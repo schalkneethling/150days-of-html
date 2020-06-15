@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base target="_blank" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HTML base element - Day 4 | 150 Days of HTML</title>
+    <link rel="stylesheet" type="text/css" href="css/pink.css" media="screen" />
+</head>
+
+<body>
+    <ul>
+        <li><a class="native" href="add-book">Add Book</a></li>
+        <li><a class="native" href="view">View Bookshelf</a></li>
+    </ul>
+
+    <ul>
+        <li><a href="https://www.goodreads.com/book/show/10614.Misery">Misery</a></li>
+        <li><a href="https://www.goodreads.com/book/show/10592.Carrie">Carrie</a></li>
+    </ul>
+</body>
+<script>
+    document.addEventListener("click", event => {
+        if (event.target.classList.contains("native")) {
+            event.preventDefault();
+            window.location = event.target.href;
+        }
+    });
+</script>
+
+</html>
