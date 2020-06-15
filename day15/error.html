@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The body element | Day 15 | 150 Days of HTML</title>
+    <script>
+        /** 
+        * Logs a message to the console indicating where
+        * the function was called from.
+        * @param {String} calledBy - The callers name
+        */
+        function fired(calledBy) {
+            console.log(`fired called by ${calledBy}`);
+        }
+    </script>
+</head>
+
+<body onerror="fired('error:: body element')">
+    <h1>Event bubbling and capture on the <code>body</code> element</h1>
+    <a href="#clicked" id="error">Do NOT Click Me!</a>
+
+    <script>
+        (function () {
+            "use strict";
+
+            const error = document.getElementById('error');
+
+            error.addEventListener('click', () => {
+                fired('click:: anchor element');
+                throw Error('You should not have clicked me!!');
+            });
+
+            error.addEventListener('error', () => {
+                fired('error:: anchor element');
+            });
+
+            document.body.addEventListener('error', () => {
+                fired('error:: body event listener');
+            });
+
+            // the html element
+            document.documentElement.addEventListener('error', () => {
+                fired('error:: html event listener');
+            });
+
+            window.addEventListener('error', () => {
+                fired('error:: window event listener');
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-security-policy"
+        content="script-src 'self'; object-src 'none'" />
+    <title>http-equiv, content-security-policy - Day 12 - 150 Days of HTML</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <script src="js/external.js"></script>
+    <script>
+        (function () {
+            const output = document.getElementById("output");
+            output.textContent = "I am writing to you from an inline script";
+        })();
+    </script>
+</body>
+
+</html>
