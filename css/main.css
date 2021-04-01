@@ -20,22 +20,53 @@ p {
   margin: 20px 0;
 }
 
+iframe {
+  border: 0;
+  width: 100%;
+}
+
+header {
+  margin-top: 24px;
+}
+
+blockquote,
+p {
+  max-width: 80ch;
+}
+
 .logo {
   position: relative;
   background: transparent url("../media/logo.svg") 0 0 no-repeat;
-  background-size: 350px;
-  width: 350px;
-  height: 350px;
+  background-size: 250px;
+  width: 250px;
+  height: 250px;
   z-index: 10;
 }
 
+@media all and (min-width: 47.9385em) {
+  .logo {
+    background-size: 350px;
+    width: 350px;
+    height: 350px;
+  }
+}
+
 .article,
-form {
+.main-container {
   background-color: rgba(255, 254, 254);
   margin: -60px auto 40px;
   padding: 60px 20px;
   border-radius: 4px;
   max-width: 1200px;
+}
+
+.main-container {
+  text-align: center;
+}
+
+.main-container h2 {
+  margin: 12px 0 24px;
+  font-size: 3rem;
 }
 
 .article {
@@ -70,20 +101,6 @@ form {
   .article pre {
     max-width: inherit;
   }
-}
-
-form {
-  text-align: center;
-}
-
-form h2 {
-  margin: 10px 0 20px;
-  font-size: 3rem;
-}
-
-blockquote,
-p {
-  max-width: 80ch;
 }
 
 input[type="email"] {

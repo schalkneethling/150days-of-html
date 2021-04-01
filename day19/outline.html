@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The sectioning elements | Day 16 | 150 Days of HTML</title>
+</head>
+
+<body>
+    <h1>Is a tomato a vegetable or a fruit?</h1>
+
+    <article>
+        <h2>Vegetable or Fruit?</h2>
+        <p>A list of common produce that are fruits not vegetables.</p>
+
+        <blockquote>
+            <h2>"Fruits are structures that contain seeds,"</h2>
+            <footer>Toby Adams, director of the Edible Academy at the New York Botanical
+                Garden, said in an interview.</footer>
+        </blockquote>
+
+        <section>
+            <h3>Tomato</h3>
+            <p>Although they're technically a fruit, tomatoes have been legally defined as
+                vegetables in the US.</p>
+        </section>
+
+        <section>
+            <h3>Avocado</h3>
+            <p>It's a fruit. Technically an oversized berry</p>
+        </section>
+
+        <section>
+            <h3>Eggplant</h3>
+            <p>Eggplants are botanically classified as berries.</p>
+        </section>
+
+        <footer>
+            <h4>Reference</h4>
+            <ul>
+                <li><a
+                        href="https://www.insider.com/fruits-that-are-vegetables-2018-12#eggplants-are-botanically-classified-as-berries-8">10
+                        'fruits' that are technically vegetables — and vice versa</a></li>
+            </ul>
+        </footer>
+    </article>
+
+    <aside>
+        <nav aria-labelledby="toc">
+            <h2 id="toc">Table of Contents</h2>
+            <ul>
+                <li><a href="#tomato">Tomato</a></li>
+                <li><a href="#avocado">Avocado</a></li>
+                <li><a href="#eggplant">Eggplant</a></li>
+                <li><a href="#reference">Reference</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!--
+Heading level outline
+<h1> Is a tomato a vegetable or a fruit?
+  <h2>"Fruits are structures that contain seeds,"</h2>
+  <h2> Vegetable or Fruit?
+    <h3> Tomato
+    <h3> Avocado
+    <h3> Eggplant
+      <h4> Reference
+  <h2> Table of Contents
+-->
+
+    <!--
+Is a tomato a vegetable or a fruit?
+   - Vegetable or Fruit?
+      - Tomato
+      - Avocado
+      - Eggplant
+      - Reference
+
+   - [aside element with no heading]
+      - Table of Contents
+-->
+</body>
+
+</html>
