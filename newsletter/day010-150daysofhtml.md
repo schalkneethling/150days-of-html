@@ -4,17 +4,17 @@ Welcome to Day 10!
 
 Today we are moving onward and looking at the `integrity` attribute of the `link` element. To be clear, as with many of the other attributes we have discussed, the `integrity` attribute is not only used on the link element. For our immediate purpose though, we will focus on the `link` element.
 
-When we talked about the `crossorigin` attribute I touched on the fact that these days very few sites load all of their dependencies from the same origin. We use a combination of third party services, content delivery networks, etc., and pretty much trust that the resource we requested will be the one that is delivered.
+When we talked about the `crossorigin` attribute I touched on the fact that these days very few sites load all of their dependencies from the same origin. We use a combination of third-party services, content delivery networks, etc., and pretty much trust that the resource we requested will be the one that is delivered.
 
-With hacking methods such as [man-in-the-middle attacks](https://www.cloudflare.com/learning/security/threats/man-in-the-middle-attack/), [DNS spoofing and DNS cache poisoning](https://security.stackexchange.com/questions/33257/dns-spoofing-vs-dns-cache-poisoning)(among others), simply trusting is not enough, especially for critical applications that involve user data, payments or other sensitive operations. This is where the `integrity` attribute can help. 🔏
+With hacking techniques such as [man-in-the-middle attacks](https://www.cloudflare.com/learning/security/threats/man-in-the-middle-attack/), [DNS spoofing, and DNS cache poisoning](https://security.stackexchange.com/questions/33257/dns-spoofing-vs-dns-cache-poisoning)(among others), simply trusting is not enough, especially for critical applications that involve user data, payments, or other sensitive operations. This is where the `integrity` attribute can help. 🔏
 
 The `integrity` attribute is part of a larger standard known as subresource integrity. While TLS(**T**ransport **L**ayer **S**ecurity)/SSL(**S**ecure **S**occer **L**ayer) is concerned with validating that the server you connect to is the server you intended to connect to, it does not authenticate the content sent by the server. Subresource integrity is concerned with the latter of the two.
 
 ## How-To 👩‍🏫
 
-The detail of this is beyond our current scope but, there is how you would use it in practice.
+The details of this are beyond our current scope but, here is how you would use it in practice.
 
-Let's say we have the following CSS file: `main.css`
+Let’s say we have the following CSS file: `main.css`
 
 ```css
 body {
@@ -22,10 +22,9 @@ body {
   color: #fff;
   font: 18px/1.5 sans-serif;
 }
-
 ```
 
-We host this file on a CDN but wish to ensure that the content we get is the content we expect. Our first step is to generate a [cryptographic hash](https://en.wikipedia.org/wiki/SHA-1) from the above content. Here I will be using [OpenSSL's tools](https://www.openssl.org/) to generate the hash from the command line.
+We host this file on a CDN but wish to ensure that the content we get is the content we expect. Our first step is to generate a [cryptographic hash](https://en.wikipedia.org/wiki/SHA-1) from the above content. Here I will be using [OpenSSL’s tools](https://www.openssl.org/) to generate the hash from the command line.
 
 ```bash
 cat main.css | openssl dgst -sha384 -binary | openssl base64 -A | pbcopy
@@ -47,12 +46,18 @@ The above produced the following:
 We then use the above as the value for our `integrity` attribute as follows:
 
 ```html
-<link rel="stylesheet" href="https://mycdn.com/main.css" integrity="sha384-4hBPy0fGoBuzDFFsZtTQy1Q1bIB7lDCym68dTqs29bO+CB8fz7xvzBXt47SrOqlf" crossorigin="anonymous" media="screen" />
+<link
+  rel="stylesheet"
+  href="https://mycdn.com/main.css"
+  integrity="sha384-4hBPy0fGoBuzDFFsZtTQy1Q1bIB7lDCym68dTqs29bO+CB8fz7xvzBXt47SrOqlf"
+  crossorigin="anonymous"
+  media="screen"
+/>
 ```
 
-With the above in place you browser can verify that the contents received from the CDN is the contents you expect and _only_ parse/execute/apply the, in this case stylesheet, to the current context if verifications passes.
+With the above in place, your browser can verify that the contents received from the CDN are the contents you expect and _only_ parse/execute/apply the code to the current context if verifications pass
 
-> You can use the same mechanism with `preload` and `modulepreload` which we have discussed previously.
+> You can use the same mechanism with `preload` and `modulepreload` which we discussed previously.
 
 That is it! 💥 You now have the means to securely load your content from a third party 🎉
 
@@ -68,4 +73,4 @@ That is it! 💥 You now have the means to securely load your content from a thi
 Until tomorrow, keep making the web awesome! o/\o
 
 ~..~
-Schalk Neethling - @schalkneethling pretty much everywhere :)
+Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

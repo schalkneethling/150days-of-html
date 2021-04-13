@@ -20,24 +20,36 @@ For external resources, browsers can also use the `type` attribute to avoid fetc
 
 ## `referrerpolicy`
 
-You may have read about the potential security and privacy implications of using `target="_blank"` and the ways of resolving or avoiding the problem all together. Well, the `referrerpolicy` attribute brings the control of `noreferrer` to `link` elements with fine grained control over what is, and is not, sent to the destination.
+You may have read about the potential security and privacy implications of using `target="_blank"` and the ways of resolving or avoiding the problem alltogether. Well, the `referrerpolicy` attribute brings the control of `noreferrer` to `link` elements with fine grained control over what is, and is not, sent to the destination.
 
-The possible policies at the time of writing are as follow: "`no-referrer`",  "`no-referrer-when-downgrade`", "`same-origin`",  "`origin`", "`strict-origin`",  "`origin-when-cross-origin`",  "`strict-origin-when-cross-origin`", or  "`unsafe-url`". Refer 🙃 to the [official documentation](https://w3c.github.io/webappsec-referrer-policy/#referrer-policies) for the most up to date information. 
+The possible policies at the time of writing are as follow: "`no-referrer`", "`no-referrer-when-downgrade`", "`same-origin`", "`origin`", "`strict-origin`", "`origin-when-cross-origin`", "`strict-origin-when-cross-origin`", or "`unsafe-url`". Refer 🙃 to the [official documentation](https://w3c.github.io/webappsec-referrer-policy/#referrer-policies) for the most up-to-date information.
 
 Let's look at two examples:
 
 ```html
-<link rel="stylesheet" href="https://external.com/lib/animations.css" type="text/css" media="screen" referrerpolicy="no-referrer" />
+<link
+  rel="stylesheet"
+  href="https://external.com/lib/animations.css"
+  type="text/css"
+  media="screen"
+  referrerpolicy="no-referrer"
+/>
 
-<link rel="preload" href="https://unpkg.com/three" type="application/javascript" as="script" referrerpolicy="strict-origin" />
+<link
+  rel="preload"
+  href="https://unpkg.com/three"
+  type="application/javascript"
+  as="script"
+  referrerpolicy="strict-origin"
+/>
 ```
 
-Assuming that the page that contains there elements are being served from `https://example.com/app.html` the following will be sent to the target destination:
+Assuming that the page that contains these elements are being served from `https://example.com/app.html` the following will be sent to the target destination:
 
 1. As the name suggests, no referrer information(Referrer Header) will be sent to the destination at all
 2. Will send a referrer with the value `https://example.com/`, but **only** if the destination is also HTTPS.
 
-The default behaviour of browser is to always apply [`no-referrer-when-downgrade`](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-no-referrer-when-downgrade). The policies and their meaning is [defined in the Referrer Policy standard](https://w3c.github.io/webappsec-referrer-policy/).
+The default behavior of the browser is to always apply [`no-referrer-when-downgrade`](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy-no-referrer-when-downgrade). The policies and their meaning are [defined in the Referrer Policy standard](https://w3c.github.io/webappsec-referrer-policy/).
 
 ## 🦓 `as`
 
@@ -48,8 +60,20 @@ Yup. As defined in the [Fetch standard documentation around destination types](h
 ```html
 <link rel="modulepreload" href="module.mjs" as="script" />
 <link rel="preload" href="main.css" as="style" />
-<link rel="preload" href="open-sans.woff2" type="font/woff2" as="font" crossorigin />
-<link rel="preload" href="open-sans.woff" type="font/woff" as="font" crossorigin />
+<link
+  rel="preload"
+  href="open-sans.woff2"
+  type="font/woff2"
+  as="font"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="open-sans.woff"
+  type="font/woff"
+  as="font"
+  crossorigin
+/>
 ```
 
 ## `disabled`
@@ -63,21 +87,27 @@ As mentioned when we discussed the `stylesheet` value of the `rel` attribute, th
 You could then use a little bit of JavaScript to "correct" the value of `rel` and trigger a load, parse and execute:
 
 ```javascript
-(function() {
+(function () {
   "use strict";
-  
+
   const lazyStylesheet = document.querySelector("[rel='await']");
   lazyStylesheet.setAttribute("rel", "stylesheet");
 })();
 ```
 
-Turns out there is a standard attribute that can be used for this exact purpose! 🤯 
+Turns out there is a standard attribute that can be used for this exact purpose! 🤯
 
 ```html
-<link rel="stylesheet" href="later.css" type="text/css" media="screen" disabled />
+<link
+  rel="stylesheet"
+  href="later.css"
+  type="text/css"
+  media="screen"
+  disabled
+/>
 ```
 
-You can then tweak the above JavaScript to look for all of these `link` element and remove the `disabled` attribute, triggering a fetch and apply of the stylesheet 🎉
+You can then tweak the above JavaScript to look for all of these `link` elements and remove the `disabled` attribute, triggering a fetch, and apply of the stylesheet 🎉
 
 ```javascript
 (function () {
@@ -92,20 +122,32 @@ You can then tweak the above JavaScript to look for all of these `link` element 
 
 ## `imagesrcset` and `imagesizes`
 
-In conclusion we look at the `imagesrcset` and `imagesizes` attributes. These attributes are used in conjunction with `preload` and an `as` attribute of type `image`. One of the aspects of HTML we will look at when we get to the `img` and `picture` elements is the concept of [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). These two attributes work in tandem with these elements allowing you to preload the appropriate image sources based on your defined `sizes`. For example:
+In conclusion, we look at the `imagesrcset` and `imagesizes` attributes. These attributes are used in conjunction with `preload` and the `as` attribute of type `image`. One of the aspects of HTML we will look at when we get to the `img` and `picture` elements is the concept of [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). These two attributes work in tandem with these elements allowing you to preload the appropriate image sources based on your defined `sizes`. For example:
 
 ```html
-<link rel="preload" imagesrcset="./media/dino-200.png 200w, ./media/dino-400.png 400w, ./media/dino-800.png 800w" imagesizes="(max-width: 480px) 200px, (max-width: 1024px) 400px, 800px" as="image" />
+<link
+  rel="preload"
+  imagesrcset="./media/dino-200.png 200w, ./media/dino-400.png 400w, ./media/dino-800.png 800w"
+  imagesizes="(max-width: 480px) 200px, (max-width: 1024px) 400px, 800px"
+  as="image"
+/>
 ```
 
 Later in the `body` of your HTML you will then have the following:
 
 ```html
-<img srcset="./media/dino-200.png 200w, ./media/dino-400.png 400w, ./media/dino-800.png 800w"
-        sizes="(max-width: 480px) 200px, (max-width: 768px) 400px, 800px" alt="" />
+<img
+  srcset="
+    ./media/dino-200.png 200w,
+    ./media/dino-400.png 400w,
+    ./media/dino-800.png 800w
+  "
+  sizes="(max-width: 480px) 200px, (max-width: 768px) 400px, 800px"
+  alt=""
+/>
 ```
 
-The combination of the two can be particularly useful for loading assets that is crucial to the user experience. Using this merely for decorative images is probably not the best use case.
+The combination of the two can be particularly useful for loading assets that are crucial to the user experience. Using this merely for decorative images is probably not the best use case.
 
 That's a wrap 🎁 Next up, the `meta` element. Until then, keep making the web awesome! o/\o
 
@@ -117,4 +159,4 @@ That's a wrap 🎁 Next up, the `meta` element. Until then, keep making the web 
 - [Responsive Images tutorial on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 
 ~..~
-Schalk Neethling - @schalkneethling pretty much everywhere :)
+Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
