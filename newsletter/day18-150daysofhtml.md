@@ -4,15 +4,15 @@ Welcome to Day 18!
 
 On the menu today we have the following:
 
-* `article`
-* `section`
-* The `main` element for good measure
+- `article`
+- `section`
+- The `main` element for good measure
 
 First up, the `main` element.
 
 ## main
 
-While the `main` element is not part of the group of sectioning elements, instead being part of the grouping elements, it would be hard to cover `article` and `section` without introducing `main`. While the elements we have covered so far mostly relate to the elements that live around our page's content, tangentially related content if you will 😉, `section`, and more specifically `article` , relate to the [meat and potatoes](https://idioms.thefreedictionary.com/the+meat+and+potatoes) of our page.
+While the `main` element is not part of the group of sectioning elements, but part of the grouping elements, it would be hard to cover `article` and `section` without introducing `main`. While the elements we have covered so far mostly relate to the elements that live around our page’s content, tangentially related content if you will 😉, `section`, and more specifically `article` , relate to the [meat and potatoes](https://idioms.thefreedictionary.com/the+meat+and+potatoes) of our page.
 
 The `main` content if you will. 😜
 
@@ -20,120 +20,119 @@ As the name suggests, the `main` element is used to identify the main content of
 
 ```html
 <header class="site-header">
-    <a href="/" title="return to homepage">
-        <h1 class="logo">150 Days of HTML</h1>
-    </a>
-    <nav aria-label="Primary navigation">
-			...
-    </nav>
+  <a href="/" title="return to homepage">
+    <h1 class="logo">150 Days of HTML</h1>
+  </a>
+  <nav aria-label="Primary navigation">...</nav>
 </header>
 
 <main role="main">
-	<h2>Welcome to my corner of the Web</h2>
+  <h2>Welcome to my corner of the Web</h2>
 </main>
 
-<aside>
-	...
-</aside>
+<aside>...</aside>
 
 <footer>
-	<p>I have an implicit ARIA role of <code>contentinfo</code> because my nearest ancestor is the <code>body</code> element.</p>
+  <p>
+    I have an implicit ARIA role of <code>contentinfo</code> because my nearest
+    ancestor is the <code>body</code> element.
+  </p>
 </footer>
 ```
 
-> NOTE: Why add `role="main"` if it is implicit already? The addition of the `role` attribute largely depends on your intended audience. If you know that the users of your website or application will be using [ever green browsers](https://www.techopedia.com/definition/31094/evergreen-browser), there is no need to specify the role. If however some of your users may be using versions of Internet Explorer 11 or older, the `role` attribute is required in order to convey the semantic meaning to assistive technologies.
+> NOTE: Why add `role="main"` if it is implicit already? The addition of the `role` attribute largely depends on your intended audience. If you know that the users of your website or application will be using [ever-green browsers](https://www.techopedia.com/definition/31094/evergreen-browser), there is no need to specify the role. If however some of your users may be using versions of Internet Explorer 11 or older, the `role` attribute is required in order to convey the semantic meaning to assistive technologies.
 
-While there can only be one `main` element per document, you could have more than one if they additional `main` elements have the `hidden` property specified. This can be useful tossup out different pieces of "main" content as a user interacts with your webpage, for example:
+While there can only be one `main` element per document, you could have more than one if the additional `main` elements have the `hidden` attribute specified. This can be useful to swap out different pieces of "main" content as a user interacts with your webpage, for example:
 
 ```html
 <main id="intro" role="main">
-	<h2>Introduction</h2>
+  <h2>Introduction</h2>
 </main>
-	
+
 <main id="toccata" role="main" hidden>
-	<h2>Toccata</h2>
+  <h2>Toccata</h2>
 </main>
-	
+
 <main id="fugue" role="main" hidden>
-	<h2>Fugue</h2>
+  <h2>Fugue</h2>
 </main>
 
 <aside>
-	<nav aria-labelledby="#toc">
-		<h3 id="toc">Table of Contents</h3>
-		<ul>
-			<li><a href="#intro">Introduction</a></li>
-			<li><a href="#toccata">Toccata</a></li>
-			<li><a href="#fugue">Fugue</a></li>
-		</ul>
-	</nav>
+  <nav aria-labelledby="#toc">
+    <h3 id="toc">Table of Contents</h3>
+    <ul>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#toccata">Toccata</a></li>
+      <li><a href="#fugue">Fugue</a></li>
+    </ul>
+  </nav>
 </aside>
 ```
 
-Using JavaScript one can toggle on and off the `disabled` attribute on the relevant `main` element as the user clicks the various links in the table of contents. This ensures that one main` element is active and visible at a time, making this a valid use case.
+Using JavaScript one can toggle on and off the `hidden` attribute on the relevant `main` element as the user clicks the various links in the table of contents. This ensures that one `main` element is active and visible at a time, making this a valid use case.
 
 ## article
 
-Following close on the heels of `main` is the `article` element. While it does not define the main content of a page, it is used to contain content on a page that is self contained. In other words, if you should take an `article` element and its contents out of the page and present it by itself, it should still make sense. The `article` element has an implicit role of `article` but, can be assigned a custom role of `feed`, `presentation`, `none`, `document`, `application`, `main` or `region`, but it probably best to use the `main` element when the intended role is main.
+Following close on the heels of `main` is the `article` element. While it does not define the main content of a page, it is used to contain content on a page that is self contained. In other words, if you take an `article` element and its contents out of the page and present it by itself, it should still make sense. The `article` element has an implicit role of `article` but, can be assigned a custom role of `feed`, `presentation`, `none`, `document`, `application`, `main` or `region`, but it probably best to use the `main` element when the intended role is main.
 
 The `article` element is commonly used as a container for the main article content(no surprise there 😁), but also to contain a list of blog entries for syndication for example:
 
 ```html
 <ul class="post-list">
-	<li>
-		<article class="post-excerpt">
-			<header>
-				<h2>Title</h2>
-			</header>
-			....
-		</article>
-	</li>
-		<li>
-		<article class="post-excerpt">
-			<header>
-				<h2>Title</h2>
-			</header>
-			....
-		</article>
-	</li>
-	...
+  <li>
+    <article class="post-excerpt">
+      <header>
+        <h2>Title</h2>
+      </header>
+      ....
+    </article>
+  </li>
+  <li>
+    <article class="post-excerpt">
+      <header>
+        <h2>Title</h2>
+      </header>
+      ....
+    </article>
+  </li>
+  ...
 </ul>
 ```
 
-As expected, and `article` element can contain the other sectioning elements such as `header`, `footer`, `section`, etc., to further semantically structure the content of the article.
+As expected, an `article` element can contain the other sectioning elements such as `header`, `footer`, `section`, etc., to further semantically structure the content of the article.
 
 ## section
 
-The `section` element is a little controversial. The general feeling as that the `section` element is a glorified `div` element and could really have been left out of the specification. While that may be true to some extent, it is not entirely one sided affair. It is also not a best practise to use a `section` element as a container when it merely acts as a style or scripting hook. In those instances, you should definitely opt for the `div` element.
+The `section` element is a little controversial. The general feeling is that the `section` element is a glorified `div` element and could really have been left out of the specification. While that may be true to some extent, it is not an entirely one-sided affair. It is also not a best practice to use a `section` element as a container when it merely acts as a style or scripting hook. In those instances, you should definitely opt for the `div` element.
 
 The `section` element comes into its own when used with an accessible name, as in the following example:
 
 ```html
 <article class="post">
-	<header>
-		<h1>Title</h1>
-	</header>
-	....
-	<section class="comments" aria-labelledby="comments-heading">
-		<header>
-			<h3 id="comments-heading">Comments</h3>
-		</header>
-		<ul class="comments">
-			<li>
-				<article class="comment">
-					<p>This is some serious semantic markup dude!</p>
-					<footer>
-						<h4>Jane Doe</h4>
-						<time datetime="2020-06-26">26 June, 2020</time>
-					</footer>
-				</article>
-			</li>
-		</ul>
-	</section>
+  <header>
+    <h1>Title</h1>
+  </header>
+  ....
+  <section class="comments" aria-labelledby="comments-heading">
+    <header>
+      <h3 id="comments-heading">Comments</h3>
+    </header>
+    <ul class="comments">
+      <li>
+        <article class="comment">
+          <p>This is some serious semantic markup dude!</p>
+          <footer>
+            <h4>Jane Doe</h4>
+            <time datetime="2020-06-26">26 June, 2020</time>
+          </footer>
+        </article>
+      </li>
+    </ul>
+  </section>
 </article>
 ```
 
-When the `section` element is used with an accessible name as above, it is assigned the ARIA role of region and exposed as such to assistive technologies. While this is the most useful use of the `section` element, it is by no means the only way it can be used. The general rule is: "the section element is appropriate only if the element's contents would be listed explicitly in the document's outline." ~ [The Official HTML documentation](https://html.spec.whatwg.org/multipage/sections.html#use-div-for-wrappers)
+When the `section` element is used with an accessible name as above, it is assigned the ARIA role of region and exposed as such to assistive technologies. While this is the most useful use of the `section` element, it is by no means the only way it can be used. The general rule is: "the section element is appropriate only if the element’s contents would be listed explicitly in the document's outline." ~ [The Official HTML documentation](https://html.spec.whatwg.org/multipage/sections.html#use-div-for-wrappers)
 
 Here I agree with [Bruce Lawson](https://twitter.com/brucel)(see article linked in related reading), and would stick to using the `section` element only when I am using it explicitly as a `region`.
 
@@ -144,4 +143,4 @@ That was a lot of ground to cover but, you now have a darn good toolbox to seman
 - [Why You Should Choose HTML5 article Over section](https://www.smashingmagazine.com/2020/01/html5-article-section/)
 
 ~..~
-Schalk Neethling - @schalkneethling pretty much everywhere :)
+Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
