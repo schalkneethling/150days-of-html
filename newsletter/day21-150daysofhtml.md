@@ -6,7 +6,7 @@ Today we continue our exploration of the grouping elements by looking at lists.
 
 ## `ol` - Ordered list
 
-As the name suggests, the `ol` element is used to markup lists that follow a defined order. This element is threfore the perfect candidate for marking up cooking instruction and assembly instructions for example. Each item in an ordered list is marked up using the `li` or list item element.
+As the name suggests, the `ol` element is used to markup lists that follow a defined order. This element is therefore the perfect candidate for marking up cooking instruction and assembly instructions for example. Each item in an ordered list is marked up using the `li` or list item element.
 
 ```html
 <section aria-labelledby="making-pizza-dough">
@@ -82,9 +82,9 @@ As mentioned earlier, another common use for an ordered list could be assembly i
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgMXVV)
 
-But what about disassembly instructions? While it could be completely valid to have these numbered from 1 - x, why not reinforce the idea that this is disassembly instruction by having the number countdown? With the `reversed` attribute on the ordered list element it is as simple as adding the attribute to the root `ol` element.
+But what about disassembly instructions? While it could be completely valid to have these numbered from 1 - x, why not reinforce the idea that this is disassembly instruction by having the numbers countdown? With the `reversed` attribute on the ordered list element, it is as simple as adding the attribute to the root `ol` element.
 
-> NOTE: This will not reverse the order the instruction are rendered, only the marker. The content will still be rendered in the same order you wrote them in the HTML.
+> NOTE: This will not reverse the order in which the instructions are rendered, only the marker. The content will still be rendered in the same order you wrote them in the HTML.
 
 ```html
 <section aria-labelledby="taking-down-tent">
@@ -114,9 +114,9 @@ But what about disassembly instructions? While it could be completely valid to h
 
 ### `start`
 
-Sometimes the steps are interspersed with some additional information, images or other context that you do not necessarily want to part of the list item. For these cases we have the `start` attribute. As the name suggests, it allows you to specify a from where the new ordered list should start or continue.
+Sometimes the steps are interspersed with some additional information, images, or other text that you do not necessarily want to be part of the list item. For these cases, we have the `start` attribute. As the name suggests, it allows you to specify from where the new ordered list should start or continue.
 
-> NOTE: Even when the steps are indicated with letters, you still specifiy the value for the `start` attribute as a numeral.
+> NOTE: Even when the steps are indicated with letters, you still specify the value for the `start` attribute as a numeral.
 
 ```html
 <section aria-labelledby="marking-up-form">
@@ -173,7 +173,7 @@ Sometimes the steps are interspersed with some additional information, images or
 
 ### `type`
 
-While setting the kind of marker the ordered list should use is most commonly done via the CSS `list-style-type` property, it is also possible to set this using the `type` attribute on the ordered list element. This can be an especially good idea when it is not guarenteed that the HTML will be rendered in a context where CSS is available and the marker used is critical to the understanding of the list. The possible values for the `type` attribute are as follows:
+While setting the type of marker the ordered list should use is commonly done via the CSS `list-style-type` property, it is also possible to set this using the `type` attribute on the ordered list element. This can be an especially good idea when it is not guaranteed that the HTML will be rendered in a context where CSS is available and the marker used is critical to the understanding of the list. The possible values for the `type` attribute are as follows:
 
 | **Keyword** |  **State**  | **Example** |
 | :---------: | :---------: | :---------: |
@@ -223,7 +223,7 @@ Decimal is the default and does not need to be specified. Some examples:
 
 A description list is made up of two other elements. The `dt` or term element and the `dd` or description element. Together these combine to create a description list of names and their associated values or descriptions.
 
-> NOTE: The `dl` element used to be called a definition list and therefore `dt` was known as the definition type and `dd` and the definition descrption. Since the parent element is not more generally called a description list, the do not quite match using those names. It is therefore best to think of the `dt` element as the name or term being described by the description(`dd`).
+> NOTE: The `dl` element used to be called a definition list and therefore `dt` was known as the definition type and `dd` as the definition description. Since the parent element is now more generally called a description list, those names do not map as cleanly. It is, therefore, best to think of the `dt` element as the name or term being described by the description(`dd`).
 
 ```html
 <dl>
@@ -247,9 +247,9 @@ A description list is made up of two other elements. The `dt` or term element an
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
 
-As you will notice from the above, the default rendering for a description list is stacked with the description indented. One thing that makes styling a description list a little tricky is that each name and description pair are separate siblings in the HTML. If one therefore apply something like [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to the parent `dl` element, the end result will most likely not be what you want as each entry in the list becomes a flex child. What you probably want is for each pair to become a child.
+As you will notice from the above, the default rendering for a description list is stacked with the description indented. One thing that makes styling a description list a little tricky is that each name and description pair are separate siblings in the HTML. If one, therefore, apply something like [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to the parent `dl` element, the end result will most likely not be what you want as each entry in the list becomes a flex child. What you probably want is for each pair to become a child.
 
-To remedy this, you are allowed to wrap elements inside the description list with a `div` for style or scripting purposes. For example, let's rewrite the above a little:
+To remedy this, you are allowed to wrap elements inside the description list with a `div` for styling purposes. For example, let’s rewrite the above a little:
 
 ```html
 <dl class="styled-description-list">
@@ -277,7 +277,7 @@ To remedy this, you are allowed to wrap elements inside the description list wit
 </dl>
 ```
 
-Adding the following CSS gives you a horizontally displayed description list with a bit more styling for the `dt` and `dd`:
+Adding the following CSS gives you a horizontally displayed description list with a bit more styling for the `dt` and `dd` elements:
 
 ```css
 .styled-description-list {
@@ -303,7 +303,7 @@ Adding the following CSS gives you a horizontally displayed description list wit
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
 
-One thing that is also unique about the description list element is that you can associate multiple type elements with a single description or, you can associate multiple description element with a single type element. For example:
+One thing that is also unique about the description list element is that you can associate multiple type elements with a single description or, you can associate multiple description elements with a single type element. For example:
 
 ```html
 <dl>
@@ -316,7 +316,7 @@ One thing that is also unique about the description list element is that you can
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
 
-When marking up a list of authors, you code do the following:
+When marking up a list of authors, you could do the following:
 
 ```html
 <dl>
@@ -330,7 +330,7 @@ When marking up a list of authors, you code do the following:
 
 ## `ul` - Unordered list
 
-The unordered list is a workhorse of the HTML world. 🐎 It's not that it has no semantic value. In fact, it has, as the other lists elements we discussed earlier, an implicit ARIA role of `list`. The reason it is a workhorse is because so much of what we do on websites can be seen as lists. And more specifically, lists that do not define a specific order nor aims to display a list of terms and their definitions. Think of a list of ingredients for a recipe, main navigation, sidebar, breadcrumbs, an application menu, etc.
+The unordered list is a workhorse of the HTML world. 🐎 It’s not that it has no semantic value. In fact, it has, as the other list elements we discussed earlier, an implicit ARIA role of `list`. The reason it is a workhorse is that so much of what we do on websites can be seen as lists. And more specifically, lists that do not define a specific order nor aim to display a list of terms and their definitions. Think of a list of ingredients for a recipe, main navigation, sidebar, breadcrumbs, an application menu, etc.
 
 ```html
 <section aria-labelledby="recipe-ingredients">
@@ -358,9 +358,9 @@ The unordered list is a workhorse of the HTML world. 🐎 It's not that it has n
 
 ## `menu`
 
-The `menu` element is really nothing more than an element to add additional semantic meaning(not that it is unimportant by the way 😅) to a unordered list used to markup an application toolbar for example. It does not change the visual rendering and also still shares the same implicit ARIA role of `list`.
+The `menu` element is really nothing more than an element to add additional semantic meaning(not that it is unimportant by the way 😅) to an unordered list used to markup an application toolbar for example. It does not change the visual rendering and also still shares the same implicit ARIA role of `list`.
 
-> NOTE: Currently this is still considered experimental and is [only supported in Firefox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu#browser_compatibility). With that said, even in non supporting browsers, the element will still render as as if it was marked up as an unordered list.
+> NOTE: Currently this is still considered experimental and is [only supported in Firefox](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu#browser_compatibility). With that said, even in non supporting browsers, the element will still render as if it was marked up as an unordered list.
 
 For example:
 
@@ -374,11 +374,13 @@ For example:
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/poRGVwV)
 
-> NOTE: The `menu` element does have a `type` and `label` attribute but, `label` has been deprecated. Also, the value for `type` could be one of either `context` or `toolbar` but, `context` has been deprecated leaving the only valid value to be toolbar. To my mind that means these attributes are no longer of any use.
+> NOTE: The `menu` element does have a `type` and `label` attribute but, `label` has been deprecated. Also, the value for `type` could be one of either `context` or `toolbar` but, `context` has been deprecated. The only remaining valid value for `type` is then, `toolbar`. To my mind, that means these attributes are no longer of any use.
 
-### Nesting
+> ANOTHER NOTE: The menu element is not a general-purpose semantic element to use for all menus or navigation but is intended for specific application toolbar type menus.
 
-Other than the `menu` element, all of the above list types allows nesting to create multi-level lists. Before looking at the lists where this is commonly done, let’s discuss nesting with the description list. Firstly, I have not personally found a use case for nesting in description lists but, if you do find a use case, remember that you can only nest a description list inside the `dt` or `dd` element. For example:
+### Nesting 🪆
+
+Other than the `menu` element, all of the above list types allow nesting to create multi-level lists. Before looking at the lists where this is commonly done, let’s discuss nesting with the description list. Firstly, I have not personally found a use case for nesting in description lists but, if you do find a use case, remember that you can only nest a description list inside the `dt` or `dd` element. For example:
 
 ```html
 <dl>
@@ -397,7 +399,7 @@ Other than the `menu` element, all of the above list types allows nesting to cre
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMVox)
 
-Nesting with the ordered and unordered lists are exactly same from a code persepctive.
+Nesting with the ordered and unordered lists is exactly the same from a code perspective.
 
 ```html
 <ul>
