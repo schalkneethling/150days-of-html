@@ -2,11 +2,11 @@
 
 Welcome to day 22!
 
-Today we continue conclude our exploration of grouping elements by looking at the `figure` and `figcaption` elements.
+Today we conclude our exploration of grouping elements by looking at the `figure` and `figcaption` elements.
 
 ## `figure`
 
-The `figure` element is much like the `article` element in that it should be used as a container for content that is self contained. The `figure` element has an implicit ARIA role of `figure`. While this is true, if the `figure` is used without a `figcaption` you can assign any ARIA role to the `figure` element. Again, if you find yourself wanting, or needing, to do that, perhaps a different element will be more appropriate.
+The `figure` element is much like the `article` element in that it should be used as a container for content that is self-contained. The `figure` element has an implicit ARIA role of `figure`. While this is true, if the `figure` is used without a `figcaption` you can assign any ARIA role to the `figure` element. Again, if you find yourself wanting, or needing, to do that, perhaps a different element will be more appropriate.
 
 One of the benefits of the `figure` role for users of assistive technologies is that the [ARIA specification](https://www.w3.org/TR/wai-aria-1.1/#figure) states that assistive technologies _should_ enable users to quickly navigate to figures. This means that screen readers, for example, will offer a user means to jump to the various `figure` elements on the page without having to step through all the content on the page.
 
@@ -66,7 +66,7 @@ The `figcaption` element goes hand in hand with the `figure` element as a means 
 
 The `figcaption` can be place before or after the main `figure` content. As can be seen in the above example, the `figcaption` can also contain other flow content elements.
 
-That concludes our look at the grouping elements of HTML. From tomorrow we will start looking at text level semantics.
+This concludes our look at the grouping elements of HTML. From tomorrow we will start looking at text level semantics.
 
 Until then, keep making the web awesome!
 
