@@ -63,18 +63,125 @@ While `_top` and `_parent` does have their use cases, the most used of the brows
 The download attribute instructs the browser to download the destination specified by the `href` attribute instead of navigating to it. The `download` attribute can be specified by itself, as a boolean attribute, or with a value. If a value is specified, it will be used as the filename(not file location i.e. slashes and back-slashes will be replaced by underscores) of the asset being downloaded.
 
 ```html
-<a href="installation-instruction-for-model-3.pdf" download
-  >Download instllation instructions</a
->
-<a href="installation-instruction-for-model-3.pdf" download="installation.pdf"
-  >Download instllation instructions</a
+<ul>
+  <li><a href="./assets/rubberduck.png" download>Download a Rubberduck</a></li>
+  <li>
+    <a href="./assets/rubberduck.png" download="duck.png">Download a Duck</a>
+  </li>
+</ul>
+```
+
+> NOTE: The download attribute only works for sources that are of the same origin.
+
+[See the live example](https://150daysofhtml.com/newsletter/day23/download-attribute.html)
+
+### `ping`
+
+The `ping` attribute is rather interesting. It essentially exposes a mechanism that allows you to collect statistics about how users use your site by sending "pings" to a specified URL, or URLs. This is limited to interaction on an `a` or `area` element though.
+
+This is the basic syntax:
+
+```html
+<a href="how-to-use-ping-attribute.html" ping="click-tracker page-view-tracker"
+  >How to use the <code>ping</code> attribute</a
 >
 ```
 
-> NOTE: The download attribute only applies for sources that are of the same origin.
+With the above in place, clicking on the link will do three things:
 
-### `ping`
+1. Send a ping to `click-tracker`
+2. Send a ping to `page-view-tracker`
+3. Fetch and load `how-to-use-ping-attribute.html`
+
+Well, that is it on a basic level. Let's dig a little deeper. If the `ping` URL's scheme is not a HTTP(S) scheme, the browser will do nothing. A user can also express a preference for pings to be disallowed in which case the user agent _should_ do nothing.
+
+> NOTE: Currently all [browsers that support the `ping` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#browser_compatibility)(essentially all but Internet Explorer) have pings enabled with seemingly [no way to disable it](https://dev.to/madsstoumann/google-tracking-and-the-ping-attribute-41d5). The odd one out is Firefox. In Firefox it is currently disabled by default and needs to be enabled via a specific flag.
+
+If the above conditionals are all met, the user agent will make a new request with the URL, or first URL in the list, using the [HTTP POST method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST). If the URL of the document that contains the hyperlink and the URL of the `ping` are of the same origin, the browser will proceed to fetch the resource specified by the `href` attribute.
+
+That is the basic "happy path". There are two other conditions thought. If the origins are different, and the scheme of the document containing the hyperlink is not `https`, the request sent by the `PING` must include a `Ping-From` and `Ping-To` [HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers). `Ping-From` should contain the URL of the document that contains the hyperlink, and `Ping-To` should contain the URL of the target URL.
+
+For example:
+
+```html
+<!-- Assume this is on a page at www.myblog.com -->
+<a
+  href="how-to-use-ping-attribute.html"
+  ping="https://click-tracker.limo/click-tracker"
+  >How to use the <code>ping</code> attribute</a
+>
+```
+
+Should a user access `http://www.myblog.com` and click on the link, the `PING POST` request should have `Ping-From: http://www.myblog.com` and `Ping-To: http://www.myblog.com/how-to-use-ping-attribute.html` set as HTTP headers on the request. Now, if the origins _are_ different, but the scheme _is_ `https`, then the user agent should only set the `Ping-To` header. Pretty intense stuff 🙃 😱
+
+I created a [small app you can use to play around with this here](https://github.com/schalkneethling/using-ping-attribute).
+
+## `rel`
+
+We have covered the `rel` attribute extensively when discussing its use on the `link` element so I will not go into to much depth here. Suffice it to say that the `rel` attribute when used on the anchor element indicates the relationship between the current document and the target location.
+
+As mentioned earlier one use is to specify `noopener` and `noreferrer` when using the `target` attribute with a value of `_blank`. Another common use case is to indicate that the target location is external to the current document, for example.
+
+```html
+<!-- 
+    Here we assume the document containing this hyperlink is on https://150daysofhtml.com/ 
+-->
+<a
+  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel"
+  rel="external"
+  >Read more about `rel` on MDN Web Docs</a
+>
+```
+
+## `hreflang`
+
+The `hreflang` attribute, as its name suggests, is used to indicate the language of the target document.
+
+```html
+<a href="https://fr.wikipedia.org/wiki/Tour_Eiffel" hreflang="fr"
+  >Tour Eiffel</a
+>
+```
+
+## `type`
+
+The `type` attribute on the anchor element can be used to provide a hint to the browser as to the type of resource the hyperlink points to. The value of the attribute should be a [valid MIME type string](https://mimesniff.spec.whatwg.org/#understanding-mime-types).
+
+```html
+<a
+  href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2020.pdf"
+  type="application/pdf"
+  >MDN Web DNA Report 2020</a
+>
+```
+
+## `referrerpolicy`
+
+As the name suggests, this attribute is used to specify the [Referrer Policy](https://w3c.github.io/webappsec-referrer-policy/) to use when fetching the resource linked to. The value needs to be a [valid referrer policy string](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy).
+
+```html
+<a
+  href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2020.pdf"
+  type="application/pdf"
+  referrerpolicy="no-referrer"
+  >MDN Web DNA Report 2020</a
+>
+```
+
+The above instructs the browser to not send along the [`Referrer` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) when following the hyperlink.
+
+> NOTE: From the HTML specification documentation: "The target, download, ping, rel, hreflang, type, and referrerpolicy attributes must be omitted if the href attribute is not present."
+
+[See in its original context](https://html.spec.whatwg.org/#the-a-element)
+
+And that covers the anchor element. Wow! Who knew there was so much to this seemingly simple backbone of the internet? You, that's who! 😁
+
+I hope you found this interesting and insightful.
 
 ### Related reading
 
 - [Additional reading regarding the `download` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-download)
+
+Until then, keep making the web awesome!
+
+~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
