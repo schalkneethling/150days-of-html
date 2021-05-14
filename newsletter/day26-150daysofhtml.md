@@ -6,10 +6,10 @@ Continuing with text-level semantics, today is a quick one and covers `small`, `
 
 ## `small`
 
-While the default front size of the contents of the `small` element is, well small, it is not only meant for small print. It is definitely one of the use cases though.
+While the default font size of the contents of the `small` element is, well small, it is not only meant for small print. It is definitely one of the use cases though.
 
 ```html
-<p><small>Hello, I’m small.</small></p>
+<p><small>Hello, I’m Mr. Potato Head</small></p>
 
 <p>
   <img
@@ -79,7 +79,7 @@ The `sub` element represents [subscript](https://en.wikipedia.org/wiki/Subscript
 
 ## `sup`
 
-The `sup` element represents [superscript](https://en.wikipedia.org/wiki/Subscript_and_superscript). Basically `sup` is our reality and `sub` is the upside down 🙃 (I could not resist the [Stranger Things reference](https://strangerthings.fandom.com/wiki/The_Upside_Down).). Let’s look at a familiar example from a previous post.
+The `sup` element represents [superscript](https://en.wikipedia.org/wiki/Subscript_and_superscript). Basically `sup` is our reality and `sub` is the upside-down 🙃 (I could not resist the [Stranger Things reference](https://strangerthings.fandom.com/wiki/The_Upside_Down).). Let’s look at a familiar example from a previous post.
 
 ```html
 <p><var>E</var> = <var>m</var><var>c</var><sup>2</sup></p>
@@ -87,7 +87,7 @@ The `sup` element represents [superscript](https://en.wikipedia.org/wiki/Subscri
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/VwPJord)
 
-That completes our look at the simple, but useful text-level semantic elements. Tomorrow we will look at some lesser known elements under the text-level semantics flag.
+That completes our look at the simple, but useful text-level semantic elements. Tomorrow we will look at some lesser-known elements under the text-level semantics flag.
 
 ### Related reading
 
