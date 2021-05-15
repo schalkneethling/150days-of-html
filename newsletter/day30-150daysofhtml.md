@@ -227,7 +227,52 @@ Also note that the width descriptor is the intrinsic width of the image plus a `
   "
   sizes="(max-width: 20em) 320px, (max-width: 64em) 768px, 1024px"
   src="../assets/sizes-768.png"
-  width="768"
+  height="320"
+  alt="A beautiful sunset in the background with two surfers paddling into the surf in the foreground"
+/>
+```
+
+**NOTE:** Even though not specified here, the device pixel ratio plays a role in which image the user agent will choose. For example, if you load the above image on a device with a max width of `20em` but with a DPR of 2, the user agent will choose `sizes-768.png`. If you want to ensure that on devices with a max width of `20em`(~320px) the smallest possible image is loaded, you also need to specify the DPR, for example:
+
+```html
+<img
+  srcset="
+    ../assets/sizes-320.png   320w,
+    ../assets/sizes-768.png   768w,
+    ../assets/sizes-1024.png 1024w
+  "
+  sizes="(max-width: 20em) and (max-resolution: 1dppx) 320px, (max-width: 64em) 768px, 1024px"
+  src="../assets/sizes-768.png"
+  height="320"
+  alt="A beautiful sunset in the background with two surfers paddling into the surf in the foreground"
+/>
+```
+
+With the above change, [loading the example in a browser window](https://img-srcset-with-dth-descriptor.glitch.me/) with a width of 320px and a DPR of 1 will result in the browser loading `sizes-320.png`.
+
+![Screenshot showing network panel loading the 320px image asset](../assets/day30/small.png)
+
+Because the other media queries do not specify a DPR we can simply resize the viewport to see the new images load.
+
+At a width of 768px:
+
+![Screenshot showing network panel loading the 320px image asset](../assets/day30/medium.png)
+
+At a width of 1024px:
+
+![Screenshot showing network panel loading the 320px image asset](../assets/day30/large.png)
+
+And of course, if you want to load the smallest image even if the device has a DPR of 2, you would change the media query to the following:
+
+```html
+<img
+  srcset="
+    ../assets/sizes-320.png   320w,
+    ../assets/sizes-768.png   768w,
+    ../assets/sizes-1024.png 1024w
+  "
+  sizes="(max-width: 20em) and (max-resolution: 2dppx) 320px, (max-width: 64em) 768px, 1024px"
+  src="../assets/sizes-768.png"
   height="320"
   alt="A beautiful sunset in the background with two surfers paddling into the surf in the foreground"
 />
