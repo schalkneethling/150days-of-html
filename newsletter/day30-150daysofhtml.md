@@ -55,6 +55,8 @@ With the `type` attribute we can take advantage of these new formats and offer u
 </picture>
 ```
 
+> Photo by [Trevor Gerzen](https://unsplash.com/@tgerz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/surfer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 When loading the below example in Chrome and look in the network panel of the developer tools you will see that Chrome loads the AVIF file format:
 
 ![AVIF file format shown to load in Chrome devtools network panel](../assets/day30/chrome-avif.png)
@@ -80,14 +82,14 @@ The other use case where you would choose `picture` over just `img` is when used
   <!-- The below image and dimensions will be used up to a max viewport width of ~320px -->
   <source
     srcset="https://placekitten.com/g/300/300"
-    media="screen and (max-width:20em)"
+    media="screen and (max-width: 20em)"
     width="300"
     height="300"
   />
   <!-- The below image and dimensions will be used up to a max viewport width of ~1024px -->
   <source
     srcset="https://placekitten.com/g/400/500"
-    media="screen and (max-width:64em)"
+    media="screen and (max-width: 64em)"
     width="400"
     height="500"
   />
@@ -138,7 +140,98 @@ To make this all clear, let’s look at some examples. First up let’s look at 
 />
 ```
 
+> NOTE: With regards to the two images specified in `srcset`. They are the exact same image but, the image called `pixel-density@2x.png` is double the intrinsic width and height of the other image. So, while `pixel-density.png` is 500x500 pixels, the other is 1000x1000px. Even though the `2x` image is twice the intrinsic size, we scale it down to the same width and height. We do this to essentially squeeze more pixels into the same image dimensions. On displayes with a higher pixel density, that should result in higher quality and crisper images.
+
+[See the live example on Glitch.me](https://img-element-with-srcset-and-pixel-density-descript.glitch.me/)
+
+With the above example open in your browser, open up the developer tools and enable responsive/device mode.
+
+### Adding high and normal DPR devices
+
+We need to take a quick detour. To test the above you will need to change to config a little to enable or add high and normal DPR(Device Pixel Ratio) devices.
+
+#### Chrome
+
+With the developer tools open and in device mode, click on the options menu at the top right:
+
+![Screenshot with highlighted options menu icon](../assets/day30/chrome-init.png)
+
+An options menu will open. Click "Add device pixel ratio".
+
+![Screenshot with the Add device pixel ratio option highlighted](../assets/day30/chrome-add-pixel-ratio.png)
+
+You will now see the DPR select dropdown added to the toolbar.
+
+![Screenshot showing DPR select menu added to toolbar](../assets/day30/chrome-dpr.png)
+
+#### Firefox
+
+With the developer tools open and in responsive mode, click on the devices menu:
+
+![Screenshot with devices select menu highlighted](../assets/day30/firefox-init.png)
+
+In the menu that open, click the "Edit list" option.
+
+![Screenshot with "Edit list" menu option highlighted](../assets/day30/firefox-edit-device-list.png)
+
+This will open the "Device Settings" menu dialog.
+
+![Screenshot showing the device settings dialog with multiple device options that can be turned on and off](../assets/day30/firefox-device-settings.png)
+
+Enable the two highlighted items(Laptop with HiDPI screen and Laptop with MDPI screen) and close the device settings dialog.
+
+![Screenshot showing the device settings dialog with multiple device options that can be turned on and off](../assets/day30/firefox-new-devices-added.png)
+
+With the above configured in your preferred browser we are ready to test that our `srcset` works as expected. In Chrome set the DPR to 1. If you are using Firefox, select the "Laptop with MDPI screen" option from the devices menu. Ensure the network panel is active in devtools and set the filter to only show "Images".
+
+**In Chrome**
+
+![Screenshot showing network filter set to Img in Chrome](../assets/day30/chrome-network-filter.png)
+
+**In Firefox**
+
+![Screenshot showing network filter set to Image in Firefox](../assets/day30/firefox-network-filter.png)
+
+Reload the example page.
+
+In Firefox you should see the following in the network panel:
+
+![Screenshot showing network panel showing the pixel-density.png image being loaded](../assets/day30/firefox-1x.png)
+
+And in Chrome:
+
+![Screenshot showing network panel showing the pixel-density.png image being loaded](../assets/day30/chrome-1x.png)
+
+Now set the DPR to 2, or select "Laptop with HiDPI screen" and reload the page. In Firefox you should see the following in the network panel:
+
+![Screenshot showing network panel showing the pixel-density@2x.png image being loaded](../assets/day30/firefox-2x.png)
+
+And in Chrome:
+
+![Screenshot showing network panel showing the pixel-density@2x.png image being loaded](../assets/day30/chrome-2x.png)
+
+The second use-case for `srcset` on the `img` we will cover as part of the `sizes` attribute is they work hand in hand.
+
 ### `sizes`
+
+In the above example we specified a pixel density descriptor as part of the source image URL in our `srcset` attribute. We also scaled the images to the same intrinsic width. Here we will look at the other option, specifying a width descriptor. When specifying a width descriptor, you also need to specify the `sizes` attribute. Also, here we intend for the images to be of different intrinsic sizes based on a media query.
+
+Also note that the width descriptor is the intrinsic width of the image plus a `w`. No other unit such as for example `px` is valid here.
+
+```html
+<img
+  srcset="
+    ../assets/sizes-320.png   320w,
+    ../assets/sizes-768.png   768w,
+    ../assets/sizes-1024.png 1024w
+  "
+  sizes="(max-width: 20em) 320px, (max-width: 64em) 768px, 1024px"
+  src="../assets/sizes-768.png"
+  width="768"
+  height="320"
+  alt="A beautiful sunset in the background with two surfers paddling into the surf in the foreground"
+/>
+```
 
 ### `alt`
 
