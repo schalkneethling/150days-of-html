@@ -19,3 +19,14 @@ When it comes to video the three most commonly used and most widely supported fo
 ```html
 <video src="../assets/villa-pool.mp4"></video>
 ```
+
+For audio the most commonly used formats are [MP3](https://en.wikipedia.org/wiki/MP3), [OGG](https://theora.org/), and [Flac](https://xiph.org/flac/), with MP3 by far being the most common and well supported. The most basic usage of the `audio` element is as follows:
+
+```html
+<audio src="../assets/morning-birds-singing.mp3"></audio>
+```
+
+### Related reading
+
+- [Video codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
+- [Audio codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
