@@ -154,6 +154,26 @@ While the [`audio`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/au
 [See the live video example on Codepen.io](https://codepen.io/schalkneethling/pen/mdWWNXW)
 [See the live audio example on Codepen.io](https://codepen.io/schalkneethling/pen/ZEeegrP)
 
+Onto the unique attributes of the `video` element.
+
+### `poster`
+
+The `poster` attribute provides a means for the author of the content to specify an image to be used as the first frame of the video before it is played. Technically this can be pretty much anything but, you are encouraged however to provide something that gives the viewer an idea of what to expect when playing the video. You can essentially think of this like the video thumbnails on Youtube.
+
+```html
+<video
+  src="../assets/villa-pool.mp4"
+  controls
+  preload="metadata"
+  poster="../assets/poster.png"
+>
+  <p>
+    Your browser does not support the video element. You can
+    <a href="../assets/villa-pool.mp4">download the video file here</a>.
+  </p>
+</video>
+```
+
 ### Related reading
 
 - [Video codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
