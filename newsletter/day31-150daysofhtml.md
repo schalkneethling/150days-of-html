@@ -1,16 +1,16 @@
-# Day 31 - Embedded content - Images continued
+# Day 31 - Embedded content - The (turns out) not so humble `img` element
 
 Welcome to day 31!
 
-Today we cover the core element without which the `picture` and `source` element would be rather useless. The humble `img` element. And much like the `link` element, oh boy has this element evolved. 🤯
+Today we cover the core element without which the `picture` and `source` elements would be rather useless. The humble `img` element. And much like the `link` element, oh boy has this element evolved. 🤯
 
 ## `img`
 
-The `type` and `media` attributes makes the combination of the `picture` element and its `source` element unique but, the `img` element has a couple of unique attributes all its own that is not to be ignored.
+The `type` and `media` attributes make the combination of the `picture` element and its `source` element unique but, the `img` element has a couple of unique attributes all its own that is not to be ignored.
 
 ### `srcset`
 
-When we looked at `srcset` with the `source` element we essentially used it as you would use `src` on the `img` element. The major functionality was driven by the attributes used with `srcset`. There is more you can do with this attribute though. Instead of just a single source, you can in fact specify a comma separated list of image sources. Along with the image source, you can also specify either an width description or a pixel density descriptor.
+When we looked at `srcset` with the `source` element we essentially used it as you would use `src` on the `img` element. The major functionality was driven by the attributes used with `srcset`. There is more you can do with this attribute though. Instead of just a single source, you can in fact specify a comma-separated list of image sources. Along with the image source, you can also specify either a width description or a pixel density descriptor.
 
 To make this all clear, let’s look at some examples. First up let’s look at using a pixel density descriptor.
 
@@ -34,13 +34,13 @@ With the above example open in your browser, open up the developer tools and ena
 
 ### Adding high and normal DPR devices
 
-We need to take a quick detour. To test the above you will need to change to config a little to enable or add high and normal DPR(Device Pixel Ratio) devices.
+We need to take a quick detour. To test the above you will need to change the config a little to enable or add high and normal DPR(Device Pixel Ratio) devices.
 
 #### Chrome
 
 With the developer tools open and in device mode, click on the options menu at the top right:
 
-![Screenshot with highlighted options menu icon](../assets/day30/chrome-init.png)
+![Screenshot with highlighted options(kebab) menu icon](../assets/day30/chrome-init.png)
 
 An options menu will open. Click "Add device pixel ratio".
 
@@ -48,7 +48,7 @@ An options menu will open. Click "Add device pixel ratio".
 
 You will now see the DPR select dropdown added to the toolbar.
 
-![Screenshot showing DPR select menu added to toolbar](../assets/day30/chrome-dpr.png)
+![Screenshot showing DPR select menu added to the toolbar](../assets/day30/chrome-dpr.png)
 
 #### Firefox
 
@@ -56,7 +56,7 @@ With the developer tools open and in responsive mode, click on the devices menu:
 
 ![Screenshot with devices select menu highlighted](../assets/day30/firefox-init.png)
 
-In the menu that open, click the "Edit list" option.
+In the menu that opens, click the "Edit list" option.
 
 ![Screenshot with "Edit list" menu option highlighted](../assets/day30/firefox-edit-device-list.png)
 
@@ -66,9 +66,9 @@ This will open the "Device Settings" menu dialog.
 
 Enable the two highlighted items(Laptop with HiDPI screen and Laptop with MDPI screen) and close the device settings dialog.
 
-![Screenshot showing the device settings dialog with multiple device options that can be turned on and off](../assets/day30/firefox-new-devices-added.png)
+![Screenshot showing the device settings dialog with the two new devices enabled](../assets/day30/firefox-new-devices-added.png)
 
-With the above configured in your preferred browser we are ready to test that our `srcset` works as expected. In Chrome set the DPR to 1. If you are using Firefox, select the "Laptop with MDPI screen" option from the devices menu. Ensure the network panel is active in devtools and set the filter to only show "Images".
+With the above configured in your preferred browser, we are ready to test that our `srcset` works as expected. In Chrome set the DPR to 1. If you are using Firefox, select the "Laptop with MDPI screen" option from the devices menu. Ensure the network panel is active in dev tools and set the filter to only show "Images".
 
 **In Chrome**
 
@@ -96,13 +96,13 @@ And in Chrome:
 
 ![Screenshot showing network panel showing the pixel-density@2x.png image being loaded](../assets/day30/chrome-2x.png)
 
-The second use-case for `srcset` on the `img` we will cover as part of the `sizes` attribute is they work hand in hand.
+The second use-case for `srcset` on the `img` we will cover as part of the `sizes` attribute as they work hand in hand.
 
 ### `sizes`
 
-In the above example we specified a pixel density descriptor as part of the source image URL in our `srcset` attribute. We also scaled the images to the same intrinsic width. Here we will look at the other option, specifying a width descriptor. When specifying a width descriptor, you also need to specify the `sizes` attribute. Also, here we intend for the images to be of different intrinsic sizes based on a media query.
+In the above example, we specified a pixel density descriptor as part of the source image URL in our `srcset` attribute. We also scaled the images to the same intrinsic width. Here we will look at the other option, specifying a width descriptor. When specifying a width descriptor, you also need to specify the `sizes` attribute. Also, here we intend for the images to be of different intrinsic sizes based on a media query.
 
-Also note that the width descriptor is the intrinsic width of the image plus a `w`. No other unit such as for example `px` is valid here.
+Also, note that the width descriptor is the intrinsic width of the image plus a `w`. No other unit such as for example `px` is valid here.
 
 ```html
 <img
@@ -118,7 +118,7 @@ Also note that the width descriptor is the intrinsic width of the image plus a `
 />
 ```
 
-**NOTE:** Even though not specified here, the device pixel ratio plays a role in which image the user agent will choose. For example, if you load the above image on a device with a max width of `20em` but with a DPR of 2, the user agent will choose `sizes-768.png`. If you want to ensure that on devices with a max width of `20em`(~320px) the smallest possible image is loaded, you also need to specify the DPR, for example:
+**NOTE:** Even though not specified here, the device pixel ratio plays a role in which image the user agent will choose. For example, if you load the above image on a device with a max-width of `20em` but with a DPR of 2, the user agent will choose `sizes-768.png`. If you want to ensure that on devices with a max-width of `20em`(~320px) the smallest possible image is loaded, you also need to specify the DPR, for example:
 
 ```html
 <img
@@ -168,7 +168,7 @@ And of course, if you want to load the smallest image even if the device has a D
 
 You already saw its use in the examples above. It is a means to provide a textual description of the image or media asset being displayed. This will be displayed if the image fails to load but, is also read aloud by screen reader software and is therefore essential for accessibility.
 
-With that said, if the image you are displaying is purely decorative, then you should specify the `alt1 attribute with an empty value.
+With that said, if the image you are displaying is purely decorative, then you should specify the `alt` attribute with an empty value.
 
 ```html
 <img src="decorative.png" width="200" height="200" alt="" />
@@ -182,7 +182,7 @@ When a screen reader encounters an image with an empty `alt` attribute, it will 
   src="surfers.avif"
   width="1000"
   height="1000"
-  alt="And image of two surfers paddling into a calm ocean during a sunset"
+  alt="An image of two surfers paddling into a calm ocean during a sunset"
 />
 <!-- you would write -->
 <img
@@ -199,7 +199,7 @@ Also, while it is important to be descriptive, avoid being overly verbose.
 
 This is a pretty advanced use case attribute but the gist of its use is as follows:
 
-If you load an image with the intent to use the image data inside a [`canvas` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) you need to specify the `crossorigin` attribute. If you either do not specify `crossorigin` or, you do specify it but the server does not opt into allowing cross-origin access, the browser will [mark the image as tainted](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image), and disallow usage of the image data in the `canvas` element.
+If you load an image with the intent to use the image data inside a [`canvas` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) you need to specify the `crossorigin` attribute. If you either do not specify `crossorigin` or, you do specify it and the server does not opt into allowing cross-origin access, the browser will [mark the image as tainted](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image), and disallow usage of the image data in the `canvas` element.
 
 ### `usemap`
 
@@ -251,7 +251,7 @@ The attribute can have one of three values, `sync`, `async`, `auto`(the default)
 
 ### `loading`
 
-This attribute has to possible values, `eager`(the default), and `lazy`. Here again, if you know that the image will be loaded below the fold, you might opt to set the image to load lazily.
+This attribute has two possible values, `eager`(the default), and `lazy`. Here again, if you know that the image will be loaded below the fold, you might opt to set the image to load lazily.
 
 ```html
 <img
@@ -263,7 +263,7 @@ This attribute has to possible values, `eager`(the default), and `lazy`. Here ag
 />
 ```
 
-You can of course be pretty agressive here and specify both `loading` and `decoding`.
+You can of course be pretty aggressive here and specify both `loading` and `decoding`.
 
 ```html
 <img
@@ -291,6 +291,10 @@ A quote from the article linked above:
 > Web Vitals is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.
 
 These are therefore critical to user experience and SEO, and should not be ignored or taken likely. As I mentioned at the start, the `img` element has evolved a lot and truly offers us some amazingly powerful features that previously required both CSS and JavaScript to achieve. Pretty humbling to see how the web platform is evolving is it not?
+
+### Related reading
+
+- [What Were Server-Side Image Maps?](https://www.rickcarlino.com/2021/03/02/what-were-server-side-image-maps-html.html)
 
 Tomorrow we will look at two more elements that used to require closed source plugins to work on the web. Until then though, keep making the web awesome!
 
