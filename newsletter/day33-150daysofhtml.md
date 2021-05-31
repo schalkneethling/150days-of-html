@@ -137,17 +137,25 @@ The final attribute of the `track` element is the `default` attribute. It is a B
 </video>
 ```
 
-**NOTE:** You cannot have more than one `track` element in the captions, subtitles, description, or chapters metadata state when the `default` attribute is set. In other words, you will not use this to set the default language captions track when there is more than one available.
-
 That covers all of the attributes and their use with the `track` element. To conclude today's post, let’s take a look at an example of putting some of this together.
 
 ```html
-<video controls src="../assets/television.mp4" type="video/mp4">
+<video controls width="320" height="240">
+  <source src="../assets/television.webm" type="video/webm" />
+  <source src="../assets/television.mp4" type="video/mp4" />
   <track
     kind="captions"
     src="../assets/television.vtt"
     srclang="en"
     label="English captions"
+    default
+  />
+  <track
+    kind="captions"
+    src="../assets/television-fr.vtt"
+    srclang="fr"
+    lang="fr"
+    label="Légendes en français"
   />
 </video>
 ```
