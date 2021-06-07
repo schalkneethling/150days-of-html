@@ -1,4 +1,4 @@
-# Day 33 - Image source and track
+# Day 33 - Sources and video captioning
 
 Welcome to day 33!
 
@@ -11,7 +11,7 @@ As with the `picture` element, the `source` element is used to specify various s
 - `src`
 - `type`
 
-Even with this limitation the `source` element is very useful and the most common way the `video` and `audio` elements are used. Let’s look at an example.
+Even with this limitation, the `source` element is very useful, and the most common way the `video` and `audio` elements are used. Let’s look at an example.
 
 ```html
 <video controls>
@@ -30,23 +30,23 @@ Even with this limitation the `source` element is very useful and the most commo
 </audio>
 ```
 
-Above is how you would use `source` with the `audio` element. Again, please see the related reading section for various links to codecs and containers. As mentioned, a user-agent will pick the first version it supports starting from the first entry and moving on. The [Opus](https://opus-codec.org/) format is a great general use format for audio but, there are [support caveats with regards to Safari](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#opus-foot-2) that you should be aware off. But then, that is exactly what the `source` element is for 😀 We start by specifying Opus, follows by MP3 and lastly an `m4a` file. The last one uses the [Advanced Audio Coding](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#aac_advanced_audio_coding)(AAC) codec inside an MPEG-4 container which is [widely supported across browsers](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#example_music_for_streaming).
+Above is how you would use `source` with the `audio` element. Again, please see the related reading section for various links to codecs and containers. As mentioned, a user agent will pick the first version it supports, starting from the first entry and moving on. The [Opus](https://opus-codec.org/) format is a great general use format for audio but, there are [support caveats with regards to Safari](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#opus-foot-2) that you should be aware off. But then, that is exactly what the `source` element is for 😀 We start by specifying Opus, followed by MP3 and lastly, an `m4a` file. The last one uses the [Advanced Audio Coding](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#aac_advanced_audio_coding)(AAC) codec inside a MPEG-4 container which is [widely supported across browsers](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#example_music_for_streaming).
 
-In terms of file size though, the above three breaks down as follows:
+In terms of file size, though, the above three breaks down as follows:
 
 - Opus: 549kb
 - MP3: 1.4MB
 - AAC: 2MB
 
-Here again you can see the benefit this will offer users in terms of bandwidth savings.
+Here again, you can see the benefit this will offer users in terms of bandwidth savings.
 
 ## `track`
 
-When adding video or audio to your website there is an important point to remember. Without captions, subtitles or a transcript, there is a large audience that is completely excluded from accessing the media. The `track` element is one of the pieces that help solve this. The `track` element has a couple of attributes to take note off.
+When adding video or audio to your website, there is an important point to remember. Without captions, subtitles, or a transcript, there is a large audience that is completely excluded from accessing the media. The `track` element is one of the pieces that help solve this. The `track` element has a couple of attributes to take note of.
 
 ### `kind`
 
-This attribute has five possible values. Those being, subtitles, captions, descriptions, chapters, and metadata. the default value if omitted is subtitles. It describes the intented purpose of the content of the text track. You can find [additional details on each kind here](https://html.spec.whatwg.org/#attr-track-kind).
+This attribute has five possible values: subtitles, captions, descriptions, chapters, and metadata. the default value, if omitted is subtitles. It describes the intended purpose of the content of the text track. You can find [additional details on each kind here](https://html.spec.whatwg.org/#attr-track-kind).
 
 ```html
 <video controls src="../assets/villa-pool.mp4" type="video/mp4">
@@ -66,7 +66,7 @@ The `src` attribute as with other elements points to the location of the associa
 
 ### `srclang`
 
-Often captions or subtitles are not only used to provide a means of access for deaf or hard of hearing persons but, to provide a translation of the language used in the video. In these instances you would specify the language of the text track using the `srclang` attribute.
+Often captions or subtitles are not only used to provide a means of access for deaf or hard of hearing persons but, to provide a translation of the language used in the video. In these instances, you would specify the language of the text track using the `srclang` attribute.
 
 ```html
 <video controls src="../assets/villa-pool.mp4" type="video/mp4">
@@ -77,7 +77,7 @@ Often captions or subtitles are not only used to provide a means of access for d
 
 ### `label`
 
-The `label` attribute is used to provide a descriptive name for the text track. This should be in a user-readable format as it will be exposed by user agents when listing the available subtitles, captions or audio descriptions.
+The `label` attribute is used to provide a descriptive name for the text track. This should be in a user-readable format as it will be exposed by user agents when listing the available subtitles, captions, or audio descriptions.
 
 ```html
 <video controls src="../assets/villa-pool.mp4" type="video/mp4">
@@ -137,7 +137,7 @@ The final attribute of the `track` element is the `default` attribute. It is a B
 </video>
 ```
 
-That covers all of the attributes and their use with the `track` element. To conclude today's post, let’s take a look at an example of putting some of this together.
+That covers all of the attributes and their use with the `track` element. To conclude today’s post, let’s take a look at an example of putting all of this together.
 
 ```html
 <video controls width="320" height="240">
@@ -160,6 +160,10 @@ That covers all of the attributes and their use with the `track` element. To con
 </video>
 ```
 
+[See the live example on 150Daysofhtml.com](https://150daysofhtml.com/day33/index.html)
+
+You can also [see the VTT file being used here](https://150daysofhtml.com/assets/television.vtt). As mentioned before, below is a **BIG** list of tools and related reading on all things video, audio, subtitling, captioning, etc. Enjoy! 😀 🙃
+
 ### Related reading
 
 - [Web audio codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
@@ -173,3 +177,4 @@ That covers all of the attributes and their use with the `track` element. To con
 - [What are video encoding formats?](https://www.cloudflare.com/learning/video/video-encoding-formats/)
 - [Audio and video types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#audio_and_video_types)
 - [Discrete types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#types)
+- [Web Video Text Tracks Format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
