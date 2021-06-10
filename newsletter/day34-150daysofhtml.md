@@ -2,19 +2,19 @@
 
 Welcome to day 34!
 
-Contuing to look at ways of embedding content into HTML we today look some elements that are most often used to embed content from external sources. Today we’ll discuss the `iframe`, `emebed`, `object`, and `params` elements.
+Continuing to look at ways of embedding content into HTML we today look at some elements that are most often used to embed content from external sources. Today we’ll discuss the `iframe`, `embed`, `object`, and `param` elements.
 
-## `emebed`, `object`, and `params`
+## `emebed`, `object`, and `param`
 
-Before we look at the `iframe` element, we will take a moment to look at `emebed`, `object`, and `params`. While these elements are still part of the HTML5 specification, their use is almost wholeheartedly discouraged. As mention when we looked at the `video` and `audio` elements, there was a time when browser did not provide a native way to embed rich media content into web pages.
+Before we look at the `iframe` element, we will take a moment to look at `embed`, `object`, and `params`. While these elements are still part of the HTML5 specification, their use is almost wholeheartedly discouraged. As mention when we looked at the `video` and `audio` elements, there was a time when browsers did not provide a native way to embed rich media content into web pages.
 
-Well, not as simply and succinctly as with `video` and `audio`. The same goes for what we now commonly call rich internet applications(RIA). In those days these capabilities was provided through plugins such as [Java(specifically Applets)](<https://en.wikipedia.org/wiki/Java_(programming_language)#Applet>), the [Adobe Flash player](https://en.wikipedia.org/wiki/Adobe_Flash_Player), and [Microsft’s Silverlight](https://en.wikipedia.org/wiki/Microsoft_Silverlight). It also used to be the way you would embed a Youtube video into a webpage for example.
+Well, not as simply and succinctly as with `video` and `audio`. The same goes for what we now commonly call rich internet applications(RIA). In those days these capabilities were provided through plugins such as [Java(specifically Applets)](<https://en.wikipedia.org/wiki/Java_(programming_language)#Applet>), the [Adobe Flash player](https://en.wikipedia.org/wiki/Adobe_Flash_Player), and [Microsft’s Silverlight](https://en.wikipedia.org/wiki/Microsoft_Silverlight). It also used to be the way you would embed a Youtube video into a webpage for example.
 
-When using these technologies, the way to embed the plugin into a page was via either the `object` or `embed` elements. There was many challenges with these plugins over the years especially with [regards to security](https://helpx.adobe.com/security/products/flash-player.html). That is why, for the longest time, [Mozilla even had a plugincheck page](https://wiki.mozilla.org/Websites/Plugincheck)(I used to work on this page myself 🙃) you could use to check whether your installed plugins was up todate, and whether there was any known vulnerabilities.
+When using these technologies, the way to embed the plugin into a page was via either the `object` or `embed` elements. There were many challenges with these plugins over the years especially with [regards to security](https://helpx.adobe.com/security/products/flash-player.html). That is why, for the longest time, [Mozilla even had a plugincheck page](https://wiki.mozilla.org/Websites/Plugincheck)(I used to work on this page myself 🙃) you could use to check whether your installed plugins were up to date and whether there were any known vulnerabilities.
 
-That is a long way of saying, you should not use these and encourage owners of projects you work on to use modern, standards based solutions instead should you encounter these in the wild. For the sake of completeness, I will show two examples using these elements.
+That is a long way of saying, you should not use these and encourage owners of projects you work on to use modern, standards-based solutions instead should you encounter these in the wild. For the sake of completeness, I will show two examples using these elements.
 
-You can for example embed video using the `embed` element in much the same way as you would using the `video` element but, without getting any of the controls and capabilities the `video` element offer you.
+You can for example embed video using the `embed` element in much the same way as you would use the `video` element but, without getting any of the controls and capabilities the `video` element offers you.
 
 ```html
 <embed
@@ -26,7 +26,7 @@ You can for example embed video using the `embed` element in much the same way a
 />
 ```
 
-Using the `object` element you could embded a Flash application and pass some parameters to the application using the `params` element.
+Using the `object` element you could embed a Flash application and pass some parameters to the application using the `param` element.
 
 ```html
 <object data="app.swf" type="application/x-shockwave-flash">
@@ -34,7 +34,7 @@ Using the `object` element you could embded a Flash application and pass some pa
 </object>
 ```
 
-That then is where we will end the discussions of these elements and move onto the `iframe` element.
+That then is where we will end the discussions of these elements and move onto the much more useful `iframe` element.
 
 ## `iframe`
 
@@ -66,11 +66,11 @@ When you load the above example you will immediately notice a problem similar to
 
 [See the live example on Codepen.io.](https://codepen.io/schalkneethling/pen/eYvrJOb)
 
-With the dimensions set, the content of the `iframe` is now fully vissible and usable.
+With the dimensions set, the content of the `iframe` is now fully visible and usable.
 
 ### `title`
 
-Before we continue with the unique attributes of the `iframe` element, we need to take a quick look at one of the global attributes that can be used with the `iframe`. When you have an `iframe` element on a page, it is critical that you identify what the contents of each `iframe` represent by using the `title` attribute. While this is not visually represented, it is surfaced to users of assistive technologies and acts as an overview of the content they can expect to find once they step into the content of the `iframe`. By providing this information you make it easy for these users to quickly jump to the content they are interested in without having to step into an iframe and tab through its contents to determine whether it is something they might be interested in.
+Before we continue with the unique attributes of the `iframe` element, we need to take a quick look at one of the global attributes that can be used with the `iframe`. When you have an `iframe` element on a page, it is critical that you identify what the contents of each `iframe` represent by using the `title` attribute. While this is not visually represented, it is surfaced to users of assistive technologies and acts as an overview of the content they can expect to find once they step into the content of the `iframe`. By providing this information you make it easy for these users to quickly jump to the `iframe` they are interested in without having to step into an `iframe` and tab through its contents to determine whether it is something they might be interested in.
 
 ```html
 <iframe
@@ -86,9 +86,9 @@ Before we continue with the unique attributes of the `iframe` element, we need t
 ></iframe>
 ```
 
-## `srcdoc`
+### `srcdoc`
 
-While the `src` attributes points to a URL, the value of `srcdoc` would be the actual HTML that is to be rendered inside the `iframe`. For example:
+While the `src` attributes point to a URL, the value of `srcdoc` would be the actual HTML that is to be rendered inside the `iframe`. For example:
 
 ```html
 <iframe
@@ -99,15 +99,17 @@ While the `src` attributes points to a URL, the value of `srcdoc` would be the a
 ></iframe>
 ```
 
-> NOTE: While [browser support for `srcdoc` is good](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#browser_compatibility) it is not supported by all browsers. One option is to specify both the `src` and `srcdoc` attribute with `src` being used as to present fallback content when `srcdoc` is not supported.
+> NOTE: While [browser support for `srcdoc` is good](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#browser_compatibility) it is not supported by all browsers. One option is to specify both the `src` and `srcdoc` attribute with `src` being used to present fallback content when `srcdoc` is not supported.
 
 [See the live example on Codepen.io.](https://codepen.io/schalkneethling/pen/eYvrJOb)
 
-## `name`
+Also, note that you need to [escape quotes and other characters](https://github.com/whatwg/html/issues/6740) inside the HTML as can be seen in the above example.
 
-the `name` attribute is used to specify a valid [browsing context name](https://html.spec.whatwg.org/#valid-browsing-context-name) for the `iframe`. With that said, it could technically be almost any string of text. This feature becomes interesting especially when used with a string that is not one of the common names such as `_blank`, `_self`, etc. In fact, with those, I have not really seen a valid use case. With a custom name however, you can do something interesting 😀
+### `name`
 
-Let’s say we have the following `iframe` in our webpage.
+The `name` attribute is used to specify a valid [browsing context name](https://html.spec.whatwg.org/#valid-browsing-context-name) for the `iframe`. With that said, it could technically be almost any string of text. This feature becomes interesting, especially when used with a string that is not one of the common names such as `_blank`, `_self`, etc. In fact, with those, I have not really seen a common use case. With a custom name, however, you can do something interesting 😀
+
+Let’s say we have the following `iframe` on our webpage.
 
 ```html
 <h2>Wikipedia viewer</h2>
@@ -119,30 +121,32 @@ Let’s say we have the following `iframe` in our webpage.
 ></iframe>
 ```
 
-All by itself it is complete useless really 🙃 Add the following though, and things get interesting:
+All by itself it is completely useless really 🙃 Add the following though, and things get interesting:
 
 ```html
 <h1>Wikipedia browser</h1>
 
 <p>See information about the movie <a href="https://en.m.wikipedia.org/wiki/Ferris_Bueller%27s_Day_Off" target="wikipedia">Ferris Bueller's Day Off</a> on Wikipedia.</p>
+
+<p>Find more of <a href="https://en.m.wikipedia.org/wiki/Matthew_Broderick#Filmography" target="wikipedia">Matthew Broderick’s movies</a></p>
 ```
 
 [See the live example on Codepen.io.](https://codepen.io/schalkneethling/pen/xxqjZWZ)
 
-When you open up the above, go ahead and click the link in the paragraph.
+When you open up the above, go ahead and click the links in the paragraphs.
 
 **What!?**
 
 What just happened? In short, the anchor element specifies a URL to load but, it then specifies the `target` into which the hyperlink should be loaded. Instead of using something like `_blank` to open it in a new tab, it specifies the `name` of the `iframe`. As a result, the URL is loaded inside the `iframe` on the same page. Pretty neat, right?
 
-> NOTE: A lot of sites does not allow itself to be loaded into an iframe so, while the above is interesting and can be used in some ctreative ways, it is important to be aware of this contraint that you do not always have control over.
+> NOTE: A lot of sites do not allow it to be loaded into an `iframe` so, while the above is interesting and can be used in some creative ways, it is important to be aware of this constraint that you do not always have control over.
 
-## `sandbox`
+### `sandbox`
 
-The `sandbox` attribute is one of the newer attributes of the `iframe` element and is all about securing the context in which the contents of the `iframe` executes. There is a total of [12 valid tokens that can be specified for the `sanbox` attribute](https://html.spec.whatwg.org/#attr-iframe-sandbox) to allow various features inside the `iframe`. Below follows the list with a short description of each:
+The `sandbox` attribute is one of the newer attributes of the `iframe` element and is all about securing the context in which the contents of the `iframe` executes. There is a total of [12 valid tokens that can be specified for the `sandbox` attribute](https://html.spec.whatwg.org/#attr-iframe-sandbox) to allow various features inside the `iframe`. Below follows the list with a short description of each:
 
 - `allow-forms` - Allows form submissions
-- `allow-modals` - This refers specificly to the following native browser modals:
+- `allow-modals` - This refers specifically to the following native browser modals:
     - window.alert()
     - window.confirm()
     - window.print()
@@ -154,9 +158,9 @@ The `sandbox` attribute is one of the newer attributes of the `iframe` element a
 - `allow-popups-to-escape-sandbox` - When set, new browsing contexts(i.e. new window or tab) will not inherit the restrictions imposed on the origin `iframe`
 - `allow-presentation` - Enables the [Presentation API](https://developer.mozilla.org/en-US/docs/Web/API/Presentation_API)
 - `allow-same-origin` - When set, the content of the `iframe` is still sandboxed but, the parent can access the DOM content of the `iframe`. Secondly, this allows you to load third-party content inside the `iframe`  and have the content be constrained by the sandbox rules but, not prevent the embedded page from communicating back to its originating site or using the storage APIs.
-- `allow-scripts` - Allow script execution within the sanboxed `iframe`
+- `allow-scripts` - Allow script execution within the sandboxed `iframe`
 - `allow-top-navigation` - If set, allows the contents of the `iframe` to set the document location of its parent document or even close its parent browsing context.
-- `allow-top-navigation-by-user-activation`: Essentially the same as the above, but only if the action was initiated by the user by, for example, clicking a link inside the `iframe`.
+- `allow-top-navigation-by-user-activation` - Essentially the same as the above, but only if the action was initiated by the user by, for example, clicking a link inside the `iframe`.
 - `allow-downloads` - Allows the `iframe` to initiate a download event.
 
 ```html
@@ -185,7 +189,7 @@ You can therefore completely sandbox an `iframe` by simply setting the `sandbox`
 
 [See the live example on Codepen.io.](https://codepen.io/schalkneethling/full/eYvrJOb)
 
-## `allow`
+### `allow`
 
 While this might sound similar to the above, and it is to some extent, this deals with a different set of features that can be enabled. This attribute deals with what is known as [policy controlled features](https://w3c.github.io/webappsec-permissions-policy/#features)([specifically container policies](https://w3c.github.io/webappsec-permissions-policy/#container-policies)) which is a relatively [large and growing list](https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md). Some example are `geolocation`, `ambient-light-sensor`, `autoplay`, `microphone`, etc. While you will see that `fullscreen` is part of this list, with an `iframe` this is controlled separately via a dedicated attribute.
 
@@ -200,8 +204,7 @@ The most basic example is:
   width="100%"
 ></iframe>
 ```
-
-The can however also restrict access to a specific origin, for example:
+You can however also restrict access to a specific origin, for example:
 
 ```html
 <iframe 
@@ -213,7 +216,7 @@ The can however also restrict access to a specific origin, for example:
 ></iframe>
 ```
 
-You can also specify more than one feature using a semicolon separated list as well as set different origin permissions for each:
+You can also specify more than one feature using a semicolon-separated list as well as set different origin permissions for each:
 
 ```html
 <iframe 
@@ -257,7 +260,7 @@ As mentioned earlier, you control access to the `fullscreen` feature via a separ
 
 ## `referrerpolicy`
 
-We have encountered this or a similar attribute before. As with the other cases, this attribute is used to set a referrer policy to be applied when fetch request are initiated. Below is the list of possible values for ease of reference. For a more detailed explanation of each policy, [please see the specification here](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy).
+We have encountered this or a similar attribute before. As with the other cases, this attribute is used to set a referrer policy to be applied when fetch requests are initiated. Below is the list of possible values for ease of reference. For a more detailed explanation of each policy, [please see the specification here](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy).
 
 - `no-referrer`
 - `no-referrer-when-downgrade`
@@ -282,7 +285,7 @@ For example:
 
 ## `loading`
 
-We first encountered this attribute when we discussed the `img` element. In terms of use and functionality there is no difference between the two. When an `iframe` is below the fold and has `loading="lazy"` set, the user agent will deprioritise loading of the `iframe` content until later which can be beneficial for the overall page performance.
+We first encountered this attribute when we discussed the `img` element. In terms of use and functionality, there is no difference between the two. When an `iframe` is below the fold and has `loading="lazy"` set, the user agent will deprioritize loading of the `iframe` content until later which can be beneficial for the overall page performance.
 
 ```html
 <iframe
@@ -301,6 +304,6 @@ That is all for today. Tomorrow we will look at `map`, `area`, MathML, and SVG w
 ### Related Reading
 
 - [Google Chrome 88 released with no Flash support, bringing an end to an era](https://www.zdnet.com/article/google-chrome-88-released-with-no-flash-bringing-an-end-to-an-era/)
-- [Why do Java, Silverlight, Adobe Acrobat and other plugins no longer work?](https://support.mozilla.org/en-US/kb/npapi-plugins)
+- [Why do Java, Silverlight, Adobe Acrobat, and other plugins no longer work?](https://support.mozilla.org/en-US/kb/npapi-plugins)
 - [Using feature policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy#the_iframe_allow_attribute)
 - [Permission policy specification](https://w3c.github.io/webappsec-permissions-policy/)
