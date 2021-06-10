@@ -33,6 +33,72 @@ When you open the example above you will see that, at this point, we are essenti
 
 This is where the `area` attribute comes into play. When the `area` element has an `href` property, it is assigned the implicit [ARIA role of `link`](https://w3c.github.io/html-aria/#el-area) which is the same as the `a`(anchor) element. The `area` element has a number of attributes most of which we have dealt with before but, it has two new attributes. We will start be looking at these.
 
+### `alt`
+
+I am deliberately starting with this attribute to discuss a couple of problematic aspects around image maps. I do this so that, once you have read this part, you can decide whether it is worth your time to explore the rest of this element’s features.
+
+Firstly, it is critical to specify alternate text that will be read aloud to users of assistive technologies. As discussed before, be clear and descriptive, but avoid being overly verbose.
+
+```html
+<img
+  src="../assets/vegetables.jpg"
+  width="1296 "
+  height="864"
+  alt="A plate containing sliced avocado, rosa tomatoes, chickpeas, lettuce leaves, shredded cabage, cubed sweet potato, and bell peppers drizzled with a creamy dressing."
+  usemap="#vegetables"
+/>
+<map name="vegetables">
+  <area
+    shape="circle"
+    coords="750, 480, 120"
+    href="https://en.wikipedia.org/wiki/Chickpea"
+    alt="Read more about chickpeas on Wikipedia"
+  />
+  <area
+    shape="rect"
+    coords="350, 100, 500, 400"
+    href="https://en.wikipedia.org/wiki/Bell_pepper"
+    alt="Read more about bell peppers on Wikipedia"
+  />
+  <area
+    shape="poly"
+    coords="427, 621, 449, 506, 531, 491, 747, 589, 750, 666, 656, 786"
+    href="https://150daysofhtml.com/assets/avos.pdf"
+    alt="Get valuable nutritional information about the avocado. Document is in PDF format."
+  />
+</map>
+```
+
+There is a catch here though. Although the value of the `alt` text will be read aloud to users using a screen reader, it does not assist any other user. For users using a mouse, they are left hunting for clickable areas(more on this a little later). When they do find one, there is no tooltip displayed with the information contained within the `alt` attribute so, unless they click the link, they really have no idea where the link will lead them(the browser does make some affordances here, but not everyone is aware of where to look). You can remedy this by dulicating the content inside a `title` attribute on the `area` element.
+
+```html
+<img
+  src="../assets/vegetables.jpg"
+  width="1296 "
+  height="864"
+  alt="A plate containing sliced avocado, rosa tomatoes, chickpeas, lettuce leaves, shredded cabage, cubed sweet potato, and bell peppers drizzled with a creamy dressing."
+  usemap="#vegetables"
+/>
+<map name="vegetables">
+  <area
+    shape="poly"
+    coords="427, 621, 449, 506, 531, 491, 747, 589, 750, 666, 656, 786"
+    href="https://150daysofhtml.com/assets/avos.pdf"
+    ping="/avo-ping"
+    rel="external noreferrer"
+    referrerpolicy="cross-origin"
+    alt="Get valuable nutritional information about the avocado. Document is in PDF format."
+    title="Get valuable nutritional information about the avocado. Document is in PDF format."
+  />
+</map>
+```
+
+But wait, there is more 😱 If the image contains alternate text, Chrome will show the alt text but collapse the image element to a small broken image icon. While pressing the tab key will move focus to the various areas of the image map, there is absolutely no visual indication. When the image fails to load in Firefox, it will show the alternative text but, even when pressing the tab key, the areas of the image map will be skipped entirely. There is also no way to get to the areas using a mouse for example.
+
+In Safari, the alternate text will be shown and, the image will retain the dimensions set with the `width` and `height` attributes of the image. When using the tab key, it will move focus to the various areas and offer a visual focus ring around the area currently in focus. You can also hunt and find the clickable areas with a pointing device and, if you used the `title` attribute, it will show the associated text as a tooltip.
+
+This is all a long way of saying, "while there may very well be cases where an image map can be useful, be aware of the many challenges it presents to users and make an informed and deliberate decision."
+
 ### `shape`
 
 The `shape` attribute has 4 possible values: `circle`, `default`, `poly`, and `rect`. If the attribute is omitted, it defaults to `rect`.
@@ -180,18 +246,6 @@ The `target` attribute here behaves and takes the [exact same values](https://ht
 />
 <map name="vegetables">
   <area
-    shape="circle"
-    coords="750, 480, 120"
-    href="https://en.wikipedia.org/wiki/Chickpea"
-    target="_blank"
-  />
-  <area
-    shape="rect"
-    coords="350, 100, 500, 400"
-    href="https://en.wikipedia.org/wiki/Bell_pepper"
-    target="_blank"
-  />
-  <area
     shape="poly"
     coords="599, 112, 673, 15, 859, 46, 971, 155, 986, 236, 816, 298, 672, 286"
     href="https://en.wikipedia.org/wiki/Lettuce"
@@ -218,31 +272,94 @@ This is another attribute we have encountered before, and as before, has the sam
 />
 <map name="vegetables">
   <area
-    shape="circle"
-    coords="750, 480, 120"
-    href="https://en.wikipedia.org/wiki/Chickpea"
-    target="_blank"
-  />
-  <area
-    shape="rect"
-    coords="350, 100, 500, 400"
-    href="https://en.wikipedia.org/wiki/Bell_pepper"
-    target="_blank"
-  />
-  <area
-    shape="poly"
-    coords="599, 112, 673, 15, 859, 46, 971, 155, 986, 236, 816, 298, 672, 286"
-    href="https://en.wikipedia.org/wiki/Lettuce"
-    target="_blank"
-  />
-  <area
     shape="poly"
     coords="427, 621, 449, 506, 531, 491, 747, 589, 750, 666, 656, 786"
-    href="https://loveonetoday.com/wp-content/uploads/2017/07/Love-One-Today-Nutrition-Facts-Label.pdf"
-    download="avocado-nutrition-facts.pdf"
+    href="https://150daysofhtml.com/assets/avos.pdf"
+    download
   />
 </map>
 ```
+
+> NOTE: PDF document originally from https://loveonetoday.com
+
+The newly added `area` now makes the avocado at the bottom of the plate a link to a PDF document containing nutritional information. Instead of opening the link in the browser, the browser will download(a user can override this) the resource.
+
+[See the live example on Glitch.me.](https://strengthened-wealthy-lamprey.glitch.me/)
+
+### `ping`
+
+As discussed on day 23 when we looked at the `a` element, the `ping` attribute essentially exposes a mechanism that allows you to collect statistics about how users use your site by sending "pings" to a specified URL, or URLs.
+
+```html
+<img
+  src="../assets/vegetables.jpg"
+  width="1296 "
+  height="864"
+  alt="A plate containing sliced avocado, rosa tomatoes, chickpeas, lettuce leaves, shredded cabage, cubed sweet potato, and bell peppers drizzled with a creamy dressing."
+  usemap="#vegetables"
+/>
+<map name="vegetables">
+  <area
+    shape="poly"
+    coords="427, 621, 449, 506, 531, 491, 747, 589, 750, 666, 656, 786"
+    href="https://150daysofhtml.com/assets/avos.pdf"
+    ping="/avo-ping"
+  />
+</map>
+```
+
+I created a [small app you can use to play around with this here](https://github.com/schalkneethling/using-ping-attribute).
+
+### `rel`
+
+Another attribute we looked at when we discussed the `a` element is the `rel` attribute. It takes a space separated [list of tokens](https://html.spec.whatwg.org/#linkTypes) that defines the relationship of the current document to the one being liked to.
+
+```html
+<img
+  src="../assets/vegetables.jpg"
+  width="1296 "
+  height="864"
+  alt="A plate containing sliced avocado, rosa tomatoes, chickpeas, lettuce leaves, shredded cabage, cubed sweet potato, and bell peppers drizzled with a creamy dressing."
+  usemap="#vegetables"
+/>
+<map name="vegetables">
+  <area
+    shape="poly"
+    coords="427, 621, 449, 506, 531, 491, 747, 589, 750, 666, 656, 786"
+    href="https://150daysofhtml.com/assets/avos.pdf"
+    ping="/avo-ping"
+    rel="external noreferrer"
+  />
+</map>
+```
+
+### `referrerpolicy`
+
+We touched on this attribute again just yesterday when discussing the `iframe` element. As with the other cases, this attribute is used to set a [referrer policy](https://w3c.github.io/webappsec-referrer-policy/#referrer-policy) to be applied when fetch requests are initiated.
+
+```html
+<img
+  src="../assets/vegetables.jpg"
+  width="1296 "
+  height="864"
+  alt="A plate containing sliced avocado, rosa tomatoes, chickpeas, lettuce leaves, shredded cabage, cubed sweet potato, and bell peppers drizzled with a creamy dressing."
+  usemap="#vegetables"
+/>
+<map name="vegetables">
+  <area
+    shape="poly"
+    coords="427, 621, 449, 506, 531, 491, 747, 589, 750, 666, 656, 786"
+    href="https://150daysofhtml.com/assets/avos.pdf"
+    ping="/avo-ping"
+    rel="external noreferrer"
+    referrerpolicy="cross-origin"
+  />
+</map>
+```
+
+## `SVG`
+
+## `MathML`
 
 ### Related reading
 
