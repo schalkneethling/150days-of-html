@@ -8,7 +8,7 @@ What is this icon the browser is looking for?
 
 Well, in this case, the icon in question is the one commonly seen in a browser tab for the website you are currently visiting:
 
-![Screenshot 2020-05-28 at 05.12.04](/Users/schalkneethling/Documents/150daysofhtml/Screenshot 2020-05-28 at 05.12.04.png)
+![Screenshot showing a Firefox tab with the MDN Web Docs logo favicon](../assets/fx-favicon.png)
 
 > Screenshot of browser tab showing favicon image for the current site, MDN Web Docs
 

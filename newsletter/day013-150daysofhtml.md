@@ -98,7 +98,7 @@ While `theme-color` is a standard meta name, support for it is very limited. At 
 
 ### Example of using the above with Chrome for Android
 
-![Screenshot 2020-06-08 at 04.30.57](/Users/schalkneethling/Documents/150daysofhtml/Screenshot 2020-06-08 at 04.30.57.png)
+![Screenshot of Chrome on Android showing the browser chrome matching the yellow theme color](../assets/chrome-theme-color.png)
 
 The above then covers the existing standard meta names at the time of writing. It is however possible to create an extension to the above list and, it is not a requirement to register these with the standards body [except for some specific cases](https://html.spec.whatwg.org/#other-metadata-names) where it is suggested. It is also important to note that there is a [wiki page listing current possible meta extensions](https://wiki.whatwg.org/wiki/MetaExtensions) in various states that should first be references to ensure an extension is not already being considered.
 

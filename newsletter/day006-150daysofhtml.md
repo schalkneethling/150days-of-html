@@ -114,7 +114,7 @@ For them to become available, there is one final piece of the puzzle that need t
 
 And it makes complete sense. With the `title` attribute set, the purpose of our alternate stylesheets is clearly defined. Reloading the document in the browser now and clicking on `View > Page Style` will surface our alternatives in the UI.
 
-### ![Screenshot 2020-05-27 at 05.24.09](/Users/schalkneethling/Documents/150daysofhtml/Screenshot 2020-05-27 at 05.24.09.png)
+### ![Screenshot of page style menu in Firefox showing the selected alternate stylesheet](../assets/fx-alternate-stylesheet.png)
 
 A couple of things to note here. All three stylesheets will be loaded by the browser but, the alternate stylesheets will be given the lowest priority and will be loaded in a non-blocking manner. The second thing is that the stylesheets are not loaded in an additive manner i.e. each stylesheet is loaded by itself. This is unfortunate and makes the use case of these alternate stylesheets via the native client almost useless except for some rare cases such as a super stripped-down version of the site(something akin to a reader mode).
 
