@@ -1,0 +1,58 @@
+.main {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: $callout-border;
+  border-radius: $default-border-radius * 2;
+  padding: 1rem;
+  text-align: center;
+
+  h2 {
+    margin: 1rem auto;
+    max-width: 30rem;
+  }
+
+  blockquote {
+    font-style: italic;
+    position: relative;
+    margin: 2rem auto;
+    max-width: 450px;
+
+    &::before,
+    &::after {
+      display: inline-block;
+      font-size: 4rem;
+      line-height: 0;
+      opacity: 0.2;
+      position: absolute;
+
+      @media #{$mq-tablet-and-up} {
+        font-size: 9rem;
+      }
+    }
+
+    &::before {
+      content: "\201C";
+      left: -10px;
+      top: 20px;
+
+      @media #{$mq-tablet-and-up} {
+        left: -45px;
+        top: 50px;
+      }
+    }
+
+    &::after {
+      bottom: -10px;
+      content: "\201D";
+      right: 5px;
+
+      @media #{$mq-tablet-and-up} {
+        bottom: -30px;
+        right: 30px;
+      }
+    }
+  }
+
+  p {
+    margin: 1rem auto;
+  }
+}

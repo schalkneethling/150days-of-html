@@ -1,0 +1,28 @@
+body {
+  background: $color-neutral-100 url("/media/tile.svg") 0 0 no-repeat;
+  font: 100%/1.7 Lato, sans-serif;
+}
+
+a:link,
+a:visited {
+  color: $color-primary;
+  padding: ($base-spacing / 4) 0;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+  text-decoration: none;
+}
+
+iframe {
+  border: 0;
+  max-width: 100%;
+}
+
+.page-container {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: $base-spacing;
+}

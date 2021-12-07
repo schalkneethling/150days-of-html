@@ -1,26 +1,21 @@
 {
   "name": "150days-of-html",
   "version": "0.0.1",
-  "description": "The home of the 150 Days of HTML Newsletter",
+  "description": "The home of 150 Days of HTML",
   "main": "index.js",
   "repository": "https://github.com/schalkneethling/150days-of-html.git",
   "author": "Schalk Neethling <sneethling@mozilla.com>",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "dev": "lite-server"
-  },
   "devDependencies": {
-    "lite-server": "^2.6.1",
-    "prettier": "^2.4.1",
-    "stylelint": "^13.13.1",
+    "prettier": "^2.5.0",
+    "sass": "^1.44.0",
+    "stylelint": "^14.1.0",
     "stylelint-a11y": "^1.2.3",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-recommended": "^5.0.0",
-    "stylelint-prettier": "^1.2.0"
-  },
-  "calavera": {
-    "prettier": true,
-    "css": true
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.0.0"
   }
 }

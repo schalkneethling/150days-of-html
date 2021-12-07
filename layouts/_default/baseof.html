@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+
+<body {{ if .IsHome }}class="home" {{ end }} {{ if .IsSection }}class="content" {{ end }}>
+    <div class="page-container">
+        {{- partial "header.html" . -}}
+        {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "buy-a-coffee.html" . -}}
+    {{- partial "footer.html" . -}}
+</body>
+
+</html>

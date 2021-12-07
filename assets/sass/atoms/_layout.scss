@@ -1,0 +1,30 @@
+.chapter-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+
+  @media #{$mq-small-desktop-and-up} {
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-nav {
+    flex: 100%;
+    order: 2;
+
+    @media #{$mq-small-desktop-and-up} {
+      flex: 25%;
+      order: initial;
+    }
+  }
+
+  .main-content {
+    flex: 100%;
+    order: 1;
+
+    @media #{$mq-small-desktop-and-up} {
+      flex: 70%;
+    }
+  }
+}

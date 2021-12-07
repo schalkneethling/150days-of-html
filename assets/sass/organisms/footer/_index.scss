@@ -1,0 +1,12 @@
+.page-footer {
+  background-color: $color-primary;
+  color: $color-primary-light;
+  font-size: $content-font-size;
+  padding: 2rem 0;
+  text-align: center;
+
+  a:link,
+  a:visited {
+    color: $color-primary-light;
+  }
+}

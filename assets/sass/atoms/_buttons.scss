@@ -1,0 +1,30 @@
+button,
+a.button {
+  background: none;
+  border: 0;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $content-font-size;
+  padding: 1rem 3rem;
+  text-decoration: none;
+
+  &.button-primary {
+    background-color: $color-primary;
+    color: $color-primary-light;
+  }
+
+  &.button-primary:hover,
+  &.button-primary:focus {
+    background-color: $color-primary-hover;
+    color: $color-primary-light;
+  }
+
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    background-color: $color-neutral-400;
+    color: $color-neutral-900;
+    cursor: default;
+  }
+}

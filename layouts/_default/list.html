@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="chapter-content-wrapper">
+    <main role="main" class="main-content">
+        {{- partial "toc.html" . -}}
+        {{ .Content }}
+        {{- partial "related.html" . -}}
+    </main>
+    {{- partial "nav.html" . -}}
+</div>
+{{ end }}

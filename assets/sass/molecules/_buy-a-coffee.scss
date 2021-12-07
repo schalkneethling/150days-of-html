@@ -1,0 +1,31 @@
+.buy-a-coffee {
+  background-color: $white;
+  padding: 2rem;
+
+  .buy-a-coffee-cta {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1400px;
+    text-align: center;
+
+    a {
+      font-size: $large-font-size-mobile;
+    }
+
+    &::before {
+      background: transparent url(/media/assets/coffee.svg) center center
+        no-repeat;
+      content: "";
+      display: block;
+      height: 150px;
+      width: 150px;
+
+      @media #{$mq-small-desktop-and-up} {
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+}

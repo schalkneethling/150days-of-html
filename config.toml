@@ -1,0 +1,13 @@
+baseURL = "/"
+languageCode = "en-us"
+languageLang = "en"
+title = "| 150 Days of HTML"
+
+[imaging]
+quality = 75
+
+[markup]
+  [markup.highlight]
+    lineNoStart = 1
+    lineNos = true
+    style = 'dracula'

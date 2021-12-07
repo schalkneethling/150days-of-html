@@ -1,2 +1,3 @@
-# 150days-of-html
-A ~150 day journey through the landscape of HTML via email :)
+# hugo-skeleton
+
+A post Hugo install collection of base HTML, SASS and static assets

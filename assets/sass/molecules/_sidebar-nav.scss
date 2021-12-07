@@ -1,0 +1,28 @@
+.sidebar-nav {
+  background-color: $color-neutral-050;
+  border: $callout-border;
+
+  h3 {
+    padding: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      background-color: $color-primary;
+      border-bottom: 2px solid $white;
+      color: $white;
+      display: block;
+      padding: 1rem;
+
+      &:hover,
+      &:focus,
+      &.active {
+        background-color: $color-primary-hover;
+      }
+    }
+  }
+}

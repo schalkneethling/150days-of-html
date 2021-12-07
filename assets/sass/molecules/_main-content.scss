@@ -1,0 +1,26 @@
+.main-content {
+  background-color: $color-neutral-050;
+  border: $callout-border;
+  padding: 2rem;
+
+  h2,
+  h3 {
+    margin-top: 2rem;
+  }
+
+  p,
+  ul,
+  ol {
+    font-size: $content-font-size;
+    margin-bottom: 1rem;
+    max-width: 80ch;
+  }
+
+  .highlight {
+    margin: 1rem 0;
+  }
+
+  .codepen-frame {
+    margin: 1rem 0;
+  }
+}

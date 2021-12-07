@@ -1,0 +1,14 @@
+<nav class="sidebar-nav" aria-label="Chapter navigation">
+    <h3>Chapters</h3>
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.book }}
+        <li>
+            <a href="{{ .URL }}" {{if or ($currentPage.IsMenuCurrent "main" .)
+                ($currentPage.HasMenuCurrent "main" .) }}class='active' {{end}}>
+                {{- .Name -}}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>

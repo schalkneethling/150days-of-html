@@ -1,0 +1,12 @@
+.logo {
+  display: block;
+  background: transparent url("/media/logo.svg") 0 0 / cover no-repeat;
+  height: 150px;
+  margin: $base-spacing auto;
+  width: 150px;
+
+  @media #{$mq-small-desktop-and-up} {
+    height: 250px;
+    width: 250px;
+  }
+}

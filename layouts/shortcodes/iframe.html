@@ -1,0 +1,4 @@
+<iframe src='{{ .Get "iframesrc" }}' width='{{ .Get "width" }}'
+    height='{{ .Get "height" }}' {{ with .Get "scrolling" }} scrolling="{{ . }}" {{ end }}
+    {{ with .Get "class" }} class="{{ . }}" {{ end }} title='{{ .Get "title" }}'
+    loading="lazy"></iframe>
