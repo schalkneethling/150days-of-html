@@ -1,6 +1,6 @@
 {
   "name": "150days-of-html",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "The home of 150 Days of HTML",
   "main": "index.js",
   "repository": "https://github.com/schalkneethling/150days-of-html.git",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "prettier": "^2.5.0",
+    "prettier": "^2.5.1",
     "sass": "^1.44.0",
     "stylelint": "^14.1.0",
     "stylelint-a11y": "^1.2.3",
