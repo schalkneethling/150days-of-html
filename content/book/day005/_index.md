@@ -2,7 +2,9 @@
 title: Chapter 5 | The link element, Part 1
 keywords: html, html standard, how-to, learn html
 description: Today we are going to start digging into a new type of link, the link element.
-menu: book
+menu:
+  book:
+    weight: 5
 ---
 
 # Chapter 5 | The link element, Part 1

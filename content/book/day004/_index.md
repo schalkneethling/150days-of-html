@@ -2,7 +2,9 @@
 title: Chapter 4 | The base element
 keywords: html, html standard, how-to, learn html
 description: Today we are going to look at an HTML element you may have never heard of, the base element.
-menu: book
+menu:
+  book:
+    weight: 4
 ---
 
 # Chapter 4 | The base element

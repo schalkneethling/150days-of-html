@@ -2,7 +2,9 @@
 title: Chapter 1 | An introduction to HTML
 keywords: html, html standard, how-to, learn html
 description: Learn the elements of the core, semantic language of the web.
-menu: book
+menu:
+  book:
+    weight: 1
 ---
 
 # Chapter 1 | An introduction to HTML

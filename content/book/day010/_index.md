@@ -1,8 +1,15 @@
-# Day 10
+---
+title: Chapter 10 | The integrity attribute
+keywords: html, html standard, how-to, learn html
+description: In this chapter we are moving onward and looking at the integrity attribute of the link element.
+menu:
+  book:
+    weight: 10
+---
 
-Welcome to Day 10!
+# Chapter 10 | The integrity attribute
 
-Today we are moving onward and looking at the `integrity` attribute of the `link` element. To be clear, as with many of the other attributes we have discussed, the `integrity` attribute is not only used on the link element. For our immediate purpose though, we will focus on the `link` element.
+In this chapter we are moving onward and looking at the `integrity` attribute of the `link` element. To be clear, as with many of the other attributes we have discussed, the `integrity` attribute is not only used on the link element. For our immediate purpose though, we will focus on the `link` element.
 
 When we talked about the `crossorigin` attribute I touched on the fact that these days very few sites load all of their dependencies from the same origin. We use a combination of third-party services, content delivery networks, etc., and pretty much trust that the resource we requested will be the one that is delivered.
 
@@ -69,8 +76,3 @@ That is it! 💥 You now have the means to securely load your content from a thi
 - [Install OpenSSL on Windows](https://tecadmin.net/install-openssl-on-windows/)
 - [OpenSSL on macOS](https://medium.com/@timmykko/using-openssl-library-with-macos-sierra-7807cfd47892)
 - [OpenSSL on Linux](https://ubuntuforums.org/showthread.php?t=2110429)
-
-Until tomorrow, keep making the web awesome! o/\o
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

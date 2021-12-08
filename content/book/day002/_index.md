@@ -2,7 +2,9 @@
 title: Chapter 2 | The head element
 keywords: html, html standard, how-to, learn html
 description: As mentioned yesterday, today we are getting into the head of our HTML document and looking at the metadata that lives in it.
-menu: book
+menu:
+  book:
+    weight: 2
 ---
 
 # Chapter 2 - The `head` element

@@ -1,8 +1,15 @@
-# Day 8
+---
+title: Chapter 8 | Resource Hints
+keywords: html, html standard, how-to, learn html
+description: What's up next with rel? Resource Hints. These keywords are all about performance.
+menu:
+  book:
+    weight: 8
+---
 
-Welcome to Day 8!
+# Chapter 8 | Resource Hints
 
-What's up next with `rel`? [Resource Hints](https://w3c.github.io/resource-hints/) 💡 These keywords are all about performance and through performance, improving user experience and accessibility. Before we dig into the various resource hints I want to be clear that this will by no means be a deep dive into resource hints. That is a topic all its own 😉 For today, we will get to know the various resource hints as well as go over the basics of what they are used for.
+What's up next with `rel`? [Resource Hints](https://w3c.github.io/resource-hints/) 💡 These keywords are all about performance and through performance, improving user experience and accessibility. Before we dig into the various resource hints I want to be clear that this will by no means be a deep dive into resource hints. That is a topic all its own 😉 For this chapter, we will get to know the various resource hints as well as go over the basics of what they are used for.
 
 > Note: As the name suggests, these are hints we as developers provide to the browser so, for the most part, it is still up to the browser to decide whether to follow our hints or not.
 
@@ -98,8 +105,3 @@ With that, we are almost through the various possible keywords of the `rel` attr
 - [The TLS Handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
 - [Resource Hints specification](https://w3c.github.io/resource-hints/)
 - [Preload specification](https://w3c.github.io/preload/)
-
-Until tomorrow, keep making the web awesome! o/\o
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

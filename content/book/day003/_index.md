@@ -2,7 +2,9 @@
 title: Chapter 3 | The title element
 keywords: html, html standard, how-to, learn html
 description: Today we dig into the first piece of metadata we will add to our webpages, the title tag.
-menu: book
+menu:
+  book:
+    weight: 3
 ---
 
 # Chapter 3 - The `title` element

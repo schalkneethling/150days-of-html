@@ -2,7 +2,9 @@
 title: Chapter 6 | The rel attribute
 keywords: html, html standard, how-to, learn html
 description: In this chapter we keep digging into the `link` element and specifically, the rel attribute.
-menu: book
+menu:
+  book:
+    weight: 6
 ---
 
 # Chapter 6: The `rel` attribute

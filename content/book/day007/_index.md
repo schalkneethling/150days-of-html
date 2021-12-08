@@ -1,14 +1,21 @@
-# Day 7
+---
+title: Chapter 7 | The icon keyword
+keywords: html, html standard, how-to, learn html
+description: Continuing with the link element and its rel attribute, in this chapter we will be looking at the icon keyword.
+menu:
+  book:
+    weight: 7
+---
 
-Welcome to Day 7!
+# Chapter 7 | rel attribute | The icon keyword
 
-Continuing with the `link` element and its `rel` attribute, we will today be looking at the `icon` keyword. Before we dig into the syntax, let’s discuss what is meant by icon here. I feel comfortable in saying that pretty much everyone has heard the term `favicon`. You may also have encountered an error being logged in the developer console to the effect, `GET http://127.0.0.1:5500/favicon.ico 404 (Not Found)`
+Continuing with the `link` element and its `rel` attribute, in this chapter we will be looking at the `icon` keyword. Before we dig into the syntax, let’s discuss what is meant by icon here. I feel comfortable in saying that pretty much everyone has heard the term `favicon`. You may also have encountered an error being logged in the developer console to the effect, `GET http://127.0.0.1:5500/favicon.ico 404 (Not Found)`
 
 What is this icon the browser is looking for?
 
 Well, in this case, the icon in question is the one commonly seen in a browser tab for the website you are currently visiting:
 
-![Screenshot showing a Firefox tab with the MDN Web Docs logo favicon](../assets/fx-favicon.png)
+![Screenshot showing a Firefox tab with the MDN Web Docs logo favicon](./fx-favicon.png)
 
 > Screenshot of browser tab showing favicon image for the current site, MDN Web Docs
 
@@ -106,8 +113,3 @@ So, do you need to make all these images yourself? No, no you do not. Thanks to 
 - [PNG favicon support](https://caniuse.com/#feat=link-icon-png)
 - [SVG, Favicons, and All the Fun Things We Can Do With Them](https://css-tricks.com/svg-favicons-and-all-the-fun-things-we-can-do-with-them/)
 - [The favicon quizz](https://css-tricks.com/favicon-quiz/)
-
-Until tomorrow, keep making the web awesome! o/\o
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
