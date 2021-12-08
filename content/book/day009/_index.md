@@ -1,8 +1,15 @@
-# Day 9
+---
+title: Chapter 9 | modulepreload, next, pingback, and search
+keywords: html, html standard, how-to, learn html
+description: In this chapter we keep digging into the `link` element and specifically, the rel attribute.
+menu:
+  book:
+    weight: 9
+---
 
-Welcome to Day 9!
+# Chapter 9 | modulepreload, next, pingback, and search
 
-As mentioned yesterday, today we conclude our exploration of the `rel` attribute keywords on the `link` element. 🥵😉 It sure was quite the exploration. The four remaining keywords are: `modulepreload`, `next`, `pingback`, and `search`.
+As mentioned in the previous chapter, in this chapter we conclude our exploration of the `rel` attribute keywords on the `link` element. 🥵😉 It sure was quite the exploration. The four remaining keywords are: `modulepreload`, `next`, `pingback`, and `search`.
 
 Let dive in 🐬
 
@@ -96,15 +103,10 @@ While DuckDuckGo does not have it set, the [specification also calls for a `prof
 
 And that, believe it or not, is that 💥
 
-While we are not done with the `link` element just yet(believe it or not 😂), we can close the book on the amazing world of the `rel` attribute. I hope you learned something useful, I sure have 😉 I do wonder though. 🤔 Was this too much? Just right? Too little? Let me know your thoughts ⚡️
+While we are not done with the `link` element just yet(believe it or not 😂), we can close the book on the amazing world of the `rel` attribute. I hope you learned something useful, I sure have 😉 I do wonder though. 🤔 Was this too much? Just right? Too little? Let me know your thoughts on [Discord]((https://discord.gg/XKsZbZzk6Z)!
 
 ### Related Reading
 
 - [ES modules](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
 - [Pingback specification](https://www.hixie.ch/specs/pingback/pingback)
 - [OpenSearch](https://github.com/dewitt/opensearch)
-
-Until tomorrow, keep making the web awesome! o/\o
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
