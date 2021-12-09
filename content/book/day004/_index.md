@@ -83,7 +83,7 @@ As mentioned, there is a second attribute you can set on the `base` element, and
 
 ## Live Codepen
 
-{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/988bf51720dea707f2e07ccba198b644?default-tab=html%2Cresult&editable=true" width="100%" height="300" scrolling="no" class="codepen-frame" title="The base element: href and target attribute" >}}
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/988bf51720dea707f2e07ccba198b644?default-tab=html%2Cresult&editable=true" width="100%" height="300" scrolling="no" class="code-frame" title="The base element: href and target attribute" >}}
 
 With the above in place, **all** links in the current page will use `https://www.googreads.com` as its base URL and all links will open in a new tab. Interesting right?
 

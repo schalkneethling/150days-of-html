@@ -1,8 +1,15 @@
-# Day 12
+---
+title: Chapter 12 | The meta element
+keywords: html, html standard, how-to, learn html
+description: In this chapter we look at the meta element which is used to provide meta-information about the current document.
+menu:
+  book:
+    weight: 12
+---
 
-Welcome to Day 12!
+# Chapter 12 | The `meta` element
 
-Today we look at the `meta` element. As its name suggests, this element is used to provide meta-information about the current document. With this element you can provide document-level metadata, set the character encoding as well as provide pragma directives(information for the "compiler", in this case, the browser engine).
+In this chapter we look at the `meta` element. As its name suggests, this element is used to provide meta-information about the current document. With this element you can provide document-level metadata, set the character encoding as well as provide pragma directives(information for the "compiler", in this case, the browser engine).
 
 ## `charset`
 
@@ -42,7 +49,7 @@ Let's look at an example.
 
 ```html
 <meta http-equiv="default-style" content="default" />
-<title>http-equiv, default-style - Day 12 - 150 Days of HTML</title>
+<title>http-equiv, default-style - Chapter 12 - 150 Days of HTML</title>
 <link
   rel="stylesheet"
   type="text/css"
@@ -85,7 +92,11 @@ h1 {
 }
 ```
 
-Looking at the above, the assumption would be that the page would have a white background white dark text(because of the cascade) but, in a supporting browser(currently only Firefox), the page will actually have a dark background with white text.
+Looking at the above, the assumption would be that the page would have a white background with dark text(because of the cascade) but, in a supporting browser(currently only Firefox), the page will actually have a dark background with white text.
+
+## Live Sandbox
+
+{{< iframe iframesrc="https://codesandbox.io/embed/http-equiv-default-style-t87ie?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="http-equiv, default-style live example" >}}
 
 > Note: Both stylesheets are still loaded by the browser but only the stylesheet set as default will be applied to the document.
 
@@ -126,6 +137,10 @@ The value of the `content` attribute here indicates the number of seconds before
 
 Every time the page is refreshed, the little piece of JavaScript will output the `counter` value, increment the `counter` by one, and store it back to `sessionStorage`. This will continue to happen until the user closes the tab or window.
 
+### Live Sandbox - refresh
+
+{{< iframe iframesrc="https://codesandbox.io/embed/http-equiv-refresh-kp2qh?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="http-equiv, refresh live example" >}}
+
 A second use case is to redirect the user to a new page. For this example, let's say you used to have a blog running on `myblog.com`, but have decided to move to `myblog.io`. All of your previous readers might have the `.com` bookmarked though. Using the `refresh` state of `http-equiv` you can put a redirect in place but, also inform users why they are being redirected.
 
 For this example, we have the following in the `head` of the document:
@@ -143,6 +158,10 @@ In the `body` of the document you can then have the following:
   the link above.
 </p>
 ```
+
+### Live Sandbox - refresh with redirect
+
+{{< iframe iframesrc="https://codesandbox.io/embed/happy-mclaren-e8x1w?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="http-equiv, refresh with redirect live example" >}}
 
 ## `x-ua-compatible`
 
@@ -191,12 +210,13 @@ And that `external.js` contains the following:
 
 Opening the document in a browser without the `content-security-policy` in the `head` will result in the output, "I am writing to you from an inline script" being written to the document. This happens because the inline JavaScript overwrites what the external JavaScript wrote into the output element. Adding the `CSP` to the `head` and refreshing the document will prevent the inline JavaScript from being executed and you will instead see, "I am writing to you from an externally linked script", written to the document instead.
 
+### Live Sandbox - refresh with redirect
+
+{{< iframe iframesrc="https://codesandbox.io/embed/http-equiv-content-security-policy-uu5t9?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="http-equiv, content-security-policy live example" >}}
+
 That covers the topics for discussion today. Tomorrow we will look at the `name` attribute of the `meta` element and its related standard meta names. Until then, keep making the web awesome! o/\o
 
 ### Related Reading
 
 - [Alternative stylehseets](https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets)
 - [Content Security Policy Standard](https://w3c.github.io/webappsec-csp/)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

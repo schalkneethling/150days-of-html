@@ -1,8 +1,15 @@
-# Day 13
+---
+title: Chapter 13 | The name attribute of the meta element
+keywords: html, html standard, how-to, learn html
+description: Standard metadata names of the name attribute of the meta element.
+menu:
+  book:
+    weight: 13
+---
 
-Welcome to Day 13!
+# Chapter 13 | The name attribute of the meta element
 
-As mentioned yesterday, today we will look at the various standard metadata names that can be used as the value of the `name` attribute of the `meta` element. 🎡
+As mentioned in the previous chapter, in this chapter we will look at the various standard metadata names that can be used as the value of the `name` attribute of the `meta` element. 🎡
 
 ## `application-name`
 
@@ -98,11 +105,11 @@ While `theme-color` is a standard meta name, support for it is very limited. At 
 
 ### Example of using the above with Chrome for Android
 
-![Screenshot of Chrome on Android showing the browser chrome matching the yellow theme color](../assets/chrome-theme-color.png)
+![Screenshot of Chrome on Android showing the browser chrome matching the yellow theme color](./chrome-theme-color.png)
 
 The above then covers the existing standard meta names at the time of writing. It is however possible to create an extension to the above list and, it is not a requirement to register these with the standards body [except for some specific cases](https://html.spec.whatwg.org/#other-metadata-names) where it is suggested. It is also important to note that there is a [wiki page listing current possible meta extensions](https://wiki.whatwg.org/wiki/MetaExtensions) in various states that should first be references to ensure an extension is not already being considered.
 
-That’s a wrap for the `meta` element, tomorrow we will move onto the next element in our journey, the `style` element. Until then, keep making the web awesome! 🧘‍♀️
+That’s a wrap for the `meta` element, in the next chapter we will move onto the `style` element. Until then, keep making the web awesome! 🧘‍♀️
 
 ### Related Reading
 
@@ -110,6 +117,3 @@ That’s a wrap for the `meta` element, tomorrow we will move onto the next elem
 - [Irrelevant keywords aka keyword stuffing](https://support.google.com/webmasters/answer/66358?hl=en)
 - [Referrer Policy](https://w3c.github.io/webappsec-referrer-policy/)
 - [`theme-color` support information on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color#Browser_compatibility)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

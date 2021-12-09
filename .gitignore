@@ -105,3 +105,4 @@ dist
 
 # Hugo
 .hugo_build.lock
+resources/_gen

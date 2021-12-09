@@ -1,8 +1,15 @@
-# Day 14
+---
+title: Chapter 14 | The style element
+keywords: html, html standard, how-to, learn html
+description: In this chapter we will look at a new element, the style element.
+menu:
+  book:
+    weight: 14
+---
 
-Welcome to Day 14!
+# Chapter 14 | The `style` element
 
-As mentioned yesterday, today we will look at a new element, the `style` element. Earlier when we discussed the `link` element we covered linking an external stylesheet to our document using something like:
+As mentioned in the previous chapter, in this chapter we will look at a new element, the `style` element. Earlier when we discussed the `link` element we covered linking an external stylesheet to our document using something like:
 
 ```html
 <link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
@@ -38,11 +45,8 @@ With all of that said, the `style` element can be an integral piece in the perfo
 
 Until then, keep making the web awesome! ☕️
 
-### Related Reading
+## Related Reading
 
 - [Modern Asynchronous CSS Loading](https://www.filamentgroup.com/lab/async-css.html)
 - [Rendering performance](https://developers.google.com/web/fundamentals/performance/rendering)
 - [CSS Critical Subresource Tests](https://github.com/web-platform-tests/wpt/pull/5525)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

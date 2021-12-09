@@ -1,8 +1,15 @@
-# Day 15
+---
+title: Chapter 15 | The body element
+keywords: html, html standard, how-to, learn html
+description: In this chapter we are stepping out of the head and into the body of the document by looking at the body element.
+menu:
+  book:
+    weight: 15
+---
 
-Welcome to Day 15!
+# Chapter 15 | The `body` element
 
-Today we are stepping out of the `head` and into the `body` of the document by looking at the `body` element. The `body` element represents the main content, the visual and interactive elements of our document, and has the implicit ARIA(Accessible Rich Internet Applications) role of `document` assigned. Almost everything we will look at from here on out will have a visual representation in the browser and will be the elements we use to construct the user interfaces our users will interact with.
+In this chapter we are stepping out of the `head` and into the `body` of the document by looking at the `body` element. The `body` element represents the main content, the visual and interactive elements of our document, and has the implicit ARIA(Accessible Rich Internet Applications) role of `document` assigned. Almost everything we will look at from here on out will have a visual representation in the browser and will be the elements we use to construct the user interfaces our users will interact with.
 
 The `body` element itself can contain [all of the global attributes](https://html.spec.whatwg.org/#global-attributes) available to most HTML elements but, it also has a number of event handler attributes that are unique in how they are processed during event bubbling and capture. While it is best practice to register event handlers on elements via `addEventListener` inside of JavaScript, the unique characteristics of these event handler attributes warrant a short discussion.
 
@@ -20,7 +27,7 @@ First, let's look at an example of a non-Window-reflected event handler that can
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The body element | Day 15 | 150 Days of HTML</title>
+    <title>The body element | Chapter 15 | 150 Days of HTML</title>
     <script>
       /**
        * Logs a message to the console indicating where
@@ -64,6 +71,10 @@ First, let's look at an example of a non-Window-reflected event handler that can
   </body>
 </html>
 ```
+
+### Live Sandbox - non-Window-reflected
+
+{{< iframe iframesrc="https://codesandbox.io/embed/event-bubbling-and-capture-on-the-body-element-tfu04?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="Event bubbling and capture on the body element live example" >}}
 
 The bubbling of an event, in this case, starts from the element on which the event was triggered and then bubbles up through the DOM(Document Object Model) until:
 
@@ -138,6 +149,17 @@ As you can see here, the bubbling is as expected. Now, let's look at a Window-re
 </html>
 ```
 
+### Live Sandbox - Window-reflected
+
+<iframe src="https://codesandbox.io/embed/event-bubbling-and-capture-on-the-body-element-window-reflected-jh06u?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Event bubbling and capture on the body element - Window reflected"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+{{< iframe iframesrc="https://codesandbox.io/embed/event-bubbling-and-capture-on-the-body-element-window-reflected-jh06u?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="Event bubbling and capture on the body element - Window reflected live example" >}}
+
 Here is the output you will see in the console after having clicked the link:
 
 ```html
@@ -180,6 +202,3 @@ Until then, keep making the web awesome! 🌮
 
 - [Event Bubbling and Capture](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture)
 - [onerror on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
