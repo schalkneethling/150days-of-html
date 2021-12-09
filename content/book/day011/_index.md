@@ -1,8 +1,15 @@
-# Day 11
+---
+title: Chapter 11 | type, referrerpolicy, imagesrcset, and imagesizes
+keywords: html, html standard, how-to, learn html
+description: In this chapter we will be wrapping up the link element by looking at type, referrerpolicy, as, disabled, imagesrcset, and imagesizes.
+menu:
+  book:
+    weight: 11
+---
 
-Welcome to Day 11!
+# Chapter 11 | type, referrerpolicy, imagesrcset, and imagesizes
 
-Today we will be wrapping up the `link` and look at the following final attributes: `type`, `referrerpolicy`, `as`, `disabled`, `imagesrcset`, and `imagesizes`.
+In this chapter we will be wrapping up the `link` element by looking at the following attributes: `type`, `referrerpolicy`, `as`, `disabled`, `imagesrcset`, and `imagesizes`.
 
 ## `type`
 
@@ -120,6 +127,10 @@ You can then tweak the above JavaScript to look for all of these `link` elements
 })();
 ```
 
+## Live Sandbox
+
+{{< iframe iframesrc="https://codesandbox.io/embed/summer-rain-9slrx?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="Lazy load CSS using the disabled attribute live example" >}}
+
 ## `imagesrcset` and `imagesizes`
 
 In conclusion, we look at the `imagesrcset` and `imagesizes` attributes. These attributes are used in conjunction with `preload` and the `as` attribute of type `image`. One of the aspects of HTML we will look at when we get to the `img` and `picture` elements is the concept of [responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). These two attributes work in tandem with these elements allowing you to preload the appropriate image sources based on your defined `sizes`. For example:
@@ -147,6 +158,12 @@ Later in the `body` of your HTML you will then have the following:
 />
 ```
 
+## Live Sandbox
+
+Resize the output window below to see the different varations of the image load.
+
+{{< iframe iframesrc="https://codesandbox.io/embed/imgsrcset-imgsizes-attribute-of-the-link-element-v5zy9?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="imgsrcset, imgsizes attribute of the link element live example" >}}
+
 The combination of the two can be particularly useful for loading assets that are crucial to the user experience. Using this merely for decorative images is probably not the best use case.
 
 That's a wrap 🎁 Next up, the `meta` element. Until then, keep making the web awesome! o/\o
@@ -157,6 +174,3 @@ That's a wrap 🎁 Next up, the `meta` element. Until then, keep making the web 
 - [Referrer Policy on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy)
 - [Referrer Policy Standard](https://w3c.github.io/webappsec-referrer-policy/)
 - [Responsive Images tutorial on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

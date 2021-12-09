@@ -1,0 +1,25 @@
+table {
+  border: 1px solid $color-neutral-900;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+th,
+td {
+  padding: 0.5rem;
+}
+
+th {
+  background-color: $color-primary;
+  color: #fff;
+  letter-spacing: 0.035rem;
+  text-align: left;
+}
+
+tr:nth-child(odd) {
+  background-color: $color-neutral-100;
+}
+
+td {
+  border-bottom: 1px solid $color-neutral-900;
+}

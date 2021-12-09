@@ -61,7 +61,7 @@ Once the above JavaScript executes(generally when the DOM(document) has finished
 
 ## Live Sandbox
 
-{{< iframe iframesrc="https://codesandbox.io/embed/broken-sun-dc3hx?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="codepen-frame" title="Lazy load CSS example" >}}
+{{< iframe iframesrc="https://codesandbox.io/embed/broken-sun-dc3hx?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="Lazy load CSS example" >}}
 
 ## alternate
 
