@@ -1,6 +1,13 @@
-# Day 19
+---
+title: Chapter 19 | The hgroup, address and heading elements
+keywords: html, html standard, how-to, learn html
+description: In this chapter we look at the hgroup, address and heading elements.
+menu:
+  book:
+    weight: 19
+---
 
-Welcome to Day 19!
+# Chapter 19 | The hgroup, address and heading elements
 
 On the menu today we have the following:
 
@@ -8,7 +15,7 @@ On the menu today we have the following:
 - `hgroup`
 - `address`
 
-It's all about the headings today. First up, the `h[1-6]` elements.
+It's (almost)all about the headings in this chapter. First up, the `h[1-6]` elements.
 
 ## headings
 
@@ -180,11 +187,15 @@ Is a tomato a vegetable or a fruit?
       - Table of Contents
 ```
 
+### Live Codepen - Example use of heading elements
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/3959cafacdfc718b57c754041090cdbb?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Example use of heading elements live example" >}}
+
 > NOTE: You will see while the `h2` inside the `blockquote` is included in the heading level outline, it is not in the structural outline.
 
 While being aware of the structure we define when using sections and headings, the most important points to remember are: Markup headings as headings and always, always ensure that the text of your heading elements are descriptive and accurately describe the section it is heading.
 
-Phew, all that talk about heading has given me a headache 😜
+Phew, all that talk about headings has given me a headache 😜
 
 ## hgroup
 
@@ -208,12 +219,14 @@ Expanding on the above example, we can use the `hgroup` to be the associated tit
 ```html
 <h1>Search results</h1>
 
-<article aria-labelledby="results-heading">
-  <hgroup id="results-heading">
-    <h2>46 results found for "css"</h2>
-    <h3>Showing results 1 to 15</h3>
-  </hgroup>
-</article>
+<main>
+  <article aria-labelledby="results-heading">
+    <hgroup id="results-heading">
+      <h2>46 results found for "css"</h2>
+      <h3>Showing results 1 to 15</h3>
+    </hgroup>
+  </article>
+</main>
 ```
 
 When a user then browses by landmarks, the above landmark will be identified and read out as follows:
@@ -257,9 +270,13 @@ The guiding principle is that the `address` element represents contact informati
 </body>
 ```
 
-From the above, you can see that the contact information for each author is inside the `article` element that wraps their article. The contact information for the publication as a whole is placed inside the `footer` element. The nearest ancestor of the `footer` element is the `body` element and as such the contact information here applies to the page as a whole.
+### Live Codepen - The `address` element
 
-And with that, we have covered all the sectioning elements in HTML. Next, we will dive into grouping content, touching on elements we use very frequently on a daily basis. Until then, keep making the web awesome! 🧐
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/a1986bc4c430b2745026453449e113e6?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="The adress element live example" >}}
+
+From the above, you can see that the contact information for each author is inside the `article` element that wraps the article content. The contact information for the publication as a whole is placed inside the `footer` element. The nearest ancestor of the `footer` element is the `body` element and as such the contact information here applies to the page as a whole.
+
+And with that, we have covered all the sectioning elements in HTML. Next, we will dive into grouping content, touching on elements we use very frequently. Keep making the web awesome! 🧐
 
 ### Related Reading
 
@@ -269,6 +286,3 @@ And with that, we have covered all the sectioning elements in HTML. Next, we wil
 - [Add heading-focused outlines and :heading(Github pull request)](https://github.com/whatwg/html/pull/3499)
 - [Visualize your document outline with the HTML5 Validator in outline mode](https://validator.w3.org/nu/)
 - [The HTML5 Outliner](https://h5o.github.io/)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
