@@ -1,5 +1,5 @@
 ---
-title: Chapter 20 | The hgroup, address and heading elements
+title: Chapter 20 | The paragraph, hr, pre and blockquote elements
 keywords: html, html standard, how-to, learn html
 description: In this chapter we start looking at the grouping content elements in HTML.
 menu:
@@ -7,7 +7,7 @@ menu:
     weight: 20
 ---
 
-# Chapter 20 | The hgroup, address and heading elements
+# Chapter 20 | The paragraph, `hr`, `pre` and `blockquote` elements
 
 In this chapter we start looking at the grouping content elements in HTML.
 
