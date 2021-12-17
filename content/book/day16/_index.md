@@ -1,8 +1,15 @@
-# Day 16
+---
+title: Chapter 16 | The sectioning elements
+keywords: html, html standard, how-to, learn html
+description: In this chapter we are going to start digging into the sectioning elements.
+menu:
+  book:
+    weight: 16
+---
 
-Welcome to Day 16!
+# Chapter 16 | The sectioning elements
 
-As mentioned yesterday, today we are going to start digging into the sectioning elements. Most of these were introduced with the release of HTML5, but some have been around since the beginning of the web. Sectioning elements allow us to [semantically markup](https://en.wikipedia.org/wiki/Semantic_HTML) our pages and applications to aid user-agents and assistive technologies to better understand, interpret and present our content to end-users. It also assists other machine-based systems, such as search engine spiders, to better index the web by inferring meaning from the various parts that make up the overall page or application. This then also forms part of a larger initiative known as [the semantic web](https://www.w3.org/standards/semanticweb/).
+As mentioned in the previous chapter, in this chapter we are going to start digging into the sectioning elements. Most of these were introduced with the release of HTML5, but some have been around since the beginning of the web. Sectioning elements allow us to [semantically markup](https://en.wikipedia.org/wiki/Semantic_HTML) our pages and applications to aid user-agents and assistive technologies to better understand, interpret and present our content to end-users. It also assists other machine-based systems, such as search engine spiders, to better index the web by inferring meaning from the various parts that make up the overall page or application. This then also forms part of a larger initiative known as [the semantic web](https://www.w3.org/standards/semanticweb/).
 
 There is quite a bit to cover here so, let's take it one piece, or element 😜, at a time starting from the top of our document.
 
@@ -38,6 +45,10 @@ Now that you have an understanding of the critical importance and utility of lan
   </nav>
 </header>
 ```
+
+### Live Codepen - Semantic header
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/21ceca2e9cd3e3bcf247979275f13a63?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Semantic header live example" >}}
 
 The above would be a common pattern of a semantically marked-up `header` for a website. It clearly communicates intent, provides ample style hooks and exposes its structure to assistive technologies.
 
@@ -89,9 +100,13 @@ Later in our document, we might have a table of contents. That would be an ideal
 </nav>
 ```
 
+### Live Codepen - Distinguish nav elements with aria-label
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/072bc8d3c5b4b8cefb7a560728d7b644?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Distinguish nav elements with aria-label live example" >}}
+
 You will notice that here I used `aria-labelledby` in combination with a matching `id` attribute on the heading element in order to set the accessible name for this `nav` element.
 
-That is where will end it for today. Tomorrow we will look at the `aside` and `footer` elements and their roles in HTML documents. With that said, this will not be the last time we will see both the `header` and `nav` elements. Expect them to play a cameo role in some of the future `sections` 🙃
+That is all for this chapter. In the next chapter we will look at the `aside` and `footer` elements and their roles in HTML documents. With that said, this will not be the last time we will see both the `header` and `nav` elements. Expect them to play a cameo role in some of the future `sections` 🙃
 
 Until then, keep making the web awesome! 🥡
 
@@ -100,6 +115,3 @@ Until then, keep making the web awesome! 🥡
 - [Microformats](http://microformats.org/)
 - [Schema.org](http://schema.org/)
 - [ARIA landmark roles](https://www.w3.org/WAI/PF/aria/roles#landmark_roles)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

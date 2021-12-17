@@ -1,12 +1,19 @@
-# Day 20
+---
+title: Chapter 20 | The hgroup, address and heading elements
+keywords: html, html standard, how-to, learn html
+description: In this chapter we start looking at the grouping content elements in HTML.
+menu:
+  book:
+    weight: 20
+---
 
-Welcome to day 20!
+# Chapter 20 | The hgroup, address and heading elements
 
-Today we start looking at the grouping content elements in HTML.
+In this chapter we start looking at the grouping content elements in HTML.
 
 ## p(paragraph) and div elements
 
-We start off with the two grouping content elements that are the most common purpose elements of the bunch. While they can both be used in a variety of similar ways, it is important to always use the element that makes the most semantic sense.
+We start off with the two grouping content elements that are the most general purpose elements of the bunch. While they can both be used in a variety of similar ways, it is important to always use the element that makes the most semantic sense.
 
 For example, both the following examples are valid:
 
@@ -37,22 +44,22 @@ However semantically, you would choose to use the paragraph element over the `di
 For example, the following is valid HTML:
 
 ```html
-<p class="field-group>
-    <label for="name>Name:</label>
-    <input type="text" name="name" id="name" />
+<p class="field-group">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" />
 </p>
 ```
 
 The more appropriate markup would be this though:
 
 ```html
-<div class="field-group>
-    <label for="name>Name:</label>
-    <input type="text" name="name" id="name" />
+<div class="field-group">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" />
 </div>
 ```
 
-The `div` element being a general [block level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) grouping element whilst the paragraph element is more appropriate for paragraphs of text. There are also some situations where a paragraph element might seem appropriate but, would be invalid HTML, for example:
+The `div` element is a general [block level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) grouping element whilst the paragraph element is more appropriate for paragraphs of text. There are also some situations where a paragraph element might seem appropriate but, would be invalid HTML, for example:
 
 ```html
 <p>Did you know that
@@ -90,9 +97,9 @@ With a little bit of CSS:
 
 you could have the above rendered as:
 
-```
-Did you know that pea pods, avocado, and eggplant, are all fruits?
-```
+### Live Codepen - A little odd, but technically valid, sentence
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/516df779e09835dfc8e04d7f42e53c3c?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="A little odd, but technically valid, sentence live example" >}}
 
 A strange use case to be sure, but now you know how to approach it should it ever come up in real life. 🙃
 
@@ -120,21 +127,21 @@ The `hr`, or thematic break element, has an implicit ARIA role of [`separator`](
 
 ## pre
 
-If you have seen code examples online in blog posts, or newsletters such as this one, you have already come into contact with the `pre` element.
+If you have seen code examples online in blog posts, or books such as this one, you have already come into contact with the `pre` element.
 
-> NOTE: Using the `pre` element by itself to markup code examples is not the whole story though. When doing so, you would couple it with the `code` element. More on that in a future post.
+> NOTE: Using the `pre` element by itself to markup code examples is not the whole story though. When doing so, you would couple it with the `code` element. More on that in a future chapter.
 
 The `pre` element is a way to markup **pre**formatted text. In HTML if you write the following:
 
 ```html
-<p>This is a sentence , with some additional w h i t e s p a c e</p>
+<p>This is a          sentence , with some         additional   w h i t e s p a c e</p>
 ```
 
-the end result would be visually rendered as:
+The end result would be visually rendered as:
 
-```
-This is a sentence , with some additional w h i t e s p a c e
-```
+### Live Codepen - Whitespace behaviour with a paragraph tag
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/655eec15fe9b5a5960203d6ea0684327?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Whitespace behaviour with a paragraph tag live example" >}}
 
 As you can see, the only thing that will be honored is single space characters, all other additional whitespaces will be collapsed. If you wanted to visually **pre**serve the whitespace, you would mark it up using the `pre` element.
 
@@ -146,7 +153,9 @@ This is a       sentence , with some     additional  w  h  i  t  e  s  p  a  c  
 
 Now it will be rendered exactly as typed:
 
-<pre>This is a       sentence , with some     additional  w  h  i  t  e  s  p  a  c  e</pre>
+### Live Codepen - Whitespace behaviour with the `pre` tag
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/662918215fa46780e2f37170a3ceb72e?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Whitespace behaviour with the pre tag live example" >}}
 
 This is then also how you would markup things such as ASCII Art:
 
@@ -201,7 +210,8 @@ While a user agent could enable users to follow a citation link, it is not requi
 
 That is then also the most common way to expose the URL specified in the `cite` attribute.
 
-That is all for our first taste of the grouping elements of HTML. Tomorrow we will continue by looking at all things list-related.
+That is all for our first taste of the grouping elements of HTML. In the next chapter we will continue by looking at all things list-related.
 
-Until then, keep making the web awesome!
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
+### Related Reading
+
+- No related reading for this chapter. Have another 🍪

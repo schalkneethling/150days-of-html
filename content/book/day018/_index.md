@@ -1,8 +1,15 @@
-# Day 18
+---
+title: Chapter 18 | The article, section and main elements
+keywords: html, html standard, how-to, learn html
+description: In this chapter we look at the article, section and main elements.
+menu:
+  book:
+    weight: 18
+---
 
-Welcome to Day 18!
+# Chapter 18 | The article, section and main elements
 
-On the menu today we have the following:
+On the menu in this chapter we have the following:
 
 - `article`
 - `section`
@@ -40,6 +47,10 @@ As the name suggests, the `main` element is used to identify the main content of
 </footer>
 ```
 
+### Live Codepen - The `main` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/18426633a729a69190758bc17e023b6a?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="The main element live example" >}}
+
 > NOTE: Why add `role="main"` if it is implicit already? The addition of the `role` attribute largely depends on your intended audience. If you know that the users of your website or application will be using [ever-green browsers](https://www.techopedia.com/definition/31094/evergreen-browser), there is no need to specify the role. If however some of your users may be using versions of Internet Explorer 11 or older, the `role` attribute is required in order to convey the semantic meaning to assistive technologies.
 
 While there can only be one `main` element per document, you could have more than one if the additional `main` elements have the `hidden` attribute specified. This can be useful to swap out different pieces of "main" content as a user interacts with your webpage, for example:
@@ -69,7 +80,11 @@ While there can only be one `main` element per document, you could have more tha
 </aside>
 ```
 
-Using JavaScript one can toggle on and off the `hidden` attribute on the relevant `main` element as the user clicks the various links in the table of contents. This ensures that one `main` element is active and visible at a time, making this a valid use case.
+Using JavaScript one can toggle on and off the `hidden` attribute on the relevant `main` element as the user clicks the various links in the table of contents. This ensures that only one `main` element is active and visible at a time, making this a valid use case.
+
+### Live Codepen - Using multiple `main` elements
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/b00ad6c54b385ee9ae3b9ef066c5b95d?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="The main element use with the hidden attribute live example" >}}
 
 ## article
 
@@ -136,11 +151,14 @@ When the `section` element is used with an accessible name as above, it is assig
 
 Here I agree with [Bruce Lawson](https://twitter.com/brucel)(see article linked in related reading), and would stick to using the `section` element only when I am using it explicitly as a `region`.
 
-That was a lot of ground to cover but, you now have a darn good toolbox to semantically order and section your content. There is one more set of elements to cover in this (cough)section(cough) before we move on to grouping content elements. Until tomorrow, keep making the web awesome! 🐒
+That was a lot of ground to cover but, you now have a darn good toolbox to semantically order and section your content.
+
+### Live Codepen - A complete blog post page example
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/d7d959055c161e21346fe5befb76c96d?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="A complete blog post page live example" >}}
+
+There is one more set of elements to cover in this (cough)section(cough) before we move on to grouping content elements. Keep making the web awesome! 🐒
 
 ### Related Reading
 
 - [Why You Should Choose HTML5 article Over section](https://www.smashingmagazine.com/2020/01/html5-article-section/)
-
-~..~
-Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
