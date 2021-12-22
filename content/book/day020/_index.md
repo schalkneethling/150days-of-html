@@ -1,7 +1,7 @@
 ---
 title: Chapter 20 | The paragraph, hr, pre and blockquote elements
 keywords: html, html standard, how-to, learn html
-description: In this chapter we start looking at the grouping content elements in HTML.
+description: In this chapter we start looking at the grouping content elements, paragraph, hr, pre and blockquote.
 menu:
   book:
     weight: 20
@@ -9,7 +9,7 @@ menu:
 
 # Chapter 20 | The paragraph, `hr`, `pre` and `blockquote` elements
 
-In this chapter we start looking at the grouping content elements in HTML.
+In this chapter we start looking at the grouping content elements, `p`(paragraph), `hr`, `pre` and `blockquote`.
 
 ## p(paragraph) and div elements
 
@@ -134,7 +134,7 @@ If you have seen code examples online in blog posts, or books such as this one, 
 The `pre` element is a way to markup **pre**formatted text. In HTML if you write the following:
 
 ```html
-<p>This is a          sentence , with some         additional   w h i t e s p a c e</p>
+<p>This is a sentence , with some additional w h i t e s p a c e</p>
 ```
 
 The end result would be visually rendered as:

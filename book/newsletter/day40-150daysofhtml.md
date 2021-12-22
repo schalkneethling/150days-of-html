@@ -398,3 +398,105 @@ You can use the `step` attribute on the following input elements.
 - time
 - number
 - range
+
+# `list`
+
+The `list` attribute is used to link and input element to a `datalist` that can then provide options for an input element. Think of those search inputs that provides a list of possible options as you type. That is a typical used case for this attribute. Let’s look at a simple example.
+
+```html
+<form
+  name="random"
+  action="/random"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <fieldset>
+    <label for="q">search</label>
+    <input type="search" name="q" id="q" list="search-suggestions" />
+    <datalist id="search-suggestions">
+      <option value="avocado">Avocado</option>
+      <option value="broccoli">Broccoli</option>
+      <option value="red-pepper">Red pepper</option>
+      <option value="yellow-pepper">Yellow pepper</option>
+      <option value="spinach">Spinach</option>
+    </datalist>
+  </fieldset>
+  <button type="submit">submit</button>
+</form>
+```
+
+## Live Codepen ~ Using a datalist with an input element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/170f7daf3b656d5f9debbc24bc857b28?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using a datalist with an input element live example" >}}
+
+[Live on Codepen.io](https://codepen.io/schalkneethling/pen/170f7daf3b656d5f9debbc24bc857b28?editors=1010)
+
+> NOTE on Firefox: For Firefox you may want to set the `autocomplete` attribute of the input field to "off". If you do not, Firefox will supplement your options with previously entered strings from other sites with a similar `input` field. In the above example, it uses a very common naming scheme for the search input field and you are very likely to get unrelated options presented to the user.
+
+## Live Codepen ~ Using a datalist with an input element, `autocomplete="off"`
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/d9ab8823eb78e9084248c52541bf9488?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using a datalist with an input element live example" >}}
+
+[Live on Codepen.io](https://codepen.io/schalkneethling/pen/d9ab8823eb78e9084248c52541bf9488)
+
+> NOTE: Try the examples above out on different browsers to see how the various browsers implement the user experience for this feature.
+
+### Valid input elements for the `step` attribute
+
+You can use the `list` attribute on the following input elements.
+
+- text
+- search
+- URL
+- telephone
+- email
+- date
+- month
+- week
+- time
+- local-date-time
+- number
+- range
+- color
+
+## `placeholder`
+
+The `placeholder` attribute can be helpful to provide a hint to users with regards to the expected format of the content entered into a field. Two things to note here:
+
+1. The `placeholder` attribute is not a replacement for the `label` element
+2. For longer hints or advisory text, the `title` attribute of the `input` element is more appropriate.
+
+For example:
+
+```html
+<label for="q">Search</label>
+<input
+  type="search"
+  name="q"
+  id="q"
+  placeholder="Enter search term"
+  title="Enter your search term. For example, repl or utility"
+/>
+```
+
+## Live Codepen ~ The `placeholder` attribute
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/cdcdd3da37619c5028365b7b28528cd3?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="The placeholder attribute live example" >}}
+
+[Live on Codepen.io](https://codepen.io/schalkneethling/pen/cdcdd3da37619c5028365b7b28528cd3)
+
+The placeholder text will be displayed before a user enters text into the input field. However, as soon as a user enters information, the placeholder is hidden. Therefore, it is vital to have another means to communicate this information if it is not apparent from the label. Also, note that people with cognitive challenges, or someone in a distracting environment, may find it easier to read a persistent label rather than a placeholder.
+
+<!-- add voice over video -->
+
+### Valid input elements for the `step` attribute
+
+You can use the `list` attribute on the following input elements.
+
+- text
+- search
+- URL
+- telephone
+- email
+- password
+- number

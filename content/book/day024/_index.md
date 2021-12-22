@@ -1,8 +1,15 @@
-# Day 24
+---
+title: Chapter 24 | em, strong, b, i, and mark
+keywords: html, html standard, how-to, learn html
+description: In this chapter we continue our look at text-level semantic elements and specifically, em, strong, b, i, and mark.
+menu:
+  book:
+    weight: 24
+---
 
-Welcome to day 24!
+# Chapter 24 | `em`, `strong`, `b`, `i`, and `mark`
 
-Yesterday we looked at the anchor element and got pretty deep into the weeds of what you can do with this seemingly simple element. Today we continue our look at text-level semantic elements and specifically, `em`, `strong`, `b`, `i`, and `mark`.
+In the previous chapter we looked at the anchor element and got pretty deep into the weeds of what you can do with this seemingly simple element. In this chapter we continue our look at text-level semantic elements and specifically, `em`, `strong`, `b`, `i`, and `mark`.
 
 ## `em`
 
@@ -38,7 +45,11 @@ Now, with the following example, the difference might become even clearer. You m
 <!-- and so forth -->
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
+### Live Codepen - The `em` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/f446b1b5ac60d3c4b368ff4b472053e3?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the em(emphasis) element live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/f446b1b5ac60d3c4b368ff4b472053e3)
 
 As you read the sentence above and change your emphasis based on the placement of the `em` element, you will notice how the meaning of the sentence changes as you do. Using `strong` in place of `em` above, will not convey the same semantic meaning and so, those subtle changes of meaning will not be conveyed.
 
@@ -51,7 +62,7 @@ Another aspect of the `em` element that I did not know about before starting to 
 </p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/8a4d80a43c3b6cffffe21329af765efe)
 
 In the second of the above examples, the word "cute" will receive double the emphasis as the overall sentence. A small detail, but something that can be used to great effect.
 
@@ -69,8 +80,6 @@ As discussed, the `strong` element is used to communicate importance. For exampl
 </div>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
-
 You will note that I used the `strong` element inside a heading element in the example above. While headings do indicate and contribute to the structure and outline of a document, they do not by themselves indicate importance. It is therefore completely valid to use the `strong` element inside a heading element.
 
 As with the `em` element, the level of importance increase by the number of ancestors. For example:
@@ -83,8 +92,6 @@ As with the `em` element, the level of importance increase by the number of ance
   >.
 </p>
 ```
-
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
 
 ## `b`
 
@@ -100,7 +107,11 @@ Unlike the `em` and `strong` elements, the `b` element does not convey any addit
 <p>&mdash; Rumi</p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
+### Live Codepen - The `b` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/774bc911bae0deeff49807cac3b2706d?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the b element live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/774bc911bae0deeff49807cac3b2706d)
 
 > NOTE: The `b` element should be used as a last resort when there is no other more appropriate element. For example, when highlighting words, consider whether the `mark` element, which we will discuss a little later, might be more appropriate.
 
@@ -112,8 +123,6 @@ Historically the `i` element was used as a means to visually style text as itali
 <p>Cannabis is a genus of flowering plants in the family <i>Cannabaceae</i>.</p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
-
 It can also be used to markup idioms from another language, for example:
 
 ```html
@@ -122,8 +131,6 @@ It can also be used to markup idioms from another language, for example:
   ours to see. <i lang="fr">Que Sera, Sera</i>.
 </p>
 ```
-
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
 
 > NOTE: As with the `b` element, care should be taken to ensure that there is not a more appropriate element that can be used.
 
@@ -142,7 +149,11 @@ The `mark` element is used to mark or highlight a word or a run of text due to i
 </div>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
+### Live Codepen - The `mark` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/bd12855455e6e8625259548d22dfb4ee?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the mark element live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/bd12855455e6e8625259548d22dfb4ee)
 
 In the above example, we use the `mark` element to highlight matches of the search term within the search result.
 
@@ -151,12 +162,8 @@ In the above example, we use the `mark` element to highlight matches of the sear
 <p>In the above sentence we can see the UK spelling of the word color.</p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYgwMwp)
-
 Above we use it to highlight the word we will be referring to in the follow-on sentence.
 
-> NOTE: By default, browsers will render `mark` elements with a bright yellow background as can be seen in the live examples linked above. This can be changed using CSS, but the default is a very common design pattern to use.
+> NOTE: By default, browsers will render `mark` elements with a bright yellow background as can be seen in the live example. This can be changed using CSS, but the default is a very common design pattern to use.
 
-And that is it for today. I hope you learned something new you can apply to your work. Until tomorrow, keep making the web awesome!
-
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
+And that is it for this chapter. I hope you learned something new you can apply to your work. Remember to join the community on [Discord](https://discord.gg/XKsZbZzk6Z) and share your learning!
