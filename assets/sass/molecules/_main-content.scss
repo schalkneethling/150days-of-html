@@ -3,6 +3,10 @@
   border: $callout-border;
   padding: 2rem;
 
+  h1 {
+    max-width: 50rem;
+  }
+
   h2,
   h3 {
     margin-top: 2rem;

@@ -1,12 +1,19 @@
-# Day 21
+---
+title: Chapter 21 | Lists
+keywords: html, html standard, how-to, learn html
+description: In this chapter we continue our exploration of the grouping elements by looking at lists.
+menu:
+  book:
+    weight: 21
+---
 
-Welcome to day 21!
+# Chapter 21 | Lists
 
-Today we continue our exploration of the grouping elements by looking at lists.
+In this chapter we continue our exploration of the grouping elements by looking at lists.
 
 ## `ol` - Ordered list
 
-As the name suggests, the `ol` element is used to markup lists that follow a defined order. This element is therefore the perfect candidate for marking up cooking instruction and assembly instructions for example. Each item in an ordered list is marked up using the `li` or list item element.
+As the name suggests, the `ol`(ordered list) element is used to markup lists that follow a defined order. This element is therefore the perfect candidate for marking up cooking instruction and assembly instructions for example. Each item in an ordered list is marked up using the `li` or list item element.
 
 ```html
 <section aria-labelledby="making-pizza-dough">
@@ -50,7 +57,11 @@ As the name suggests, the `ol` element is used to markup lists that follow a def
 </section>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgMXVV)
+### Live Codepen - Marking up a recipe
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/6ecb8bc59ab8dbfd43393641f076186d?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Marking up a recipe live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/6ecb8bc59ab8dbfd43393641f076186d)
 
 While the ordered list element support all of the [global attributes](https://html.spec.whatwg.org/#global-attributes), it also has a couple of its own unique attributes.
 
@@ -80,7 +91,7 @@ As mentioned earlier, another common use for an ordered list could be assembly i
 </section>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgMXVV)
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/5884e61def3b39a218e51b107b02fbe9)
 
 But what about disassembly instructions? While it could be completely valid to have these numbered from 1 - x, why not reinforce the idea that this is disassembly instruction by having the numbers countdown? With the `reversed` attribute on the ordered list element, it is as simple as adding the attribute to the root `ol` element.
 
@@ -110,7 +121,11 @@ But what about disassembly instructions? While it could be completely valid to h
 </section>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgMXVV)
+### Live Codepen - Using the reversed attribute with ordered lists
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/056f388ff8a687b11c8a6c816822be3a?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the reversed attribute with ordered lists live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/056f388ff8a687b11c8a6c816822be3a?editors=1000)
 
 ### `start`
 
@@ -169,7 +184,11 @@ Sometimes the steps are interspersed with some additional information, images, o
 </section>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgMXVV)
+### Live Codepen - Using the reversed attribute with ordered lists
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/0e58b06befa2d348f79241c161d6d70c?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the reversed attribute with ordered lists live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/0e58b06befa2d348f79241c161d6d70c?editors=1000)
 
 ### `type`
 
@@ -217,7 +236,11 @@ Decimal is the default and does not need to be specified. Some examples:
 </ol>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgMXVV)
+### Live Codepen - Using the type attribute with ordered lists
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/484650c1fc493a112829118caeb1f8fe?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the type attribute with ordered lists live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/484650c1fc493a112829118caeb1f8fe?editors=1000)
 
 ## `dl` - Description list
 
@@ -245,7 +268,11 @@ A description list is made up of two other elements. The `dt` or term element an
 </dl>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
+### Live Codepen - Using the description list element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/a6b6d2ca1b860feeedd31d38b3217513?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the description list element live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/a6b6d2ca1b860feeedd31d38b3217513?editors=1000)
 
 As you will notice from the above, the default rendering for a description list is stacked with the description indented. One thing that makes styling a description list a little tricky is that each name and description pair are separate siblings in the HTML. If one, therefore, apply something like [flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) to the parent `dl` element, the end result will most likely not be what you want as each entry in the list becomes a flex child. What you probably want is for each pair to become a child.
 
@@ -301,7 +328,11 @@ Adding the following CSS gives you a horizontally displayed description list wit
 }
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
+### Live Codepen - Styled description list element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/a6b6d2ca1b860feeedd31d38b3217513?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Styled description list element live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/a6b6d2ca1b860feeedd31d38b3217513?editors=1000)
 
 One thing that is also unique about the description list element is that you can associate multiple type elements with a single description or, you can associate multiple description elements with a single type element. For example:
 
@@ -314,7 +345,7 @@ One thing that is also unique about the description list element is that you can
 </dl>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
+    [Live example on Codepen.io](https://codepen.io/schalkneethling/pen/be34889cc17b83e6d47a9d487edc7292)
 
 When marking up a list of authors, you could do the following:
 
@@ -326,7 +357,11 @@ When marking up a list of authors, you could do the following:
 </dl>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMrLX)
+### Live Codepen - Using multiple type or description elements
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/be34889cc17b83e6d47a9d487edc7292?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using multiple type or description elements live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/be34889cc17b83e6d47a9d487edc7292)
 
 ## `ul` - Unordered list
 
@@ -354,7 +389,11 @@ The unordered list is a workhorse of the HTML world. 🐎 It’s not that it has
 </section>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/poRGVwV)
+### Live Codepen - Using an unordered list element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/70c4045bacf3e1e5a1cd7fe3d93c8459?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using an unordered list element live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/70c4045bacf3e1e5a1cd7fe3d93c8459?editors=1000)
 
 ## `menu`
 
@@ -372,7 +411,11 @@ For example:
 </menu>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/poRGVwV)
+### Live Codepen - Using the menu element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/b5fc19184dde68e404d8f3e9e9ce9be1?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the menu element live example" >}}
+
+[Live example on Codepen.io](https://codepen.io/schalkneethling/pen/b5fc19184dde68e404d8f3e9e9ce9be1?editors=1100)
 
 > NOTE: The `menu` element does have a `type` and `label` attribute but, `label` has been deprecated. Also, the value for `type` could be one of either `context` or `toolbar` but, `context` has been deprecated. The only remaining valid value for `type` is then, `toolbar`. To my mind, that means these attributes are no longer of any use.
 
@@ -380,7 +423,7 @@ For example:
 
 ### Nesting 🪆
 
-Other than the `menu` element, all of the above list types allow nesting to create multi-level lists. Before looking at the lists where this is commonly done, let’s discuss nesting with the description list. Firstly, I have not personally found a use case for nesting in description lists but, if you do find a use case, remember that you can only nest a description list inside the `dt` or `dd` element. For example:
+Other than the `menu` element, all of the above list types allow nesting to create multi-level lists. Before looking at the lists where this is commonly done, let’s discuss nesting with the description list.
 
 ```html
 <dl>
@@ -397,7 +440,7 @@ Other than the `menu` element, all of the above list types allow nesting to crea
 </dl>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMVox)
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/3a965a93f04c1c94b37d20793e42ffb2)
 
 Nesting with the ordered and unordered lists is exactly the same from a code perspective.
 
@@ -422,7 +465,7 @@ Nesting with the ordered and unordered lists is exactly the same from a code per
 </ul>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMVox)
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/3a965a93f04c1c94b37d20793e42ffb2)
 
 With an ordered list though, you can use the `type` attribute to specify different markers for the top-level and nested lists.
 
@@ -447,9 +490,10 @@ With an ordered list though, you can use the `type` attribute to specify differe
 </ol>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/BapMVox)
+### Live Codepen - Nesting with HTML list elements
 
-And that is it for all things lists! 🎉 Tomorrow we will conclude our look at grouping content with the `figure` and `figcaption` elements.
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/3a965a93f04c1c94b37d20793e42ffb2?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Nesting with HTML list elements live example" >}}
 
-Until then, keep making the web awesome!
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/3a965a93f04c1c94b37d20793e42ffb2)
+
+And that is it for all things lists! 🎉 In the next chapter we will conclude our look at grouping content with the `figure` and `figcaption` elements.

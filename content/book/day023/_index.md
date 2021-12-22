@@ -1,12 +1,19 @@
-# Day 23
+---
+title: Chapter 23 | The anchor element
+keywords: html, html standard, how-to, learn html
+description: In this chapter we start our look at the text-level semantic elements.
+menu:
+  book:
+    weight: 23
+---
 
-Welcome to day 23!
+# Chapter 23 | The anchor element
 
-Today we start our look at the text-level semantic elements. Today is exclusively focused on the element that makes the web, the web. The anchor(`a`) element.
+In this chapter we start our look at the text-level semantic elements. This chapter is exclusively focused on the element that makes the web, the web. The anchor(`a`) element.
 
 ## `a` - The anchor element
 
-This is the element that makes the web the web. It is what allows us to link all the documents, websites, pages, and applications together. So simple and yet so powerful. The web would not be what it is without this element. Besides the [global attributes](https://html.spec.whatwg.org/#global-attributes), the anchor element has a couple of attributes that are of interest.
+the anchor element is what allows us to link all the documents, websites, pages, and applications together. So simple and yet so powerful. The web would not be what it is without this element. Besides the [global attributes](https://html.spec.whatwg.org/#global-attributes), the anchor element has a couple of attributes that are of interest.
 
 ### `href`
 
@@ -17,8 +24,6 @@ This is the attribute we use to specify where the user agent will navigate when 
 <a>150daysofhtml.com</a>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/RwKOPyZ)
-
 ### `target`
 
 The `target` attribute sets the browsing context to use when the hyperlink is activated. The value needs to be one of `_blank`, `_parent`, or `_top`.
@@ -26,9 +31,6 @@ The `target` attribute sets the browsing context to use when the hyperlink is ac
 > NOTE: For a [detailed list see the documentation](https://html.spec.whatwg.org/#valid-browsing-context-name-or-keyword).
 
 ```html
-<a href="https://150daysofhtml.com">150daysofhtml.com</a>
-<a>150daysofhtml.com</a>
-
 <p>
   Clicking the link in the below <code>iframe</code> will load the link into the
   top most browsing context which is the main window. i.e. will replace the
@@ -39,6 +41,7 @@ The `target` attribute sets the browsing context to use when the hyperlink is ac
   srcdoc="<a href='https://duckduckgo.com/' target='_top'>Go to DuckDuckGo using target _top</a>"
   width="200"
   height="200"
+  title="Links to DuckDuckGo using target _top"
 ></iframe>
 
 <a href="https://duckduckgo.com/" target="_parent"
@@ -46,7 +49,11 @@ The `target` attribute sets the browsing context to use when the hyperlink is ac
 >
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/RwKOPyZ)
+### Live Codepen - The `target` attribute
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/3ec929b24c87c8251f63ebea25181a76?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the target attribute on anchor elements live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/3ec929b24c87c8251f63ebea25181a76)
 
 While `_top` and `_parent` do have their use cases, the most used of the browser contexts is the `_blank` value. This will open the link in a new tab unless the user's browser is configured to always open in a new window.
 
@@ -73,11 +80,15 @@ The download attribute instructs the browser to download the destination specifi
 
 > NOTE: The download attribute only works for sources that are of the same origin.
 
-[See the live example](https://150daysofhtml.com/newsletter/day23/download-attribute.html)
+### Live Example - The `download` attribute
+
+{{< iframe iframesrc="./download-attribute.html" width="100%" height="200" scrolling="no" class="code-frame" title="Using the download attribute on anchor elements live example" >}}
+
+> NOTE: The second download link above sets the filename to `duck.png` instead of `rubberduck.png`.
 
 ### `ping`
 
-The `ping` attribute is rather interesting. It essentially exposes a mechanism that allows you to collect statistics about how users use your site by sending "pings" to a specified URL, or URLs. This is limited to interaction on an `a` or `area` element.
+The `ping` attribute is rather interesting. It essentially exposes a mechanism that allows you to collect statistics about how users use your site by sending "pings" to a specified URL, or URLs. This is limited to interactions on an `a` or `area` element.
 
 This is the basic syntax:
 
@@ -120,7 +131,7 @@ I created a [small app you can use to play around with this here](https://github
 
 We have covered the `rel` attribute extensively when discussing its use on the `link` element so I will not go into too much depth here. Suffice it to say that the `rel` attribute, when used on the anchor element, indicates the relationship between the current document and the target location.
 
-As mentioned earlier one use is to specify `noopener` and `noreferrer` when using the `target` attribute with a value of `_blank`. Another common use case is to indicate that the target location is external to the current document, for example.
+As mentioned earlier, one use is to specify `noopener` and `noreferrer` when using the `target` attribute with a value of `_blank`. Another common use case is to indicate that the target location is external to the current document, for example.
 
 ```html
 <!-- 
@@ -151,9 +162,11 @@ The `type` attribute on the anchor element can be used to provide a hint to the 
 <a
   href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2020.pdf"
   type="application/pdf"
-  >MDN Web DNA Report 2020</a
+  >MDN Web DNA Report 2020 (PDF document, 1.2MB)</a
 >
 ```
+
+> NOTE: It is best practice to also specify the format if not another HTML document. It is also good to state size of the linked asset as shown above.
 
 ## `referrerpolicy`
 
@@ -164,25 +177,19 @@ As the name suggests, this attribute is used to specify the [Referrer Policy](ht
   href="https://insights.developer.mozilla.org/reports/pdf/MDN-Web-DNA-Report-2020.pdf"
   type="application/pdf"
   referrerpolicy="no-referrer"
-  >MDN Web DNA Report 2020</a
+  >MDN Web DNA Report 2020 (PDF document, 1.2MB)</a
 >
 ```
 
 The above instructs the browser to not send along the [`Referrer` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer) when following the hyperlink.
 
-> NOTE: From the HTML specification documentation: "The target, download, ping, rel, hreflang, type, and referrerpolicy attributes must be omitted if the href attribute is not present."
+> NOTE: From the HTML specification documentation: "The target, download, ping, rel, hreflang, type, and referrerpolicy attributes must be omitted if the `href` attribute is not present."
 
 [See in its original context](https://html.spec.whatwg.org/#the-a-element)
 
-And that covers the anchor element. Wow! Who knew there was so much to this seemingly simple backbone of the internet? You, that's who! 😁
-
-I hope you found this interesting and insightful.
+And that covers the anchor element. Wow! Who knew there was so much to this seemingly simple backbone of the internet? Well now, you, that's who! 😁 I hope you found this interesting and insightful.
 
 ### Related reading
 
 - [Additional reading regarding the `download` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-download)
 - [Busting frame busting: a study of clickjacking vulnerabilities at popular sites](https://seclab.stanford.edu/websec/framebusting/)
-
-Until then, keep making the web awesome!
-
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

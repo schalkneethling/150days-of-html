@@ -1,8 +1,15 @@
-# Day 25 - Representing data with text-level semantics
+---
+title: Chapter 25 | data, time, code, var, samp, and kbd elements
+keywords: html, html standard, how-to, learn html
+description: Continuing with the text-level semantics elements, in this chapter we cover data, time, code, var, samp, and kbd.
+menu:
+  book:
+    weight: 25
+---
 
-Welcome to day 25!
+# Chapter 25 | `data`, `time`, `code`, `var`, `samp`, and `kbd` elements
 
-Continuing with the text-level semantics element. Today we are going to cover `data`, `time`, `code`, `var`, `samp`, and `kbd`.
+Continuing with the text-level semantics elements, in this chapter we cover `data`, `time`, `code`, `var`, `samp`, and `kbd`.
 
 ## `data`
 
@@ -11,8 +18,6 @@ Not to be confused with the `data` attribute, the `data` element represents, wel
 ```html
 <p><data value="8">Eight</data></p>
 ```
-
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
 
 Another use for the `data` element is when used in conjunction with JavaScript to, for example, ease sorting of a data table.
 
@@ -44,8 +49,6 @@ Another use for the `data` element is when used in conjunction with JavaScript t
 </table>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE) (without the sorting implemented)
-
 In the above table, the `data` element is used to represent the total number of cookies sold by each child. This makes implementing a sorting function for the "Cookies sold" column much simpler than having to parse the numbers from the text content, calculate the sum, and then apply a sort.
 
 Another use case is to combine the `data` element with [microdata](https://html.spec.whatwg.org/#microdata).
@@ -58,17 +61,13 @@ Another use case is to combine the `data` element with [microdata](https://html.
 </h1>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
-
 ## `time`
 
-Whereas the `data` element is a generic container for representing human and machine-readable content, the `time` element is specifically meant to represent dates and time values. While the `value` attribute of the `data` element is required, the `datetime` attribute of the `time` element is not. While this is valid, the most common use case for the `time` element is to define both a human and machine-readable format of the time, date, or date and time.
+Whereas the `data` element is a generic container for representing human and machine-readable content, the `time` element is specifically meant to represent dates and time values. While the `value` attribute of the `data` element is required, the `datetime` attribute of the `time` element is not. While this is valid, the most common use case for the `time` element is to define both a human and machine-readable format of the date, time, or date and time.
 
 ```html
 <p>Event date and time: <time>2011-11-18T14:54Z</time></p>
 ```
-
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
 
 The above is entirely valid but, it would probably be more user friendly to represent the information as follows:
 
@@ -81,8 +80,6 @@ The above is entirely valid but, it would probably be more user friendly to repr
 </p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
-
 With the above you have both a human-readable representation and a machine-readable format you can parse with JavaScript, for example:
 
 ```javascript
@@ -93,7 +90,11 @@ output.textContent = eventDateTime;
 // Fri Nov 18 2011 16:54:00 GMT+0200 (South Africa Standard Time)
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
+### Live Codepen - Combining the `time` element’s `datetime` attribute with JavaScript
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/9290e342728239a140b6980307059dd6?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Combining the time element’s datetime attribute with JavaScript live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/9290e342728239a140b6980307059dd6)
 
 To learn what constitutes a valid date and time format that can be used with the element it is best to [refer to the official documentation here](https://html.spec.whatwg.org/#the-time-element).
 
@@ -111,8 +112,6 @@ For example inline it can be used as follows:
 </p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
-
 Or to markup an entire code example(in these instances it is best to couple it with the `pre` element so that the browser respects intended whitespace):
 
 ```html
@@ -129,7 +128,11 @@ array1.forEach(element => console.log(element));
 </pre>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
+### Live Codepen - Combining the pre and code elements
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/8999a6b65ece68d499d6cb4f5b5ff474?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Combining the pre and code elements live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/8999a6b65ece68d499d6cb4f5b5ff474)
 
 > NOTE: As you will notice from the live examples, the browser will use a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font) for content marked up with the `code` element.
 
@@ -143,15 +146,17 @@ Again, this is not to be confused with the JavaScript `var` keyword but, it _is_
 <p>What is the value of the number?</p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
-
 Or alternatively in a programming context:
 
 ```html
 <p><code>const <var>container</var> = document.getElementById('container');<code></p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
+### Live Codepen - Using the `var` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/ebb813558062218d2ba3e903cbfc97f8?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the var element live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/ebb813558062218d2ba3e903cbfc97f8?editors=1000)
 
 ## `samp`
 
@@ -171,7 +176,11 @@ Unpacking objects: 100% (21/21), 5.89 KiB | 464.00 KiB/s, done.
 
 The above shows the output of a [Git command](https://git-scm.com/) ran in a [Terminal application](<https://en.wikipedia.org/wiki/Terminal_(macOS)>) and combined with the `pre` element is a perfect use case for the `samp` element.
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
+### Live Codepen - Using the `samp` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/41f39cbdbd9ee630eb152c38dd60a6e8?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the samp element live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/41f39cbdbd9ee630eb152c38dd60a6e8)
 
 ## `kbd`
 
@@ -184,8 +193,6 @@ Where the `samp` element was for computer output, the `kbd` is meant to markup u
 </p>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
-
 You can also nest the `kbd` element inside a `samp` element. In this case, it represents the input as it was echoed by the system.
 
 ```html
@@ -194,8 +201,6 @@ You can also nest the `kbd` element inside a `samp` element. In this case, it re
 <samp><kbd>Hello</kbd></samp>
 </pre>
 ```
-
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
 
 When a `kbd` element contains a `samp` element it represents input based on system output.
 
@@ -206,12 +211,12 @@ When a `kbd` element contains a `samp` element it represents input based on syst
 </pre>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxgoQQE)
+### Live Codepen - Using the `kbd` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/1444ab962aa56e69eadb64719d2d3d9a?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the kbd element live example" >}}
+
+[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/1444ab962aa56e69eadb64719d2d3d9a?editors=1000)
 
 In the above example, the entire line `cat renovate.json | grep "packageRules"` represents user input, but the result(output) of `cat renovate.json` is piped(`|`) to the `grep "packageRules"` as input. The last line is then the output of executing the entire string of user input. 🙃 That is all to say that you can go pretty crazy and detailed with the combination of all of these elements but, it is often not needed. Always be mindful to use the appropriate elements, and aim for the simplest solution that effectively conveys the message both semantically and visually.
 
 That then concludes our exploration of representing various types of data using text-level semantics.
-
-Until tomorrow, keep making the web awesome!
-
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
