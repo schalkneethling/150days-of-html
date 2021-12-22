@@ -30,7 +30,12 @@ blockquote {
   border-radius: $default-border-radius;
   font-style: italic;
   margin: ($base-unit * 2) 0;
-  padding: $base-unit * 2;
+  padding: ($base-unit * 2) ($base-unit * 4);
+  padding-bottom: 1px;
+
+  p {
+    margin-bottom: $base-unit;
+  }
 }
 
 .page-container {

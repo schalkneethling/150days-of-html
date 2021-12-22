@@ -10,11 +10,19 @@
     max-width: 30rem;
   }
 
+  p {
+    margin: 1rem auto;
+  }
+}
+
+.home .main {
   blockquote {
+    background-color: transparent;
     font-style: italic;
     position: relative;
     margin: 2rem auto;
     max-width: 450px;
+    padding: initial;
 
     &::before,
     &::after {
@@ -50,9 +58,5 @@
         right: 30px;
       }
     }
-  }
-
-  p {
-    margin: 1rem auto;
   }
 }
