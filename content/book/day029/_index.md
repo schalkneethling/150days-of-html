@@ -1,8 +1,15 @@
-# Day 29 - Concluding text-level semantics
+---
+title: Chapter 29 | span, br, wbr, and u
+keywords: html, html standard, how-to, learn html
+description: In this chapter we conclude our look at text-level semantics. The elements we wil cover are, span, br, wbr, and u.
+menu:
+  book:
+    weight: 29
+---
 
-Welcome to day 29!
+# Chapter 29 | `span`, `br`, `wbr`, and `u`
 
-Today we conclude our look at text-level semantics. The elements we cover today are, `span`, `br`, `wbr`, and `u`.
+In this chapter we conclude our look at text-level semantics. The elements we wil cover are, `span`, `br`, `wbr`, and `u`.
 
 ## `span`
 
@@ -18,7 +25,9 @@ If you look at the example below you will notice that you can see the Twitter ic
 
 For example, VoicerOver on macOS will say, "link, Go to Twitter.com".
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/xxqbvoZ)
+### Live Codepen - Using the span element with CSS to visually hide text
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/e43defecf1e87b0b7a645c1e33c0b470?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the span element with CSS to visually hide text live example" >}}
 
 Another use case is to apply a specific font, style, and color to certain words or phrases for branding purposes. For example, let’s take the word "screenAML".
 
@@ -26,7 +35,9 @@ Another use case is to apply a specific font, style, and color to certain words 
 <h2><span class="branded">screen</span>AML</h2>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/qBrdddq)
+### Live Codepen - Custom font style using span and CSS
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/4e404324f8e47e58f8339b02ad316b44?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Custom font style using span and CSS live example" >}}
 
 ## `br`
 
@@ -63,7 +74,9 @@ The `br` element represents a line break. This element should only be used if it
 
 The line break element is a self-closing element and does not itself contain any content.
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/NWpqqbo)
+### Live Codepen - Using the line break element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/71c425993cfcf3d652829243ff4249d4?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the line break element live example" >}}
 
 ## `wbr`
 
@@ -93,11 +106,13 @@ Unlike the line break element, the `wbr` element indicates a break opportunity. 
 
 When looking at the example below you will notice that while in the first paragraph the word "supercalifragilisticexpialidocious" does not break but drops to its own line, in the second paragraph, it breaks at the break opportunities we provided using the `wbr` element.
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/PopqqOy)
+### Live Codepen - Using the wbr element
 
-## `u`
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/381b306ca2d86d222201c84f7dc51c5c?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the wbr element live example" >}}
 
-While the `u` element is rendered as an underline by default, this is not a general-purpose element used to add underlines to a span of text. It is commonly used to indicate a [proper name in Chinese text](https://en.wikipedia.org/wiki/Proper_name_mark) or, the indicate a misspelled word. For example:
+## `u`(Unarticulated Annotation element)
+
+While the `u` element is rendered as an underline by default, this is not a general-purpose element used to add underlines to a span of text. It is commonly used to indicate a [proper name in Chinese text](https://en.wikipedia.org/wiki/Proper_name_mark) or, to indicate a misspelled word. For example:
 
 ```html
 <p>我來自<u>德國</u>。</p>
@@ -111,7 +126,9 @@ While the `u` element is rendered as an underline by default, this is not a gene
 
 > NOTE: Because the `u` element is rendered with an underline, it can create confusion with hyperlinks and so, care is to be taken when using this element so as to avoid confusion.
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/GRWJJYw)
+### Live Codepen - Using the `u` element
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/6e146ec211baa0e09721a3ed3f8c6191?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using the u element live example" >}}
 
 That’s a wrap for text-level semantics. Before we end this section and move onto embedded content, there are a few link types that we have not yet covered. Hard to believe I know 😀 🙃 So in closing, let’s take a look at these.
 
@@ -145,8 +162,6 @@ This value can be used with the anchor and `area` elements. The value of the `hr
 </article>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/XWMbmje)
-
 In the above example, the first link’s closest ancestor `article` element is the blog post extract and so, the bookmark indicates that the value of the `href` for this link is a permalink to the full post. The second link’s closest `article` element ancestor is the comment made by Sally and so, the value of the `href` attribute here is a permalink to the comment.
 
 If there is no ancestor `article` elements or other sectioning content such as a `div` element for example, the hyperlink refers to the nearest heading sibling or ancestor. User agents do not afford bookmark type hyperlinks any special UI treatment and is mainly a form of metadata, to be used by scripts, or for styling purposes.
@@ -167,7 +182,9 @@ As the name suggests this is used to indicate that the hyperlink points to help 
 
 A user agent could show a different cursor when a user hovers over a hyperlink but, you could also use it as a hook for CSS and add your own icon or change the cursor as can be seen in the below example.
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/XWMbmje)
+### Live Codepen - Styling elements using the `rel="help"` attribute
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/b1e6c84c6668e70e9a1f315741f5087f?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Styling elements using the rel='help' attribute live example" >}}
 
 When used with the `link` element, the referenced document points to a help document for the page as a whole.
 
@@ -188,8 +205,6 @@ This keyword is used to indicate that the referenced document contains informati
   >.
 </p>
 ```
-
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/XWMbmje)
 
 This can also be used with the `link` element as follows:
 
@@ -270,9 +285,7 @@ Both these keywords indicate that the current document is part of a sequence and
 </ul>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/XWMbmje)
-
-When using the next keyword with the `link` element the user agent should process the link as if one of the resource hints(dns-prefetch, preconnect, prefetch, or prerender ) was specified. Which of these the user agent chooses to use is implementation dependant.
+When using the next keyword with the `link` element the user agent should process the link as if one of the resource hints(`dns-prefetch`, `preconnect`, `prefetch`, or `prerender` ) was specified. Which of these the user agent chooses to use is implementation dependant.
 
 ```html
 <link
@@ -281,12 +294,8 @@ When using the next keyword with the `link` element the user agent should proces
 />
 ```
 
-That then covers all of the link types. Next up embedded content. On the menu for tomorrow are `picture`, `source`, and `img`.
+That then covers all of the link types. Next up embedded content. In the next chapter we will cover the `picture` and `source` elements.
 
 ### Related reading
 
 - [When to use rel=”nofollow”](https://www.webfx.com/blog/web-design/rel-nofollow/)
-
-Until tomorrow, keep making the web awesome!
-
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

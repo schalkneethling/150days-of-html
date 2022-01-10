@@ -1,10 +1,17 @@
-# Day 27 - Ruby? Say what now?
+---
+title: Chapter 27 | Ruby? Say what now?
+keywords: html, html standard, how-to, learn html
+description: Elements for annotating or controlling how the text for different languages and writing directions are rendered.
+menu:
+  book:
+    weight: 27
+---
 
-Welcome to day 27!
+# Chapter 27 | Ruby? Say what now?
 
-Continuing with text-level semantics, today we look at a couple of elements that are concerned with either annotating or controlling how the text for different languages and writing directions are rendered.
+Continuing with text-level semantics, in this chapter we look at a couple of elements that are concerned with either annotating or controlling how the text for different languages and writing directions are rendered.
 
-## `ruby`, `rp, and `rt`
+## `ruby`, `rp`, and `rt`
 
 These elements need to be discussed as a group, as neither can be demonstrated in isolation. The `ruby` element is used to represent small annotations. The most common use is to show the pronunciation of [East Asian characters](https://en.wikipedia.org/wiki/CJK_characters), but can be used to annotate other kinds of text as well. Each `ruby` element consists of the base character and its associated annotation.
 
@@ -46,14 +53,19 @@ As mentioned above, you could also use this to annotate other types of text, for
 <ruby> W <rp>(</rp><rt>Web</rt><rp>)</rp> </ruby>
 ```
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/VwPogRZ)
+### Live Codepen - Common and nt ot so common use of `ruby`, `rp`, and `rt`
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/4687dacc1dd0b282d63d36d69e356e4c?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Common and nt ot so common use of ruby, rp, and rt live example" >}}
 
 ## `bdi` and `bdo`
 
-While one could discuss these elements in isolation, demonstrating the difference is a bit clearer when discussed together. Let's look at an example and then discuss the details.
+While one could discuss these elements in isolation, demonstrating the difference is a bit clearer when discussed together. Let’s look at an example and then discuss the details.
 
 ```html
-<!-- bdi - This document has dir="ltr" set on the html element -->
+<!-- 
+    bdi - This document has dir="ltr" set on the html element
+    <html dir="ltr">
+-->
 <ul>
   <li>
     <p>User <bdo dir="rtl">إيان</bdo>: 3 posts.</p>
@@ -80,7 +92,9 @@ If you look at the live example below you will notice the following about the fi
 3. Here everything seems to render correctly but, if you look closely you will notice that the Arabic name is rendered incorrectly.
 4. Here and in example five, the individual word, as well as the overall sentence, renders correctly.
 
-[See the live example on Glitch.me](https://immense-paper-help.glitch.me/)
+### Live Codesandbox - Example using The bdi and bdo elements
+
+{{< iframe iframesrc="https://codesandbox.io/embed/elegant-field-bdjtm?fontsize=14&hidenavigation=1&theme=dark" width="100%" height="500" scrolling="no" class="code-frame" title="The bdi and bdo elements live example" >}}
 
 The main differences then between the `bdi` and `bdo` elements are:
 
@@ -94,7 +108,3 @@ While perhaps not used a lot, it is most definitely important to be aware of the
 ### Related reading
 
 - [Ruby character](https://en.wikipedia.org/wiki/Ruby_character)
-
-Until tomorrow, keep making the web awesome!
-
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)

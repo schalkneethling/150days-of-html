@@ -1,8 +1,15 @@
-# Day 30 - Embedded content - Images
+---
+title: Chapter 30 | picture and source elements
+keywords: html, html standard, how-to, learn html
+description: The elements we cover in this chapter are, picture, and source.
+menu:
+  book:
+    weight: 30
+---
 
-Welcome to day 30!
+# Chapter 30 | `picture` and `source` elements
 
-Today we start to dig into the embedded content elements. The elements we cover today are, `picture`, and `source`. The `picture` element and its related `source` element, introduced with HTML5, give us new powerful tools to improve the user experience from both a performance and visual perspective. So let’s dig into the details and see how you can use these new elements.
+In this chapter we start to dig into the embedded content elements. The elements we cover in this chapter are, `picture`, and `source`. The `picture` element and its related `source` element, introduced with HTML5, give us new powerful tools to improve the user experience from both a performance and visual perspective. So let’s dig into the details and see how you can use these new elements.
 
 ## `picture`
 
@@ -38,18 +45,12 @@ With the `type` attribute we can take advantage of these new formats and offer u
 
 ```html
 <picture>
-  <source
-    srcset="https://150daysofhtml.com/assets/picture-source-type.avif"
-    type="image/avif"
-  />
-  <source
-    srcset="https://150daysofhtml.com/assets/picture-source-type.webp"
-    type="image/webp"
-  />
+  <source srcset="trevor-gerzen-r_XS7sml57o-unsplash.avif" type="image/avif" />
+  <source srcset="trevor-gerzen-r_XS7sml57o-unsplash.webp" type="image/webp" />
   <img
-    src="https://150daysofhtml.com/assets/picture-source-type.png"
-    width="1000"
-    height="667"
+    src="trevor-gerzen-r_XS7sml57o-unsplash.png"
+    width="1223"
+    height="815"
     alt="A beautiful sunset in the background with two surfers paddling into the surf in the foreground"
   />
 </picture>
@@ -59,19 +60,21 @@ With the `type` attribute we can take advantage of these new formats and offer u
 
 When loading the below example in Chrome and looking in the network panel of the developer tools, you will see that Chrome loads the AVIF file format:
 
-![AVIF file format shown to load in Chrome devtools network panel](../assets/day30/chrome-avif.png)
+![AVIF file format shown to load in Chrome devtools network panel](./chrome-avif.png)
 
-Opening the same example in Firefox demonstrates how it falls back to WebP format:
+Opening the same example in Safari demonstrates how it falls back to WebP format:
 
-![WebP file format shown to load in Firefox devtools network panel](../assets/day30/firefox-webp.png)
+![WebP file format shown to load in Safari devtools network panel](./safari-webp.png)
 
 As you will also see in the example, there is a significant difference in the file size of the various formats. As performance is a large part of the user experience and accessibility, this is a great tool to have in your arsenal.
 
-- AVIF - 69kb
-- Webp - 88kb
-- PNG - 214kb
+- AVIF - 171kb
+- Webp - 208kb
+- JPG - 236kb
 
-[See the live example on Codepen.io](https://codepen.io/schalkneethling/pen/eYvZPgL)
+### Live Codepen - Using `picture` with multiple `source` elements and fallback
+
+{{< iframe iframesrc="https://codepen.io/schalkneethling/embed/preview/da17ee415ec9ea27cf753065d77b95f1?default-tab=html%2Cresult&editable=true" width="100%" height="500" scrolling="no" class="code-frame" title="Using picture with multiple source elements and fallback live example" >}}
 
 ### `media`
 
@@ -107,8 +110,6 @@ When you open the example below, also open up your browser’s developer tools a
 
 [See the live example on Codepen.io](https://codepen.io/schalkneethling/full/ExWKOLg)
 
-To see the above example along with the source code, [use this link](https://codepen.io/schalkneethling/pen/ExWKOLg).
-
 Before we move on to the `img` element, you might be saying, "Hold on, you said the `source` element does not represent anything visually, but in the examples above, it does?". Looking at the second example, what really happens is something like the following.
 
 1. The browser encounters the `picture` element and looks for its first child element.
@@ -118,7 +119,7 @@ Before we move on to the `img` element, you might be saying, "Hold on, you said 
 5. It now looks for its child `img` element.
 6. It then replaces the `src` attribute value with the value from the `source` element that matched the environment. Seeing that we also specified width and height, it also copies over those values and renders the `img` element. And walla! 🎉 😀
 
-That then covers the majority of the most important aspects of these elements. We will encounter the `source` element again when we look at the `video` and `audio` elements. Tomorrow we wil dig into the `img` element and **oh boy**, hold on to your hats, folks 😀
+That then covers the majority of the most important aspects of these elements. We will encounter the `source` element again when we look at the `video` and `audio` elements. In the next chapter we wil dig into the `img` element and **oh boy**, hold on to your hats, folks 😀
 
 ### Related reading
 
@@ -127,7 +128,3 @@ That then covers the majority of the most important aspects of these elements. W
 - [AVIF](https://avif.io/)
 - [WebP](https://developers.google.com/speed/webp)
 - [CSS-Tricks' Complete guide to CSS media queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/)
-
-Until tomorrow, keep making the web awesome!
-
-~..~ Schalk Neethling - [@schalkneethling](https://twitter.com/schalkneethling) pretty much everywhere :)
