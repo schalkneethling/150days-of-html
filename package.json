@@ -16,6 +16,6 @@
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-prettier": "^2.0.0",
-    "stylelint-scss": "^4.1.0"
+    "stylelint-scss": "^4.2.0"
   }
 }
