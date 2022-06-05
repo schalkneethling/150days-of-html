@@ -1,0 +1,42 @@
+name: "[Report from 150DaysOfHTML website only]"
+description: Issue filed via "Report a problem" link on 150DaysOfHTML pages.
+labels: ["needs triage"]
+body:
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Set automatically. Do not modify.
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: What specific section or headline is this issue about?
+  - type: textarea
+    id: problem
+    attributes:
+      label: What information was incorrect, unhelpful, or incomplete?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to see?
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Do you have any supporting links, references, or citations?
+      description: Link to information that helps us confirm your issue.
+  - type: textarea
+    id: more-info
+    attributes:
+      label: Do you have anything more you want to share?
+      description: For example, screenshots, screen recordings, or sample code
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        You're finished! Please click **Submit new issue**.
