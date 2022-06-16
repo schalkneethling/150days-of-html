@@ -13,7 +13,9 @@ As mentioned yesterday, today we are getting into the `head` of our HTML documen
 
 In a single short phrase, it is [“data about data”](https://en.wikipedia.org/wiki/Metadata). That’s so meta right? 😉
 
-Not all metadata lives in the `head` though, and not all metadata that lives in the `head` is necessarily descriptive, but I am getting a-`head` of myself #lame
+Not all metadata lives in the `head` though, and not all metadata that lives in the `head` is necessarily descriptive, but I am getting a-`head` of myself.
+
+{{< youtube id="fVYbaw_xTsM" title="150DaysofHTML, Chapter 2, The head element" >}}
 
 ## head
 
