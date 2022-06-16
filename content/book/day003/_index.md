@@ -11,6 +11,8 @@ menu:
 
 Chapter 2 was a quick one and introduced you to the `head` element and the concept of metadata. In this chapter we dig into the first piece of metadata we will add to our webpages, the `title` tag.
 
+{{< youtube id="dsdap1Xzkqo" title="150DaysofHTML, Chapter 3, The title element" >}}
+
 Seems like such a simple element, and it is, but while simple, it is critical to orient a user. The `title` uniquely identifies the current page in browser history, is the first piece of information read to users using screen readers; it is the title shown to users in search results and when sharing on social media, and is [great for SEO](https://moz.com/learn/seo/title-tag)(search engine optimisation) aka Google Juice 🍹
 
 With that said, keep the following guidelines in mind when writing your title:
