@@ -22,7 +22,7 @@ For example, the title for this email as an HTML document would be:
 
 ```html
 <!DOCTYPE html>
-<html lang="“en”">
+<html lang="en">
   <head>
     <title>The HTML title element - Day 3 | 150 Days of HTML</title>
   </head>
@@ -37,13 +37,13 @@ Why would you ever want to do that though?
 Glad you asked. For example, your page title could be the title of a poem or a song. In those cases you do not want to content translated.
 
 ```html
-<title translate="“no”">Revoir Paris | Roland Dyens</title>
+<title translate="no">Revoir Paris | Roland Dyens</title>
 ```
 
 Here, it would also be prudent to add a `lang` attribute indicating the primary language used in the `title` tag.
 
 ```html
-<title translate="“no”" lang="“fr”">Revoir Paris | Roland Dyens</title>
+<title translate="no" lang="fr">Revoir Paris | Roland Dyens</title>
 ```
 
 That covers the `title` element and the third element of our journey through HTML. Tomorrow we will cover an element many people have probably never heard of. 🤔 That is all I am saying for now though. 😸
