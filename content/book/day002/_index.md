@@ -21,7 +21,7 @@ Most of the metadata about our document lives in the `head` of the document, and
 
 ```html
 <!DOCTYPE html>
-<html lang="“en”">
+<html lang="en">
   <head>
     ...
   </head>
