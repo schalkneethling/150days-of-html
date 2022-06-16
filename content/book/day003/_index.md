@@ -18,23 +18,23 @@ With that said, keep the following guidelines in mind when writing your title:
 - Be concise when writing your titles and aim to keep the total character count at around 60.
 - Remember that document titles should make sense when read out of context.
 
-For example, the title for this email as an HTML document would be:
+For example, the title for this chapter would read:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>The HTML title element - Day 3 | 150 Days of HTML</title>
+    <title>The HTML title element - Chapter 3 | 150 Days of HTML</title>
   </head>
   ...
 </html>
 ```
 
-The `title` tag does not have any special attributes but supports the global attributes, one of which is `translate`. Using this attribute, you can prevent translation tools from localising your page title.
+The `title` tag does not have any special attributes but supports all the global attributes, one of which is `translate`. Using this attribute, you can prevent translation tools from localising your page title.
 
 Why would you ever want to do that though?
 
-Glad you asked. For example, your page title could be the title of a poem or a song. In those cases you do not want to content translated.
+Glad you asked. Your page title could be the title of a poem or a song. In those cases you do not want the title translated.
 
 ```html
 <title translate="no">Revoir Paris | Roland Dyens</title>
@@ -46,7 +46,7 @@ Here, it would also be prudent to add a `lang` attribute indicating the primary 
 <title translate="no" lang="fr">Revoir Paris | Roland Dyens</title>
 ```
 
-That covers the `title` element and the third element of our journey through HTML. Tomorrow we will cover an element many people have probably never heard of. 🤔 That is all I am saying for now though. 😸
+That covers the `title` element and the third element of our journey through HTML. Tomorrow we will cover an element many people have probably never heard of. 🤔 But that is where we will leave it for now. 😸
 
 ## Related Reading
 
