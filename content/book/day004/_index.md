@@ -11,6 +11,8 @@ menu:
 
 As mentioned in chapter 3, in this chapter we are going to look at an HTML element you may have never heard of. The element under discussion is the `base` element.
 
+{{< youtube id="y1H11wi0F-4" title="150DaysofHTML, Chapter 4, The base element" >}}
+
 The `base` element is written as self-closing tag. This means that, while a lot of tags are written as follows:
 
 ```html
