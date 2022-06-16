@@ -13,6 +13,8 @@ Welcome to chapter one of your 150 chapter journey. If one has always thought of
 
 As you will see throughout this journey though, there is a **lot** more to the HTML language than just those elements. To be honest though, a lot of these are variants on the same base element derived from attributes. This is especially true with form elements. With that being said, these attributes can be immensely powerful in open up an entire new world of possibilities once you are aware of them.
 
+{{< youtube id="w5fmNozNQxw" title="150DaysofHTML, Chapter 1, An introduction to HTML" >}}
+
 ## What is HTML?
 
 HTML stands for **H**yper**T**ext **M**arkup **L**anguage and has been at the core of [the web](https://en.wikipedia.org/wiki/World_Wide_Web) since its very inception in 1989. It forms the bases of all things on the web no matter how simple or how complex. Without HTML, there is no webpage or web application. HTML also provides the [semantic structure of our documents and applications](https://webaim.org/techniques/semanticstructure/) and this is where knowing the language really pays off. Semantic structure is also critical when it comes to the accessibility of your documents, a topic I will touch on throughout the 150 days.
