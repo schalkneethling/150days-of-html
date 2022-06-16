@@ -11,9 +11,21 @@ menu:
 
 As mentioned in chapter 3, in this chapter we are going to look at an HTML element you may have never heard of. The element under discussion is the `base` element.
 
-The `base` element is a self-closing element. It allows you to set a base URL for all links on the current page and/or set a base browsing context for all links on the page. 🔗
+The `base` element is written as self-closing tag. This means that, while a lot of tags are written as follows:
 
-Let’s look at a practical example.
+```html
+<title>My page title</title>
+```
+
+A self closing tag is written like this:
+
+```html
+<base href="https://150daysofhtml.com" />
+```
+
+The `base` element allows you to set a base URL for all links on the current page, set a base browsing context, or both, for all links on the page. 🔗
+
+Let’s look at an example.
 
 ```html
 <ul>
@@ -49,6 +61,8 @@ All of those links share the same **base** URL. 🤔 Using the `base` element, y
   </body>
 </html>
 ```
+
+> NOTE: If the HTML above was on a page that was hosted as part of the Goodreads website, you would not include the URL as part of the link and instead, opt for using relative URLs. In other words, instead of `https://www.goodreads.com/book/show/11588.The_Shining` you will do just `book/show/11588.The_Shining`
 
 Now, you may also want those links to always open in a new tab. One option is to do:
 
@@ -87,7 +101,7 @@ As mentioned, there is a second attribute you can set on the `base` element, and
 
 With the above in place, **all** links in the current page will use `https://www.googreads.com` as its base URL and all links will open in a new tab. Interesting right?
 
-Thing is, it means that **all** links will have this behaviour. It is also a little more nuanced than that. Not only are anchor tags affected, but it will affect _all_ elements with an `href` attribute set. For example:
+Thing is, it does mean that **all** "links" will have this behaviour. This means that not only are anchor tags are affected, but that it will affect _all_ elements with an `href` attribute set. For example:
 
 ```html
 <base href="https://www.goodreads.com/" />
@@ -101,7 +115,7 @@ In the above scenario, the browser will attempt to load the stylesheet from the 
 <base href="https://www.goodreads.com/" />
 ```
 
-Still, I find it a little hard to come up with a use case for using `base`. I can see how a webpage might have links that all use the same base URL, but I am not sure how often you would want all links to open in a new tab for example. Of course, `_target` is not the only potential value for the `target` attribute. One other potential value for the `target` attribute is `_top`. Using `_top` as the value of `target` might be useful as a means of [frame busting](https://en.wikipedia.org/wiki/Framekiller) aka, prevent your site from being displayed in an `iframe`.
+Remember that `_blank` is not the only possible value for the `target` attribute. One other value is `_top`. Using `_top` as the value of `target` might be useful as a means of [frame busting](https://en.wikipedia.org/wiki/Framekiller) aka, prevent your site from being displayed in an `iframe`.
 
 ```html
 <base target="_top" />
@@ -109,7 +123,7 @@ Still, I find it a little hard to come up with a use case for using `base`. I ca
 
 While this will not prevent the site from initially being loaded in an `iframe`, it _will_ cause clicks on any links in the page to bust out of the `iframe` by setting its browsing context to the topmost browsing context i.e. the browser window itself.
 
-Thinking it over some more, I wondered what would happen if you combined `base` with a specific `class` and some JavaScript.🤔 The result is something I could see being useful in web applications. Although it might be a bit of a stretch. For demonstration purposes though, here it is:
+I will close this chapter with an example use case that might be a bit of a stretch. I am using a combination of the `base` element, a specific CSS `class` on certain elements, and some JavaScript. The result is something that could be useful in a web applications.
 
 ```html
 <!DOCTYPE html>
@@ -130,10 +144,10 @@ Thinking it over some more, I wondered what would happen if you combined `base` 
 
     <ul>
       <li>
-        <a href="https://www.goodreads.com/book/show/10614.Misery">Misery</a>
+        <a href="https://www.amazon.com/Misery-Stephen-King-ebook/dp/B003BKZW7M/ref=sr_1_1?keywords=stephen+king+misery&qid=1655407924&sr=8-1">Misery</a>
       </li>
       <li>
-        <a href="https://www.goodreads.com/book/show/10592.Carrie">Carrie</a>
+        <a href="https://www.amazon.com/Carrie-Stephen-King-ebook/dp/B0037TPMOU/ref=sr_1_1?crid=2DCD204IC665N&keywords=stephen+king+carrie&qid=1655407959&sprefix=stephen+king+carr%2Caps%2C509&sr=8-1">Carrie</a>
       </li>
     </ul>
   </body>
@@ -170,7 +184,7 @@ The URL parsing algorithm works as follows (from the W3C documentation):
 <!-- The above URL will be https://www.otherwebsite.com/blog/archives.html -->
 ```
 
-Knowing the above might very well open up some additional actually useful use cases. Alrighty then, that was a bit of a whirlwind ride. I am curious to know what use cases people come up with using the `base` element. If you stumble on or devise some interesting use case, let me know!
+Knowing the above might well open up some additional use cases for this element. I am curious to know what use cases people come up with using the `base` element. If you stumble on or devise some interesting use case, let me know!
 
 ## Related Reading
 
