@@ -144,10 +144,10 @@ I will close this chapter with an example use case that might be a bit of a stre
 
     <ul>
       <li>
-        <a href="https://www.amazon.com/Misery-Stephen-King-ebook/dp/B003BKZW7M/ref=sr_1_1?keywords=stephen+king+misery&qid=1655407924&sr=8-1">Misery</a>
+        <a href="https://amzn.to/3Olm2de">Misery</a>
       </li>
       <li>
-        <a href="https://www.amazon.com/Carrie-Stephen-King-ebook/dp/B0037TPMOU/ref=sr_1_1?crid=2DCD204IC665N&keywords=stephen+king+carrie&qid=1655407959&sprefix=stephen+king+carr%2Caps%2C509&sr=8-1">Carrie</a>
+        <a href="https://amzn.to/3OlsCQM">Carrie</a>
       </li>
     </ul>
   </body>
